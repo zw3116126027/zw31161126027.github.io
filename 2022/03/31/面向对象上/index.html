@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="面向过程与面向对象 上面向过程与面向对象 二者都是一种思想，面向对象是相对于面向过程而言的。面向过程，强调的是功能行为，以函数为最小单位，考虑怎么做。面向对象，将功能封装进对象，强调具备了功能的对象，以类&#x2F;对象为最小单位，考虑谁来做。 面向对象更加强调运用人类在日常的思维逻辑中采用的思想方法与原则，如抽象、分类、继承、聚合、多态等。面向过程(POP) 与 面向对象(OOP) 封装 (En">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的的的的的的的的的的的的的的">
+<meta property="og:url" content="http://example.com/2022/03/31/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%8A/index.html">
+<meta property="og:site_name" content="我的的的的的的的的的的的的的的">
+<meta property="og:description" content="面向过程与面向对象 上面向过程与面向对象 二者都是一种思想，面向对象是相对于面向过程而言的。面向过程，强调的是功能行为，以函数为最小单位，考虑怎么做。面向对象，将功能封装进对象，强调具备了功能的对象，以类&#x2F;对象为最小单位，考虑谁来做。 面向对象更加强调运用人类在日常的思维逻辑中采用的思想方法与原则，如抽象、分类、继承、聚合、多态等。面向过程(POP) 与 面向对象(OOP) 封装 (En">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-31T08:25:12.817Z">
+<meta property="article:modified_time" content="2022-03-31T10:18:39.908Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://example.com/2022/03/31/面向对象上/"/>
+
+
+
+
+
+  <title> | 我的的的的的的的的的的的的的的</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">我的的的的的的的的的的的的的的</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">郑炜的博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/31/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的的的的的的的的的的的的的的">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-03-31T16:25:12+08:00">
+                2022-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="面向过程与面向对象-上"><a href="#面向过程与面向对象-上" class="headerlink" title="面向过程与面向对象 上"></a><center>面向过程与面向对象 上</h1><h4 id="面向过程与面向对象"><a href="#面向过程与面向对象" class="headerlink" title="面向过程与面向对象"></a>面向过程与面向对象</h4><ul>
+<li>二者都是一种思想，面向对象是相对于面向过程而言的。面向过程，<font>强调的<br>是功能行为，以函数为最小单位，考虑怎么做。面向对象，将功能封装进对<br>象，强调具备了功能的对象，以类&#x2F;对象为最小单位，考虑谁来做。</li>
+<li>面向对象更加强调运用人类在日常的思维逻辑中采用的思想方法与原则，如<br>抽象、分类、继承、聚合、多态等。<h3 id="面向过程-POP-与-面向对象-OOP"><a href="#面向过程-POP-与-面向对象-OOP" class="headerlink" title="面向过程(POP) 与 面向对象(OOP)"></a>面向过程(POP) 与 面向对象(OOP)</h3></li>
+<li>封装 (Encapsulation)</li>
+<li>继承 (Inheritance)</li>
+<li>多态 (Polymorphism)<h4 id="面向过程与面向对象-1"><a href="#面向过程与面向对象-1" class="headerlink" title="面向过程与面向对象"></a>面向过程与面向对象</h4><h6 id="面向过程"><a href="#面向过程" class="headerlink" title="面向过程"></a>面向过程</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 打开冰箱</span><br><span class="line">2. 把大象装进冰箱</span><br><span class="line">3. 把冰箱门关住</span><br></pre></td></tr></table></figure>
+<h6 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">人&#123;</span><br><span class="line">    打开(冰箱)&#123;</span><br><span class="line">        冰箱.开门();</span><br><span class="line">    &#125;</span><br><span class="line">    操作(大象)&#123;</span><br><span class="line">        大象.进入(冰箱);</span><br><span class="line">    &#125;</span><br><span class="line">    关闭(冰箱)&#123;</span><br><span class="line">        冰箱.关门();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">冰箱&#123;</span><br><span class="line">    开门()&#123;&#125;</span><br><span class="line">    关门()&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">大象&#123;</span><br><span class="line">    进入(冰箱)&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="面向对象的思想概述"><a href="#面向对象的思想概述" class="headerlink" title="面向对象的思想概述"></a><center>面向对象的思想概述</h3></li>
+<li><h5 id="类-Class-和对象-Object-是面向对象的核心概念。"><a href="#类-Class-和对象-Object-是面向对象的核心概念。" class="headerlink" title="类(Class)和对象(Object)是面向对象的核心概念。"></a>类(Class)和对象(Object)是面向对象的核心概念。</h5></li>
+</ul>
+<ul>
+<li><blockquote>
+<p>类是对一类事物的描述，是抽象的、概念上的定义</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>对象是实际存在的该类事物的每个个体，因而也称为实例(instance)。</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><h5 id="“万事万物皆对象”"><a href="#“万事万物皆对象”" class="headerlink" title="“万事万物皆对象”"></a>“万事万物皆对象”</h5></li>
+</ul>
+<ul>
+<li><blockquote>
+<p>可以理解为：类 &#x3D; 抽象概念的人；对象 &#x3D; 实实在在的某个人</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>面向对象程序设计的重点是类的设计</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>类的设计，其实就是类的成员的设计</p>
+</blockquote>
+<h3 id="面向对象的思想概述-1"><a href="#面向对象的思想概述-1" class="headerlink" title="面向对象的思想概述"></a><center>面向对象的思想概述</h3></li>
+</ul>
+<ul>
+<li>可以理解为：类 &#x3D; 抽象概念的人；对象 &#x3D; 实实在在的某个人</li>
+<li>面向对象程序设计的重点是类的设计</li>
+<li>类的设计，其实就是类的成员的设计</li>
+</ul>
+<h3 id="类的语法格式"><a href="#类的语法格式" class="headerlink" title="类的语法格式"></a><center>类的语法格式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">修饰符 class 类名&#123;</span><br><span class="line">    属性声明;</span><br><span class="line">    方法声明;</span><br><span class="line">&#125;</span><br><span class="line">说明：修饰符<span class="keyword">public</span>:类可以被任意访问</span><br><span class="line">    类的正文要用&#123; &#125;扩起来</span><br><span class="line"></span><br><span class="line">举例：</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="type">int</span> age;              <span class="comment">//声明私有变量 age</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showAge</span><span class="params">(<span class="type">int</span> i)</span>&#123;   <span class="comment">//声明方法showAge()</span></span><br><span class="line">            age=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="对象的创建和使用"><a href="#对象的创建和使用" class="headerlink" title="对象的创建和使用"></a>对象的创建和使用</h3><ul>
+<li><blockquote>
+<p>创建对象语法： 类名 对象名 &#x3D; new 类名();</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>使用“对象名.对象成员”的方式访问对象成员（包括属性和方法）</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>说明：如果创建了一个类的多个对象，对于类中定义的属性，每个对象都拥有各自的一套副本，且互不干扰。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/03/31/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/03/31/python/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E4%B8%8A"><span class="nav-number">1.</span> <span class="nav-text">面向过程与面向对象 上</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">面向过程与面向对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B-POP-%E4%B8%8E-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-OOP"><span class="nav-number">1.0.1.</span> <span class="nav-text">面向过程(POP) 与 面向对象(OOP)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">面向过程与面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B"><span class="nav-number">1.0.1.1.0.1.</span> <span class="nav-text">面向过程</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.0.1.1.0.2.</span> <span class="nav-text">面向对象</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%80%9D%E6%83%B3%E6%A6%82%E8%BF%B0"><span class="nav-number">1.0.2.</span> <span class="nav-text">面向对象的思想概述</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%B1%BB-Class-%E5%92%8C%E5%AF%B9%E8%B1%A1-Object-%E6%98%AF%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E3%80%82"><span class="nav-number">1.0.2.0.1.</span> <span class="nav-text">类(Class)和对象(Object)是面向对象的核心概念。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E2%80%9C%E4%B8%87%E4%BA%8B%E4%B8%87%E7%89%A9%E7%9A%86%E5%AF%B9%E8%B1%A1%E2%80%9D"><span class="nav-number">1.0.2.0.2.</span> <span class="nav-text">“万事万物皆对象”</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%80%9D%E6%83%B3%E6%A6%82%E8%BF%B0-1"><span class="nav-number">1.0.3.</span> <span class="nav-text">面向对象的思想概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.0.4.</span> <span class="nav-text">类的语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="nav-number">1.0.5.</span> <span class="nav-text">对象的创建和使用</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
