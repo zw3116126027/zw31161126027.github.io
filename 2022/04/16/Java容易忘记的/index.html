@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="导航," />
+  <meta name="keywords" content="java," />
 
 
 
@@ -94,9 +94,9 @@
 <meta property="og:description" content="什么是继承:将具有相同属性和方法的类中相同属性和方法提取出，构建一个新类，这个新类就是父类，然后由父类再构建子类，子类继承父类的属性和方法，使得子类对象具有父类的特征和行为  类变量、类方法与static关键字: static修饰的变量和方法可以通过类名和对象名访问，而不用static修饰的变量和方法只能通过对象名访问。   类变量或静态常量：static修饰的属性称为类属性（类变量）如：1234">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-04-16T05:29:32.000Z">
-<meta property="article:modified_time" content="2022-04-20T00:20:55.819Z">
+<meta property="article:modified_time" content="2022-04-20T01:25:11.297Z">
 <meta property="article:author" content="郑炜">
-<meta property="article:tag" content="导航">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
 
 
@@ -329,7 +329,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-04-20T08:20:55+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2022-04-20T09:25:11+08:00">
                 2022-04-20
               </time>
             
@@ -499,7 +499,8 @@
 <li>子类方法与父类方法具有相同的名字。</li>
 <li>参数列表与父类方法相同。</li>
 <li>返回值类型与父类方法相同。</li>
-<li>子类方法访问权限不能比父类更严格。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Penguin</span> <span class="keyword">extends</span> <span class="title class_">Pet</span> &#123;  <span class="comment">//Penguin子类重写toString()</span></span><br><span class="line">    <span class="keyword">public</span>  <span class="keyword">static</span> <span class="type">String</span> <span class="variable">nale</span> <span class="operator">=</span> <span class="string">&quot;Q仔&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span>  <span class="keyword">static</span> <span class="type">String</span> <span class="variable">fenale</span> <span class="operator">=</span> <span class="string">&quot;Q妹&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> String sex;   <span class="comment">//性别</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span>&#123;   <span class="comment">//Penguin子类重写toString()</span></span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">info</span> <span class="operator">=</span> <span class="built_in">super</span>.toString(); <span class="comment">//toString():访问父类的方法</span></span><br><span class="line">        <span class="keyword">return</span> info+<span class="string">&quot;,&quot;</span>+sex;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>子类方法访问权限不能比父类更严格。</li>
+<li>抛出的异常<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Penguin</span> <span class="keyword">extends</span> <span class="title class_">Pet</span> &#123;  <span class="comment">//Penguin子类重写toString()</span></span><br><span class="line">    <span class="keyword">public</span>  <span class="keyword">static</span> <span class="type">String</span> <span class="variable">nale</span> <span class="operator">=</span> <span class="string">&quot;Q仔&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span>  <span class="keyword">static</span> <span class="type">String</span> <span class="variable">fenale</span> <span class="operator">=</span> <span class="string">&quot;Q妹&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> String sex;   <span class="comment">//性别</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span>&#123;   <span class="comment">//Penguin子类重写toString()</span></span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">info</span> <span class="operator">=</span> <span class="built_in">super</span>.toString(); <span class="comment">//toString():访问父类的方法</span></span><br><span class="line">        <span class="keyword">return</span> info+<span class="string">&quot;,&quot;</span>+sex;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <hr>
 <h2 id="抽象类、抽象方法和abstract关键字"><a href="#抽象类、抽象方法和abstract关键字" class="headerlink" title="抽象类、抽象方法和abstract关键字"></a><strong>抽象类、抽象方法和abstract关键字</strong></h2><h3 id="1-抽象类"><a href="#1-抽象类" class="headerlink" title="1. 抽象类"></a>1. 抽象类</h3><ul>
@@ -551,7 +552,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E5%AF%BC%E8%88%AA/" rel="tag"># 导航</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -711,7 +712,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -734,6 +735,18 @@
                     <a href="https://weibo.com/u/6582101683" target="_blank" title="weibo">
                       
                         <i class="fa fa-fw fa-weibo"></i>weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://space.bilibili.com/267615120" target="_blank" title="bilibili">
+                      
+                        <i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/zhengwei06?spm=1000.2115.3001.5343" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-CSDN"></i>CSDN</a>
                   </span>
                 
             </div>
