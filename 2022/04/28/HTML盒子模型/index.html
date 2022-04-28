@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="equals的若干问题解答," />
+  <meta name="keywords" content="HTML盒子模型," />
 
 
 
@@ -86,20 +86,22 @@
 
 
 
-<meta name="description" content="详细解答：Java hashCode() 和 equals()的若干问题解答 引用于：javaGuide 做的笔记String#equals() 和 Object#equals() 有何区别？ 操作少量的数据: 适用 String 单线程操作字符串缓冲区下操作大量数据: 适用 StringBuilder 多线程操作字符串缓冲区下操作大量数据: 适用 StringBuffer  String 中的">
+<meta name="description" content="关于HTML盒子模型的笔记样式图： 建议：连接css文件(在css打代码更方便些)  1&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;.&#x2F;css&#x2F;master.css&quot;&gt;  &lt;!-- herf：实际文件地址--&gt; 盒子模型 浏览器默认样式 所有元素都是矩形 margin: 外边距 border: 边框，有很多样式，直角、圆">
 <meta property="og:type" content="article">
-<meta property="og:title" content="equals的若干问题解答">
-<meta property="og:url" content="http://blog-zw.top/2022/04/21/equals%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94/index.html">
+<meta property="og:title" content="HTML盒子模型">
+<meta property="og:url" content="http://blog-zw.top/2022/04/28/HTML%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.html">
 <meta property="og:site_name" content="blog-zw">
-<meta property="og:description" content="详细解答：Java hashCode() 和 equals()的若干问题解答 引用于：javaGuide 做的笔记String#equals() 和 Object#equals() 有何区别？ 操作少量的数据: 适用 String 单线程操作字符串缓冲区下操作大量数据: 适用 StringBuilder 多线程操作字符串缓冲区下操作大量数据: 适用 StringBuffer  String 中的">
+<meta property="og:description" content="关于HTML盒子模型的笔记样式图： 建议：连接css文件(在css打代码更方便些)  1&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;.&#x2F;css&#x2F;master.css&quot;&gt;  &lt;!-- herf：实际文件地址--&gt; 盒子模型 浏览器默认样式 所有元素都是矩形 margin: 外边距 border: 边框，有很多样式，直角、圆">
 <meta property="og:locale">
-<meta property="og:image" content="http://blog-zw.top/2022/04/21/equals%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94/1.jpg">
-<meta property="article:published_time" content="2022-04-21T04:27:29.000Z">
-<meta property="article:modified_time" content="2022-04-26T12:14:11.607Z">
+<meta property="og:image" content="http://blog-zw.top/2022/04/28/HTML%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E9%A2%84%E8%A7%88.png">
+<meta property="og:image" content="http://blog-zw.top/2022/04/28/HTML%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/1.png">
+<meta property="og:image" content="http://blog-zw.top/2022/04/28/HTML%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/2.png">
+<meta property="article:published_time" content="2022-04-28T01:08:27.000Z">
+<meta property="article:modified_time" content="2022-04-28T09:16:22.385Z">
 <meta property="article:author" content="郑炜">
-<meta property="article:tag" content="equals的若干问题解答">
+<meta property="article:tag" content="HTML盒子模型">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://blog-zw.top/2022/04/21/equals%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94/1.jpg">
+<meta name="twitter:image" content="http://blog-zw.top/2022/04/28/HTML%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E9%A2%84%E8%A7%88.png">
 
 
 
@@ -129,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://blog-zw.top/2022/04/21/equals的若干问题解答/"/>
+  <link rel="canonical" href="http://blog-zw.top/2022/04/28/HTML盒子模型/"/>
 
 
 
 
 
-  <title>equals的若干问题解答 | blog-zw</title>
+  <title>HTML盒子模型 | blog-zw</title>
   
 
 
@@ -286,7 +288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog-zw.top/2022/04/21/equals%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94/">
+    <link itemprop="mainEntityOfPage" href="http://blog-zw.top/2022/04/28/HTML%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -303,7 +305,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">equals的若干问题解答</h1>
+          <h1 class="post-title" itemprop="name headline">HTML盒子模型</h1>
         
 
         <div class="post-meta">
@@ -315,8 +317,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-21T12:27:29+08:00">
-                2022-04-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-28T09:08:27+08:00">
+                2022-04-28
               </time>
             
 
@@ -331,8 +333,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-04-26T20:14:11+08:00">
-                2022-04-26
+              <time title="更新于" itemprop="dateModified" datetime="2022-04-28T17:16:22+08:00">
+                2022-04-28
               </time>
             
           </span>
@@ -350,8 +352,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/HTML/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML</span>
                   </a>
                 </span>
 
@@ -386,7 +388,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  655
+                  535
                 </span>
               
 
@@ -423,29 +425,27 @@
       
 
       
-        <p>详细解答：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/skywang12345/p/3324958.html">Java hashCode() 和 equals()的若干问题解答</a></p>
-<h1 id="引用于：javaGuide-做的笔记"><a href="#引用于：javaGuide-做的笔记" class="headerlink" title="引用于：javaGuide 做的笔记"></a>引用于：javaGuide 做的笔记</h1><h2 id="String-equals-和-Object-equals-有何区别？"><a href="#String-equals-和-Object-equals-有何区别？" class="headerlink" title="String#equals() 和 Object#equals() 有何区别？"></a>String#equals() 和 Object#equals() 有何区别？</h2><ol>
-<li>操作少量的数据: 适用 String</li>
-<li>单线程操作字符串缓冲区下操作大量数据: 适用 StringBuilder</li>
-<li>多线程操作字符串缓冲区下操作大量数据: 适用 StringBuffer</li>
-</ol>
-<p>String 中的 equals 方法是被重写过的，比较的是 String 字符串的值是否相等。 Object 的 equals 方法是比较的对象的内存地址。</p>
-<h2 id="String-s1-x3D-new-String-“abc”-这句话创建了几个字符串对象？"><a href="#String-s1-x3D-new-String-“abc”-这句话创建了几个字符串对象？" class="headerlink" title="String s1 &#x3D; new String(“abc”);这句话创建了几个字符串对象？"></a>String s1 &#x3D; new String(“abc”);这句话创建了几个字符串对象？</h2><p>会创建 1 或 2 个字符串：</p>
-<ul>
-<li>如果字符串常量池中已存在字符串常量“abc”，则只会在堆空间创建一个字符串常量“abc”。</li>
-<li>如果字符串常量池中没有字符串常量“abc”，那么它将首先在字符串常量池中创建，然后在堆空间中创建，因此将创建总共 2 个字符串对象。</li>
+        <h1 id="关于HTML盒子模型的笔记"><a href="#关于HTML盒子模型的笔记" class="headerlink" title="关于HTML盒子模型的笔记"></a>关于HTML盒子模型的笔记</h1><h3 id="样式图："><a href="#样式图：" class="headerlink" title="样式图："></a>样式图：</h3><p><img src="/2022/04/28/HTML%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E9%A2%84%E8%A7%88.png"></p>
+<p>建议：连接css文件(在css打代码更方便些)<br>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./css/master.css&quot;</span>&gt;</span>  <span class="comment">&lt;!-- herf：实际文件地址--&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><ul>
+<li>浏览器默认样式</li>
+<li>所有元素都是矩形</li>
+<li>margin: 外边距</li>
+<li>border: 边框，有很多样式，直角、圆角、颜色等</li>
+<li>padding: 内边距</li>
+<li>content: 内容，就是本身的内容，比如一段话</li>
 </ul>
-<p>验证：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;abc&quot;</span>);<span class="comment">// 堆内存的地址值</span></span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">System.out.println(s1 == s2);<span class="comment">// 输出 false,因为一个是堆内存，一个是常量池的内存，故两者是不同的。</span></span><br><span class="line">System.out.println(s1.equals(s2));<span class="comment">// 输出 true</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>结果：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">false</span></span><br><span class="line"><span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<h2 id="String-类型的变量和常量做“-”运算时发生了什么？"><a href="#String-类型的变量和常量做“-”运算时发生了什么？" class="headerlink" title="String 类型的变量和常量做“+”运算时发生了什么？"></a>String 类型的变量和常量做“+”运算时发生了什么？</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">str1</span> <span class="operator">=</span> <span class="string">&quot;str&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">str2</span> <span class="operator">=</span> <span class="string">&quot;ing&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">str3</span> <span class="operator">=</span> <span class="string">&quot;str&quot;</span> + <span class="string">&quot;ing&quot;</span>;<span class="comment">//常量池中的对象</span></span><br><span class="line"><span class="type">String</span> <span class="variable">str4</span> <span class="operator">=</span> str1 + str2; <span class="comment">//在堆上创建的新的对象</span></span><br><span class="line"><span class="type">String</span> <span class="variable">str5</span> <span class="operator">=</span> <span class="string">&quot;string&quot;</span>;<span class="comment">//常量池中的对象</span></span><br><span class="line">System.out.println(str3 == str4);<span class="comment">//false</span></span><br><span class="line">System.out.println(str3 == str5);<span class="comment">//true</span></span><br><span class="line">System.out.println(str4 == str5);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
-<p><img src="/2022/04/21/equals%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94/1.jpg" alt="1"><br>注意 ：比较 String 字符串的值是否相等，可以使用 equals() 方法。 String 中的 equals 方法是被重写过的。 Object 的 equals 方法是比较的对象的内存地址，而 String 的 equals 方法比较的是字符串的值是否相等。如果你使用 &#x3D;&#x3D; 比较两个字符串是否相等的话，IDEA 还是提示你使用 equals() 方法替换。</p>
-<blockquote>
-<p>对于基本数据类型来说，&#x3D;&#x3D; 比较的是值。对于引用数据类型来说，&#x3D;&#x3D;比较的是对象的内存地址。</p>
-</blockquote>
-<p> 对于编译期可以确定值的字符串，也就是常量字符串 ，jvm 会将其存入字符串常量池。</p>
-<p> <code>字符串常量池</code> 是 JVM 为了提升性能和减少内存消耗针对字符串（String 类）专门开辟的一块区域，主要目的是为了避免字符串的重复创建。<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="type">String</span> <span class="variable">aa</span> <span class="operator">=</span> <span class="string">&quot;ab&quot;</span>; <span class="comment">// 放在常量池中</span></span><br><span class="line"><span class="type">String</span> <span class="variable">bb</span> <span class="operator">=</span> <span class="string">&quot;ab&quot;</span>; <span class="comment">// 从常量池中查找</span></span><br><span class="line">System.out.println(aa==bb);<span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<p>在浏览器默认所有的元素和边缘有空白是怎么回事呢？</p>
+<p><code>其实就是浏览器默认的边距样式，而且不一样的浏览器，样式也可能不一样，我们可以吧默认样式去掉。</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* &#123;  <span class="comment">/*默认通配符 匹配所有标签 */</span></span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">0</span>;  <span class="comment">/*去掉外边距*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="说一说盒子"><a href="#说一说盒子" class="headerlink" title="说一说盒子:"></a>说一说盒子:</h3><p>所有界面的元素都可以看出一个盒子，盒子模型就是包围内容的一个盒子。<br><img src="/2022/04/28/HTML%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/1.png"></p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;              <span class="comment">/*盒子的大小，高宽也就是一个矩形*/</span></span><br><span class="line">    <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: aqua;    <span class="comment">/*背景颜色*/</span></span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">30px</span>;             <span class="comment">/*内边距*/</span></span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">300px</span>;             <span class="comment">/*外边距*/</span></span><br><span class="line">    <span class="attribute">border</span>: <span class="number">20px</span> solid black;  <span class="comment">/*边框样式为实线，颜色为黑色*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在设置了，<code>内边距</code>，<code>边框</code>，<code>外边距</code> 我们可以看出盒子似乎大了，不是一开始设置的300*150大小了，这是因为我们增加了内边距边框，但是为什么增加内边距边框,就导致盒子变大了呢？因为它默认的规则是，所有增加的边距边框都往外加！！！在内容高度宽度的基础上往外加！</p>
+<p>我们可以设置box-sizing:<br>一般默认的box-sizing为 content-box<br>我们设置为 border-box</p>
+<h3 id="预览："><a href="#预览：" class="headerlink" title="预览："></a>预览：</h3><p><img src="/2022/04/28/HTML%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/2.png"></p>
+<h3 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自己的通俗理解:<br><code>也就是比如说，如果要建设一个房子,默认要装修就是在建好的房子里面装修，但是 未设置 box-sizing 就是反着来在初始房子大小往外扩建装修,但如果设置了box-sizing 为 border-box 就变成了在房子里面装修了，width:300px heigit:150 也就是基础房子的大小(盒子)</code></p>
 
       
     </div>
@@ -463,7 +463,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/equals%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94/" rel="tag"># equals的若干问题解答</a>
+            <a href="/tags/HTML%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/" rel="tag"># HTML盒子模型</a>
           
         </div>
       
@@ -476,8 +476,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2022/04/20/%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%EF%BC%9A%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E6%80%A7%E8%83%BD%E6%AF%94%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%EF%BC%9F%EF%BC%9F/" rel="next" title="面向过程：面向过程性能比面向对象高？？">
-                <i class="fa fa-chevron-left"></i> 面向过程：面向过程性能比面向对象高？？
+              <a href="/2022/04/26/%E4%B8%BA%E4%BB%80%E4%B9%88Java%E4%B8%AD%E5%8F%AA%E6%9C%89%E5%80%BC%E4%BC%A0%E9%80%92%EF%BC%9F/" rel="next" title="为什么Java中只有值传递？">
+                <i class="fa fa-chevron-left"></i> 为什么Java中只有值传递？
               </a>
             
           </div>
@@ -485,10 +485,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2022/04/24/mysql%E7%AC%94%E8%AE%B0/" rel="prev" title="mysql笔记">
-                mysql笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -698,7 +694,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E4%BA%8E%EF%BC%9AjavaGuide-%E5%81%9A%E7%9A%84%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">引用于：javaGuide 做的笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#String-equals-%E5%92%8C-Object-equals-%E6%9C%89%E4%BD%95%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">String#equals() 和 Object#equals() 有何区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String-s1-x3D-new-String-%E2%80%9Cabc%E2%80%9D-%E8%BF%99%E5%8F%A5%E8%AF%9D%E5%88%9B%E5%BB%BA%E4%BA%86%E5%87%A0%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">String s1 &#x3D; new String(“abc”);这句话创建了几个字符串对象？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String-%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F%E5%81%9A%E2%80%9C-%E2%80%9D%E8%BF%90%E7%AE%97%E6%97%B6%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.3.</span> <span class="nav-text">String 类型的变量和常量做“+”运算时发生了什么？</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E4%BA%8EHTML%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">关于HTML盒子模型的笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E5%BC%8F%E5%9B%BE%EF%BC%9A"><span class="nav-number">1.0.1.</span> <span class="nav-text">样式图：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">盒子模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B4%E4%B8%80%E8%AF%B4%E7%9B%92%E5%AD%90"><span class="nav-number">1.1.1.</span> <span class="nav-text">说一说盒子:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">代码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%84%E8%A7%88%EF%BC%9A"><span class="nav-number">1.1.3.</span> <span class="nav-text">预览：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A-1"><span class="nav-number">1.1.4.</span> <span class="nav-text">代码：</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
