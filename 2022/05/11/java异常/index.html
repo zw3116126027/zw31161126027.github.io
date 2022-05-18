@@ -86,15 +86,15 @@
 
 
 
-<meta name="description" content="运行时异常(unchecked，RuntimeException):要编译过了，出现的错误才叫运行时异常！！！也就是骗过了编译器以下就是常用的运行时异常 栈溢出12main(args);&#x2F;&#x2F; java.lang.StackOverflowError  堆溢出12Integer[] arr &#x3D; new Integer[1024*1024*1024];&#x2F;&#x2F; java.lang.OutOfMemoryE">
+<meta name="description" content="异常：在Java语言中，将程序执行中发生的不正常情况称为“异常” 。 (开发过程中的语法错误和逻辑错误不是异常)  Java程序在执行过程中所发生的异常事件可分为两类：  Error：Java虚拟机无法解决的严重问题。如：JVM系统内部错误、资源 耗尽等严重情况。比如：StackOverflowError和OOM。一般不编写针对性 的代码进行处理。 Exception: 其它因编程错误或偶然的外">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java异常">
 <meta property="og:url" content="http://blog-zw.top/2022/05/11/java%E5%BC%82%E5%B8%B8/index.html">
 <meta property="og:site_name" content="&#x3D;-&#x3D;">
-<meta property="og:description" content="运行时异常(unchecked，RuntimeException):要编译过了，出现的错误才叫运行时异常！！！也就是骗过了编译器以下就是常用的运行时异常 栈溢出12main(args);&#x2F;&#x2F; java.lang.StackOverflowError  堆溢出12Integer[] arr &#x3D; new Integer[1024*1024*1024];&#x2F;&#x2F; java.lang.OutOfMemoryE">
+<meta property="og:description" content="异常：在Java语言中，将程序执行中发生的不正常情况称为“异常” 。 (开发过程中的语法错误和逻辑错误不是异常)  Java程序在执行过程中所发生的异常事件可分为两类：  Error：Java虚拟机无法解决的严重问题。如：JVM系统内部错误、资源 耗尽等严重情况。比如：StackOverflowError和OOM。一般不编写针对性 的代码进行处理。 Exception: 其它因编程错误或偶然的外">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-05-11T11:04:35.000Z">
-<meta property="article:modified_time" content="2022-05-11T12:53:07.396Z">
+<meta property="article:modified_time" content="2022-05-18T02:49:21.171Z">
 <meta property="article:author" content="郑炜">
 <meta property="article:tag" content="java异常">
 <meta name="twitter:card" content="summary">
@@ -339,8 +339,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-05-11T20:53:07+08:00">
-                2022-05-11
+              <time title="更新于" itemprop="dateModified" datetime="2022-05-18T10:49:21+08:00">
+                2022-05-18
               </time>
             
           </span>
@@ -394,7 +394,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  314
+                  1.6k
                 </span>
               
 
@@ -410,7 +410,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  6
                 </span>
               
             </div>
@@ -431,7 +431,31 @@
       
 
       
-        <h1 id="运行时异常-unchecked，RuntimeException"><a href="#运行时异常-unchecked，RuntimeException" class="headerlink" title="运行时异常(unchecked，RuntimeException):"></a>运行时异常(unchecked，RuntimeException):</h1><p><code>要编译过了，出现的错误才叫运行时异常！！！也就是骗过了编译器以下就是常用的运行时异常</code></p>
+        <ul>
+<li><p>异常：在Java语言中，将程序执行中发生的不正常情况称为“异常” 。 (开发过程中的语法错误和逻辑错误不是异常)</p>
+</li>
+<li><p>Java程序在执行过程中所发生的异常事件可分为两类：</p>
+<ol>
+<li><font color="red">Error</font>：Java虚拟机无法解决的严重问题。如：JVM系统内部错误、资源 耗尽等严重情况。比如：StackOverflowError和OOM。一般不编写针对性 的代码进行处理。</li>
+<li><font color="red">Exception</font>: 其它因编程错误或偶然的外在因素导致的一般性问题，可以使 用针对性的代码进行处理。例如：</li>
+</ol>
+<ul>
+<li>空指针访问</li>
+<li>数组角标越界</li>
+<li>试图读取不存在的文件</li>
+<li>网络连接中断</li>
+</ul>
+</li>
+<li><p>程序员通常只能处理Exception，而对Error无能为力</p>
+</li>
+<li><p>对于这些错误，一般有两种解决方法：一是遇到错误就终止程序 的运行。另一种方法是由程序员在编写程序时，就考虑到错误的 检测、错误消息的提示，以及错误的处理。</p>
+</li>
+<li><p>捕获错误最理想的是在编译期间，但有的错误只有在运行时才会发生。 比如：除数为0，数组下标越界等</p>
+<p>​         分类： <font color="red">编译时异常</font>和 <font color="red">运行时异常</font></p>
+</li>
+</ul>
+<hr>
+<h1 id="运行时异常-unchecked，RuntimeException"><a href="#运行时异常-unchecked，RuntimeException" class="headerlink" title="运行时异常(unchecked，RuntimeException):"></a>运行时异常(unchecked，RuntimeException):</h1><p> <font color="red">要编译过了，出现的错误才叫运行时异常！！！也就是骗过了编译器以下就是常用的运行时异常</font></p>
 <h1 id="栈溢出"><a href="#栈溢出" class="headerlink" title="栈溢出"></a>栈溢出</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">main(args);</span><br><span class="line"><span class="comment">// java.lang.StackOverflowError</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="堆溢出"><a href="#堆溢出" class="headerlink" title="堆溢出"></a>堆溢出</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Integer[] arr = <span class="keyword">new</span> <span class="title class_">Integer</span>[<span class="number">1024</span>*<span class="number">1024</span>*<span class="number">1024</span>];</span><br><span class="line"><span class="comment">// java.lang.OutOfMemoryError</span></span><br></pre></td></tr></table></figure>
@@ -451,7 +475,46 @@
 <h1 id="算数异常"><a href="#算数异常" class="headerlink" title="算数异常"></a>算数异常</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a=<span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> b=<span class="number">0</span>;</span><br><span class="line">System.out.println(a/b);</span><br><span class="line"><span class="comment">//java.lang.ArithmeticException  b为 0 时，运行时会得到无限大的数，这就叫算数的异常</span></span><br></pre></td></tr></table></figure>
 
 <hr>
-<h1 id="编译时异常"><a href="#编译时异常" class="headerlink" title="编译时异常"></a>编译时异常</h1><h2 id="就是编译时出现的异常，直接报错了。"><a href="#就是编译时出现的异常，直接报错了。" class="headerlink" title="就是编译时出现的异常，直接报错了。"></a>就是编译时出现的异常，直接报错了。</h2>
+<h1 id="编译时异常"><a href="#编译时异常" class="headerlink" title="编译时异常"></a>编译时异常</h1><h4 id="就是编译时出现的异常，直接报错了-也就是一般编译器IDE提示的异常比如：语法错误。"><a href="#就是编译时出现的异常，直接报错了-也就是一般编译器IDE提示的异常比如：语法错误。" class="headerlink" title="就是编译时出现的异常，直接报错了,也就是一般编译器IDE提示的异常比如：语法错误。"></a>就是编译时出现的异常，直接报错了,也就是一般编译器IDE提示的异常比如：语法错误。</h4><hr>
+<h1 id="异常处理机制"><a href="#异常处理机制" class="headerlink" title="异常处理机制"></a>异常处理机制</h1><p><code>ctrl+alt+T   快捷键</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">...... <span class="comment">//可能产生异常的代码</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>( ExceptionName1 e )&#123;</span><br><span class="line">...... <span class="comment">//当产生ExceptionName1型异常时的处置措施</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>( ExceptionName2 e )&#123;</span><br><span class="line">...... <span class="comment">//当产生ExceptionName2型异常时的处置措施</span></span><br><span class="line">&#125;</span><br><span class="line">[ <span class="keyword">finally</span>&#123;</span><br><span class="line">...... <span class="comment">//无论是否发生异常，都无条件执行的语句</span></span><br><span class="line">&#125; ]</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span><span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;hello.txt&quot;</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>try</strong></p>
+<p>捕获异常的第一步是用try{…}语句块选定捕获异常的范围，将可能出现 异常的代码放在try语句块中。</p>
+</li>
+<li><p><strong>catch (Exceptiontype e)</strong></p>
+<p>在catch语句块中是对异常对象进行处理的代码。每个try语句块可以伴随 一个或多个catch语句，用于处理可能产生的不同类型的异常对象。</p>
+</li>
+<li><p><strong>finally</strong></p>
+<p>捕获异常的最后一步是通过finally语句为异常处理提供一个 统一的出口,使得在控制流转到程序的其它部分以前,能够对程序的状态作统一的管理。</p>
+<p> <font color="red">不论在try代码块中是否发生了异常事件，catch语句是否执 行，catch语句是否有异常，catch语句中是否有return， finally块中的语句都会被执行。</font></p>
+<p>finally语句和catch语句是任选的</p>
+</li>
+</ul>
+<p><strong>当try语句中出现异常时</strong>，会执⾏catch中的语句，java运⾏时系统会⾃动将catch括号中的Exception e 初始化，也就是实例化Exception类型的对象。e是此名称。然后e（引⽤）会⾃动调⽤Exception类中指定的⽅法，也就出现了e.printStackTrace() <font color="red">printStackTrace()⽅法的意思是：在命令⾏打印异常信息在程序中出错的位置及原因。（这是⽩话解释，⽐较容易理解)</font></p>
+<p><strong>在捕获异常的时候</strong>，⼤家都可能要⽤到这样的⼀条语句：e.printStackTrace();e是Throwable的实例异常对象，⽤在catch语句中，相当于⼀个形参，⼀旦try捕获到了异常，那么就将这个异常信息交给e，由e处理，printStackTrace()是异常类的⼀个⽅法。与它重载的⽅法还有printStackTrace(PrintStream s) 和printStackTrace(PrintWriter s)。在Throwable类中,printStackTrace()内部是这样执⾏的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">printStackTrace</span><span class="params">()</span> &#123;</span><br><span class="line">        printStackTrace(System.err);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>它调⽤了printStackTrace(PrintStream s)⽅法。err是System类当中的⼀个静态PrintStream类型字段。所以它能传递进去。</p>
+<h2 id="捕获异常的有关信息"><a href="#捕获异常的有关信息" class="headerlink" title="捕获异常的有关信息"></a>捕获异常的有关信息</h2><p>与其它对象一样，可以访问一个异常对象的成员变量或调用它的 方法。</p>
+<ul>
+<li><font color="red">getMessage()</font>   获取异常信息，返回字符串</li>
+<li><font color="red">printStackTrace()</font> 获取异常类名和异常信息，以及异常出 现在程序中的位置。返回值void。</li>
+</ul>
+<h2 id="异常处理机制-举例-1"><a href="#异常处理机制-举例-1" class="headerlink" title="异常处理机制:举例(1)"></a>异常处理机制:举例(1)</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">IndexOutExp</span> &#123;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">String friends[] = &#123; <span class="string">&quot;lisa&quot;</span>, <span class="string">&quot;bily&quot;</span>, <span class="string">&quot;kessy&quot;</span> &#125;;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">System.out.println(friends[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (ArrayIndexOutOfBoundsException e) &#123;</span><br><span class="line">System.out.println(<span class="string">&quot;index err&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">System.out.println(<span class="string">&quot;\nthis is the end&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">程序IndexOutExp.java运行结果：java IndexOutExp</span><br><span class="line">lisa</span><br><span class="line">bily</span><br><span class="line">kessy</span><br><span class="line">index err</span><br><span class="line">this is the en</span><br></pre></td></tr></table></figure>
+
+<h2 id="异常处理机制-举例-2"><a href="#异常处理机制-举例-2" class="headerlink" title="异常处理机制:举例(2)"></a>异常处理机制:举例(2)</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span> &#123;</span><br><span class="line">    <span class="type">int</span> x;    <span class="comment">//默认为 0</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> y;</span><br><span class="line">        <span class="type">test</span> <span class="variable">c</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">test</span>();     <span class="comment">//这个是自己本类，具体的类名</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            y = <span class="number">3</span> / c.x;      <span class="comment">//调用x</span></span><br><span class="line">        &#125; <span class="keyword">catch</span> (ArithmeticException e) &#123;     <span class="comment">//算数异常错误</span></span><br><span class="line">            System.out.println(<span class="string">&quot;test by zero error!&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;program ends ok!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">程序DivideZero1运行结果：java DivideZero1</span><br><span class="line">divide by zero error!</span><br><span class="line">program ends ok!</span><br></pre></td></tr></table></figure>
+
+<h2 id="异常处理机制-IO-Exception"><a href="#异常处理机制-IO-Exception" class="headerlink" title="异常处理机制 IO Exception"></a>异常处理机制 IO Exception</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">            File file=<span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;E:/JDBC/src/zw.txt&quot;</span>);   <span class="comment">//实际文件路径</span></span><br><span class="line">            <span class="type">FileInputStream</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(file);</span><br><span class="line">            <span class="type">int</span> b;</span><br><span class="line">            b = in.read();</span><br><span class="line">            <span class="keyword">while</span> (b != -<span class="number">1</span>) &#123;      <span class="comment">//到了末尾就不读了</span></span><br><span class="line">                System.out.print((<span class="type">char</span>) b);</span><br><span class="line">                b = in.read();   </span><br><span class="line">            &#125;</span><br><span class="line">            in.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;It&#x27;s ok!&quot;</span>);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>小知识</strong>：<code>FileInputStream类的成员方法read()的功能是每次从相应的(本地为 ASCII码编码格式)文件中读取一个字节，并转换成0~255之间的int型整数返回， 到达文件末尾时则返回-1。</code></p>
+
       
     </div>
     
@@ -699,7 +762,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BC%82%E5%B8%B8-unchecked%EF%BC%8CRuntimeException"><span class="nav-number">1.</span> <span class="nav-text">运行时异常(unchecked，RuntimeException):</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%88%E6%BA%A2%E5%87%BA"><span class="nav-number">2.</span> <span class="nav-text">栈溢出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A0%86%E6%BA%A2%E5%87%BA"><span class="nav-number">3.</span> <span class="nav-text">堆溢出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A9%BA%E6%8C%87%E9%92%88%E5%BC%82%E5%B8%B8"><span class="nav-number">4.</span> <span class="nav-text">空指针异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E8%A7%92%E6%A0%87%E8%B6%8A%E7%95%8C"><span class="nav-number">5.</span> <span class="nav-text">数组角标越界</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%B6%8A%E7%95%8C"><span class="nav-number">6.</span> <span class="nav-text">字符串越界</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%BC%82%E5%B8%B8"><span class="nav-number">7.</span> <span class="nav-text">类型转换异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E6%A0%BC%E5%BC%8F%E5%BC%82%E5%B8%B8"><span class="nav-number">8.</span> <span class="nav-text">数字格式异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E4%B8%8D%E5%8C%B9%E9%85%8D%E5%BC%82%E5%B8%B8"><span class="nav-number">9.</span> <span class="nav-text">输入不匹配异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%97%E6%95%B0%E5%BC%82%E5%B8%B8"><span class="nav-number">10.</span> <span class="nav-text">算数异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E6%97%B6%E5%BC%82%E5%B8%B8"><span class="nav-number">11.</span> <span class="nav-text">编译时异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%B1%E6%98%AF%E7%BC%96%E8%AF%91%E6%97%B6%E5%87%BA%E7%8E%B0%E7%9A%84%E5%BC%82%E5%B8%B8%EF%BC%8C%E7%9B%B4%E6%8E%A5%E6%8A%A5%E9%94%99%E4%BA%86%E3%80%82"><span class="nav-number">11.1.</span> <span class="nav-text">就是编译时出现的异常，直接报错了。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BC%82%E5%B8%B8-unchecked%EF%BC%8CRuntimeException"><span class="nav-number">1.</span> <span class="nav-text">运行时异常(unchecked，RuntimeException):</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%88%E6%BA%A2%E5%87%BA"><span class="nav-number">2.</span> <span class="nav-text">栈溢出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A0%86%E6%BA%A2%E5%87%BA"><span class="nav-number">3.</span> <span class="nav-text">堆溢出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A9%BA%E6%8C%87%E9%92%88%E5%BC%82%E5%B8%B8"><span class="nav-number">4.</span> <span class="nav-text">空指针异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E8%A7%92%E6%A0%87%E8%B6%8A%E7%95%8C"><span class="nav-number">5.</span> <span class="nav-text">数组角标越界</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%B6%8A%E7%95%8C"><span class="nav-number">6.</span> <span class="nav-text">字符串越界</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%BC%82%E5%B8%B8"><span class="nav-number">7.</span> <span class="nav-text">类型转换异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E6%A0%BC%E5%BC%8F%E5%BC%82%E5%B8%B8"><span class="nav-number">8.</span> <span class="nav-text">数字格式异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E4%B8%8D%E5%8C%B9%E9%85%8D%E5%BC%82%E5%B8%B8"><span class="nav-number">9.</span> <span class="nav-text">输入不匹配异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%97%E6%95%B0%E5%BC%82%E5%B8%B8"><span class="nav-number">10.</span> <span class="nav-text">算数异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E6%97%B6%E5%BC%82%E5%B8%B8"><span class="nav-number">11.</span> <span class="nav-text">编译时异常</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%B1%E6%98%AF%E7%BC%96%E8%AF%91%E6%97%B6%E5%87%BA%E7%8E%B0%E7%9A%84%E5%BC%82%E5%B8%B8%EF%BC%8C%E7%9B%B4%E6%8E%A5%E6%8A%A5%E9%94%99%E4%BA%86-%E4%B9%9F%E5%B0%B1%E6%98%AF%E4%B8%80%E8%88%AC%E7%BC%96%E8%AF%91%E5%99%A8IDE%E6%8F%90%E7%A4%BA%E7%9A%84%E5%BC%82%E5%B8%B8%E6%AF%94%E5%A6%82%EF%BC%9A%E8%AF%AD%E6%B3%95%E9%94%99%E8%AF%AF%E3%80%82"><span class="nav-number">11.0.0.1.</span> <span class="nav-text">就是编译时出现的异常，直接报错了,也就是一般编译器IDE提示的异常比如：语法错误。</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6"><span class="nav-number">12.</span> <span class="nav-text">异常处理机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8D%95%E8%8E%B7%E5%BC%82%E5%B8%B8%E7%9A%84%E6%9C%89%E5%85%B3%E4%BF%A1%E6%81%AF"><span class="nav-number">12.1.</span> <span class="nav-text">捕获异常的有关信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6-%E4%B8%BE%E4%BE%8B-1"><span class="nav-number">12.2.</span> <span class="nav-text">异常处理机制:举例(1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6-%E4%B8%BE%E4%BE%8B-2"><span class="nav-number">12.3.</span> <span class="nav-text">异常处理机制:举例(2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6-IO-Exception"><span class="nav-number">12.4.</span> <span class="nav-text">异常处理机制 IO Exception</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -733,7 +796,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11.1k</span>
+    <span title="Site words total count">14k</span>
   
 </div>
 
