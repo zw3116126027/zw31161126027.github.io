@@ -86,15 +86,15 @@
 
 
 
-<meta name="description" content="复习abstract 抽象的 可以用来修饰：类、方法 具体的  abstract修饰类：抽象类   不能实例化    抽象类一定有构造器    都会提供抽象类的子类    abstract修饰方法：抽象方法   抽象方法只方法声明，没方法体    包含抽象方法的类，一定是个抽象类。反之，抽象类中可以没有抽象方法的。    若子类重写了父类中所的抽象方法后，此子类可实例化    若子类没重写父类中的">
+<meta name="description" content="线程创建Thread 、Runnable、Callable 类              接口              接口 继承Thread类 子类继承Thread类具备多线程能力  启动线程：子类对象.start()不建议使用：避免OOP单继承局限性 1234567891011121314public class test1 extends Thread&amp;#123;    public vo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java多线程">
 <meta property="og:url" content="http://blog-zw.top/2022/03/31/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.html">
 <meta property="og:site_name" content="&#x3D;-&#x3D;">
-<meta property="og:description" content="复习abstract 抽象的 可以用来修饰：类、方法 具体的  abstract修饰类：抽象类   不能实例化    抽象类一定有构造器    都会提供抽象类的子类    abstract修饰方法：抽象方法   抽象方法只方法声明，没方法体    包含抽象方法的类，一定是个抽象类。反之，抽象类中可以没有抽象方法的。    若子类重写了父类中所的抽象方法后，此子类可实例化    若子类没重写父类中的">
+<meta property="og:description" content="线程创建Thread 、Runnable、Callable 类              接口              接口 继承Thread类 子类继承Thread类具备多线程能力  启动线程：子类对象.start()不建议使用：避免OOP单继承局限性 1234567891011121314public class test1 extends Thread&amp;#123;    public vo">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-03-31T07:58:25.607Z">
-<meta property="article:modified_time" content="2022-04-26T12:16:51.208Z">
+<meta property="article:modified_time" content="2022-05-22T06:04:46.917Z">
 <meta property="article:author" content="郑炜">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -339,8 +339,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-04-26T20:16:51+08:00">
-                2022-04-26
+              <time title="更新于" itemprop="dateModified" datetime="2022-05-22T14:04:46+08:00">
+                2022-05-22
               </time>
             
           </span>
@@ -394,7 +394,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  194
+                  984
                 </span>
               
 
@@ -410,7 +410,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  5
                 </span>
               
             </div>
@@ -431,61 +431,45 @@
       
 
       
-        <h1 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h1><h3 id="abstract-抽象的"><a href="#abstract-抽象的" class="headerlink" title="abstract 抽象的"></a>abstract 抽象的</h3><ol>
-<li>可以用来修饰：类、方法</li>
-<li>具体的</li>
-</ol>
-<p>abstract修饰类：抽象类</p>
-<ul>
-<li><blockquote>
-<p>不能实例化</p>
-</blockquote>
+        <h1 id="线程创建"><a href="#线程创建" class="headerlink" title="线程创建"></a>线程创建</h1><p>Thread 、Runnable、Callable</p>
+<p>类              接口              接口</p>
+<h1 id="继承Thread类"><a href="#继承Thread类" class="headerlink" title="继承Thread类"></a>继承Thread类</h1><ul>
+<li><p>子类继承Thread类具备多线程能力</p>
 </li>
-<li><blockquote>
-<p>抽象类一定有构造器</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>都会提供抽象类的子类</p>
-</blockquote>
-</li>
+<li><p>启动线程：子类对象.start()<br><font color="red">不建议使用：避免OOP单继承局限性</font></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test1</span> <span class="keyword">extends</span> <span class="title class_">Thread</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">20</span>; i++) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;我在看代码！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        test1 test2=<span class="keyword">new</span> <span class="title class_">test1</span>();</span><br><span class="line">        test2.start();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;我在学习多线程！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p>abstract修饰方法：抽象方法</p>
-<ul>
-<li><blockquote>
-<p>抽象方法只方法声明，没方法体</p>
-</blockquote>
+<h1 id="实现Runnable接口"><a href="#实现Runnable接口" class="headerlink" title="实现Runnable接口"></a>实现Runnable接口</h1><ul>
+<li><p>实现接口Runnable具有多线程能力</p>
 </li>
-<li><blockquote>
-<p>包含抽象方法的类，一定是个抽象类。反之，抽象类中可以没有抽象方法的。</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>若子类重写了父类中所的抽象方法后，此子类可实例化</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>若子类没重写父类中的所的抽象方法，则子类也是一个抽象类，需要abstract修饰</p>
-</blockquote>
-</li>
+<li><p>启动线程：传入目标对象+Thread对象.start()<br><font color="red">推荐使用：避免单继承局限性，灵活方便，方便同一个对象被多个线程使</font></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test1</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">20</span>; i++) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;我在看代码！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        test1 test2=<span class="keyword">new</span> <span class="title class_">test1</span>();</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(test2).start();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;我在学习多线程！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="多线程并发问题"><a href="#多线程并发问题" class="headerlink" title="多线程并发问题"></a>多线程并发问题</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test1</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span>&#123;  <span class="comment">//调用Runnable</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> ticketNums=<span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span> (ticketNums&lt;=<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Thread.sleep(<span class="number">200</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(Thread.currentThread().getName()+<span class="string">&quot;--&gt;&quot;</span>+ticketNums--+<span class="string">&quot;票&quot;</span>);</span><br><span class="line">        &#125;<span class="comment">//获取多线程名字   Thread.currentThread().getName</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        test1 t1=<span class="keyword">new</span> <span class="title class_">test1</span>();</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(t1,<span class="string">&quot;张三&quot;</span>).start();   <span class="comment">//多线程名字</span></span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(t1,<span class="string">&quot;李四&quot;</span>).start();</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(t1,<span class="string">&quot;黄牛&quot;</span>).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="龟兔赛跑"><a href="#龟兔赛跑" class="headerlink" title="龟兔赛跑"></a>龟兔赛跑</h1></li>
 </ul>
-<ol start="3">
-<li>注意点：</li>
-</ol>
-<ul>
-<li><blockquote>
-<ol>
-<li>abstract不能用来修饰：属性、构造器等结构</li>
-</ol>
-</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test1</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String winner;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;  <span class="comment">//模拟兔子休息</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt;= <span class="number">100</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(Thread.currentThread().getName().equals(<span class="string">&quot;兔子&quot;</span>)&amp;&amp; i%<span class="number">10</span>==<span class="number">0</span>)&#123;   <span class="comment">//10步睡眠停顿</span></span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    Thread.sleep(<span class="number">10</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="type">boolean</span> flag=gameOver(i);</span><br><span class="line">            <span class="keyword">if</span> (flag)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(Thread.currentThread().getName()+<span class="string">&quot;--&gt;跑了&quot;</span>+i+<span class="string">&quot;步&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">gameOver</span><span class="params">(<span class="type">int</span> steps)</span>&#123;  <span class="comment">//判断是否完成比赛</span></span><br><span class="line">        <span class="keyword">if</span> (winner!=<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;&#123;</span><br><span class="line">            <span class="keyword">if</span> (steps&gt;=<span class="number">100</span>)&#123;</span><br><span class="line">                winner = Thread.currentThread().getName();</span><br><span class="line">                System.out.println(<span class="string">&quot;winner is &quot;</span>+winner);</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        test1 t1=<span class="keyword">new</span> <span class="title class_">test1</span>();</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(t1,<span class="string">&quot;兔子&quot;</span>).start();</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(t1,<span class="string">&quot;乌龟&quot;</span>).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Callable接口-了解即可-扩充"><a href="#Callable接口-了解即可-扩充" class="headerlink" title="Callable接口(了解即可)扩充"></a>Callable接口(了解即可)扩充</h1><ol>
+<li><p>实现Callable接口，需要返回类型</p>
 </li>
-<li><blockquote>
-<ol start="2">
-<li>abstract不能用来修饰私方法、静态方法、final的方法、final的类</li>
-</ol>
-</blockquote>
+<li><p>重写call方法，需要抛出异常</p>
 </li>
-</ul>
+<li><p>创建目标对象</p>
+</li>
+<li><p>创建执行服务：ExecutorService ser &#x3D; Executors.newFixedThreadPool(1);</p>
+</li>
+<li><p>提交执行：Future<Boolean> result1 &#x3D; ser.submit(t1);</Boolean></p>
+</li>
+<li><p>获取结果：boolean r1 &#x3D; result1.get()</p>
+</li>
+<li><p>关闭服务：ser.shutdownNow();</p>
+<p><code>演示：利用callable改造下载图片案例</code></p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.commons.io.FileUtils;</span><br><span class="line"><span class="keyword">import</span> org.testng.annotations.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.net.URL;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Auther</span>:kli_zw</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2022/5/22</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: PACKAGE_NAME</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Version</span>:1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">callable的好处</span></span><br><span class="line"><span class="comment">1. 可以定义返回值</span></span><br><span class="line"><span class="comment">2. 可以抛出异常</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span> <span class="keyword">implements</span> <span class="title class_">Callable</span>&lt;Boolean&gt; &#123;   <span class="comment">//设置返回值</span></span><br><span class="line">    <span class="keyword">private</span> String url;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">test</span><span class="params">(String url, String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.url = url;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Boolean <span class="title function_">call</span><span class="params">()</span>  &#123;</span><br><span class="line">        webDownloader webDownloader1=<span class="keyword">new</span> <span class="title class_">webDownloader</span>();</span><br><span class="line">        webDownloader1.downloader(url,name);</span><br><span class="line">        System.out.println(<span class="string">&quot;下载了文件名为：&quot;</span>+name);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ExecutionException, InterruptedException &#123;</span><br><span class="line">        test t1=<span class="keyword">new</span> <span class="title class_">test</span>(<span class="string">&quot;https://blog-zw.top/2022/04/30/%E5%9C%A8Linux%E9%87%8C%E5%AE%89%E8%A3%85mysql/1.png&quot;</span>,<span class="string">&quot;1.jpg&quot;</span>);</span><br><span class="line">        test t2=<span class="keyword">new</span> <span class="title class_">test</span>(<span class="string">&quot;https://blog-zw.top/2022/04/30/%E5%9C%A8Linux%E9%87%8C%E5%AE%89%E8%A3%85mysql/1.png&quot;</span>,<span class="string">&quot;2.jpg&quot;</span>);</span><br><span class="line">        test t3=<span class="keyword">new</span> <span class="title class_">test</span>(<span class="string">&quot;https://blog-zw.top/2022/04/30/%E5%9C%A8Linux%E9%87%8C%E5%AE%89%E8%A3%85mysql/1.png&quot;</span>,<span class="string">&quot;3.jpg&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建执行服务  线程池   池子里有3个线程</span></span><br><span class="line">        ExecutorService ser= Executors.newFixedThreadPool(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">       <span class="comment">//提交执行</span></span><br><span class="line">        Future&lt;Boolean&gt; r1=ser.submit(t1);</span><br><span class="line">        Future&lt;Boolean&gt; r2=ser.submit(t2);</span><br><span class="line">        Future&lt;Boolean&gt; r3=ser.submit(t3);</span><br><span class="line">		</span><br><span class="line">        <span class="comment">//获取结果</span></span><br><span class="line">        <span class="type">boolean</span> rs1=r1.get();</span><br><span class="line">        <span class="type">boolean</span> rs2=r2.get();</span><br><span class="line">        <span class="type">boolean</span> rs3=r3.get();</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//打印返回结果</span></span><br><span class="line">		System.out.println(rs1);</span><br><span class="line">        System.out.println(rs2);</span><br><span class="line">        System.out.println(rs3);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//关闭服务</span></span><br><span class="line">        ser.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">webDownloader</span>&#123;  <span class="comment">//下载</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">downloader</span><span class="params">(String url,String name)</span> &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                FileUtils.copyURLToFile(<span class="keyword">new</span> <span class="title class_">URL</span>(url),<span class="keyword">new</span> <span class="title class_">File</span>(name));</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">                System.out.println(<span class="string">&quot;io异常，downloader方法出现异常&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -738,7 +722,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%8D%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">复习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract-%E6%8A%BD%E8%B1%A1%E7%9A%84"><span class="nav-number">1.0.1.</span> <span class="nav-text">abstract 抽象的</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA"><span class="nav-number">1.</span> <span class="nav-text">线程创建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%A7%E6%89%BFThread%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">继承Thread类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0Runnable%E6%8E%A5%E5%8F%A3"><span class="nav-number">3.</span> <span class="nav-text">实现Runnable接口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91%E9%97%AE%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">多线程并发问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91"><span class="nav-number">5.</span> <span class="nav-text">龟兔赛跑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Callable%E6%8E%A5%E5%8F%A3-%E4%BA%86%E8%A7%A3%E5%8D%B3%E5%8F%AF-%E6%89%A9%E5%85%85"><span class="nav-number">6.</span> <span class="nav-text">Callable接口(了解即可)扩充</span></a></li></ol></div>
             
 
           </div>
@@ -772,7 +756,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">14k</span>
+    <span title="Site words total count">15.5k</span>
   
 </div>
 
