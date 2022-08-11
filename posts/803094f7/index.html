@@ -86,18 +86,35 @@
 
 
 
-<meta name="description" content="虚拟机环境准备准备集群例如：三台主机，nano为Master(主人)，其他主机为奴隶     nano nano01-slave nano02-slave    IP 192.168.100.200 192.168.100.201 192.168.100.202   hostname nano nano-slave01 nano-slave02   域名(hosts) master slave01">
+<meta name="description" content="虚拟机环境准备例如：三台主机，nano为Master(主人)，其他主机为slave(奴隶)    我的计算机 nano nano01-slave nano02-slave    IP 192.168.100.200 192.168.100.201 192.168.100.202   hostname master slave01 slave02   域名(hosts) master slave01">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Linux里Hadoop环境搭建">
 <meta property="og:url" content="http://blog-zw.top/posts/803094f7/index.html">
 <meta property="og:site_name" content="&#x3D;-&#x3D;">
-<meta property="og:description" content="虚拟机环境准备准备集群例如：三台主机，nano为Master(主人)，其他主机为奴隶     nano nano01-slave nano02-slave    IP 192.168.100.200 192.168.100.201 192.168.100.202   hostname nano nano-slave01 nano-slave02   域名(hosts) master slave01">
+<meta property="og:description" content="虚拟机环境准备例如：三台主机，nano为Master(主人)，其他主机为slave(奴隶)    我的计算机 nano nano01-slave nano02-slave    IP 192.168.100.200 192.168.100.201 192.168.100.202   hostname master slave01 slave02   域名(hosts) master slave01">
 <meta property="og:locale">
 <meta property="og:image" content="http://blog-zw.top/posts/803094f7/2.png">
 <meta property="og:image" content="http://blog-zw.top/posts/803094f7/3.png">
 <meta property="og:image" content="http://blog-zw.top/posts/803094f7/1.png">
+<meta property="og:image" content="http://blog-zw.top/posts/803094f7/13.png">
+<meta property="og:image" content="http://blog-zw.top/posts/803094f7/4.png">
+<meta property="og:image" content="http://blog-zw.top/posts/803094f7/6.png">
+<meta property="og:image" content="http://blog-zw.top/posts/803094f7/7.png">
+<meta property="og:image" content="http://blog-zw.top/posts/803094f7/8.png">
+<meta property="og:image" content="http://blog-zw.top/posts/803094f7/9.png">
+<meta property="og:image" content="http://blog-zw.top/posts/803094f7/10.png">
+<meta property="og:image" content="http://blog-zw.top/posts/803094f7/11.png">
+<meta property="og:image" content="http://blog-zw.top/posts/803094f7/12.png">
+<meta property="og:image" content="http://blog-zw.top/posts/803094f7/18.png">
+<meta property="og:image" content="http://blog-zw.top/posts/803094f7/19.png">
+<meta property="og:image" content="http://blog-zw.top/posts/803094f7/14.png">
+<meta property="og:image" content="http://blog-zw.top/posts/803094f7/15.png">
+<meta property="og:image" content="http://blog-zw.top/posts/803094f7/20.png">
+<meta property="og:image" content="http://blog-zw.top/posts/803094f7/21.png">
+<meta property="og:image" content="http://blog-zw.top/posts/803094f7/16.png">
+<meta property="og:image" content="http://blog-zw.top/posts/803094f7/17.png">
 <meta property="article:published_time" content="2022-08-09T12:23:58.000Z">
-<meta property="article:modified_time" content="2022-08-09T16:25:25.184Z">
+<meta property="article:modified_time" content="2022-08-11T17:49:43.825Z">
 <meta property="article:author" content="Kli_zw">
 <meta property="article:tag" content="在Linux里Hadoop环境搭建">
 <meta name="twitter:card" content="summary">
@@ -343,8 +360,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-08-10T00:25:25+08:00">
-                2022-08-10
+              <time title="更新于" itemprop="dateModified" datetime="2022-08-12T01:49:43+08:00">
+                2022-08-12
               </time>
             
           </span>
@@ -398,7 +415,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  550
+                  1.8k
                 </span>
               
 
@@ -414,7 +431,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  8
                 </span>
               
             </div>
@@ -435,11 +452,11 @@
       
 
       
-        <h1 id="虚拟机环境准备"><a href="#虚拟机环境准备" class="headerlink" title="虚拟机环境准备"></a>虚拟机环境准备</h1><h2 id="准备集群"><a href="#准备集群" class="headerlink" title="准备集群"></a>准备集群</h2><p><strong>例如：三台主机，nano为Master(主人)，其他主机为奴隶</strong></p>
+        <h1 id="虚拟机环境准备"><a href="#虚拟机环境准备" class="headerlink" title="虚拟机环境准备"></a>虚拟机环境准备</h1><p><strong>例如：三台主机，nano为Master(主人)，其他主机为slave(奴隶)</strong></p>
 <table>
 <thead>
 <tr>
-<th></th>
+<th>我的计算机</th>
 <th>nano</th>
 <th>nano01-slave</th>
 <th>nano02-slave</th>
@@ -453,9 +470,9 @@
 </tr>
 <tr>
 <td>hostname</td>
-<td>nano</td>
-<td>nano-slave01</td>
-<td>nano-slave02</td>
+<td>master</td>
+<td>slave01</td>
+<td>slave02</td>
 </tr>
 <tr>
 <td>域名(hosts)</td>
@@ -464,17 +481,16 @@
 <td>slave02</td>
 </tr>
 </tbody></table>
-<h2 id="修改hostname"><a href="#修改hostname" class="headerlink" title="修改hostname"></a>修改hostname</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@nano ~]vim /etc/hostname</span><br></pre></td></tr></table></figure>
+<h2 id="配置hostname-主机名"><a href="#配置hostname-主机名" class="headerlink" title="配置hostname(主机名)"></a>配置hostname(主机名)</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@nano ~]vim /etc/hostname</span><br></pre></td></tr></table></figure>
 
-<p><code>把nano改为：master 其余主机名改为，nano-slave01、nano-slave02</code></p>
-<h2 id="修改hosts"><a href="#修改hosts" class="headerlink" title="修改hosts"></a>修改hosts</h2><p>为了<strong>ssh</strong>方便配置和访问，将IP改成域名的方式访问,将内容删除填写以下内容</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">192.168.100.200 master</span><br><span class="line">192.168.100.201 slave01</span><br><span class="line">192.168.100.202 slave02S</span><br></pre></td></tr></table></figure>
-
-<h1 id="Hadoop环境准备"><a href="#Hadoop环境准备" class="headerlink" title="Hadoop环境准备"></a><strong>Hadoop环境准备</strong></h1><h2 id="1-SSH免密登录"><a href="#1-SSH免密登录" class="headerlink" title="1.SSH免密登录"></a>1.SSH免密登录</h2><ol>
+<p><code>主机名改为：master 其余主机名改为，slave01、slave02</code></p>
+<h2 id="SSH免密登录"><a href="#SSH免密登录" class="headerlink" title="SSH免密登录"></a>SSH免密登录</h2><ol>
 <li><strong>生成密钥对</strong></li>
 </ol>
 <p><code>默认使用rsa算法。可以使用-t参数指定如ssh-keygen -t dsa 使用dsa算法加密</code></p>
+<p><strong><font color="ondine">配置好了就可以使用 scp 命令分发文件至其他主机</font></strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+
 <p><strong>敲三个回车</strong></p>
 <img src="/posts/803094f7/2.png" style="zoom:80%;">
 
@@ -488,31 +504,219 @@
 <blockquote>
 <p>输入 <strong>yes</strong> 和  要<strong>免密登录主机的密码</strong></p>
 </blockquote>
-<p>以上免密就配置好了，master访问(ssh)奴隶就不用密码了</p>
 <p><strong><font color="red">注意：还需要在nano-slave01，nano-slave02采用相同的方法配置免密登录。</font></strong></p>
-<h2 id="2-集群配置JAVA环境"><a href="#2-集群配置JAVA环境" class="headerlink" title="2.集群配置JAVA环境"></a>2.集群配置JAVA环境</h2><p><strong>集群每台都得配置Java环境，如果虚拟机不是最小化安装，则要卸载虚拟机自带的JDK</strong></p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep -i java | xargs -n1 rpm -e --nodeps </span><br><span class="line">Ø  rpm -qa：查询所安装的所有rpm软件包</span><br><span class="line">Ø  grep -i：忽略大小写</span><br><span class="line">Ø  xargs -n1：表示每次只传递一个参数</span><br><span class="line">Ø  rpm -e –nodeps：强制卸载软件</span><br></pre></td></tr></table></figure>
+<p><strong>以上免密就配置好了！</strong></p>
+<p><strong><font color="ondine">主机之间互相访问方法： ssh 192.168.100.XXX   PS:  要想更方便配置和访问，可以将IP换成域名(简写)的方式访问，如下步骤：</font></strong></p>
+<h2 id="配置hosts-域名"><a href="#配置hosts-域名" class="headerlink" title="配置hosts(域名)"></a>配置hosts(域名)</h2><p>为了<strong>ssh</strong>方便配置和访问，将IP改成域名的方式访问,将原内容删除填写以下内容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@nano ~]vim /etc/hosts</span><br></pre></td></tr></table></figure>
 
-<p> <a href="https://blog-zw.top/posts/cccf557c/">未配置JAVA环境请参考</a></p>
-<p><strong>如果单台配置好了java环境，可以使用scp命令分发文件至其他虚拟机 (前提是配置好了免密登录) 如：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">192.168.100.200 master</span><br><span class="line">192.168.100.201 slave01</span><br><span class="line">192.168.100.202 slave02</span><br></pre></td></tr></table></figure>
+
+<p><strong>三台主机都要配置(因为后面步骤配置更方便)  使用scp 命令分发hosts至其他主机 ：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@nano ~]# scp -r /etc/hosts root@slave01:/etc/</span><br><span class="line">[root@nano ~]# scp -r /etc/hosts root@slave02:/etc/</span><br></pre></td></tr></table></figure>
+
+<h1 id="Hadoop环境准备"><a href="#Hadoop环境准备" class="headerlink" title="Hadoop环境准备"></a><strong>Hadoop环境准备</strong></h1><h2 id="集群配置JAVA环境"><a href="#集群配置JAVA环境" class="headerlink" title="集群配置JAVA环境"></a>集群配置JAVA环境</h2><ol>
+<li><strong>集群每台都得配置Java环境，如果虚拟机不是最小化安装(图形化界面自带Open JDK)，则要卸载虚拟机自带的JDK</strong></li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/ed15cb1b2457d05be36981f2.html">Linux上如何删除自带的OpenJDK</a></p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@nano ~] rpm -qa | grep -i java | xargs -n1 rpm -e --nodeps </span><br><span class="line"> Ø  rpm -qa：查询所安装的所有rpm软件包</span><br><span class="line"> Ø  grep -i：忽略大小写</span><br><span class="line"> Ø  xargs -n1：表示每次只传递一个参数</span><br><span class="line"> Ø  rpm -e –nodeps：强制卸载软件</span><br></pre></td></tr></table></figure>
+
+<p>未配置JDK建议按照： <a href="https://blog-zw.top/posts/cccf557c/">在Linux里安装jdk</a></p>
+<ol start="2">
+<li><strong>如果单台配置好了java环境，可以使用scp命令分发文件至其他虚拟机：</strong></li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/danmiao/p/9963170.html">scp命令详解</a></p>
 <blockquote>
 <p>scp -r  要拷贝的文件路径&#x2F;名称   目的地用户@主机:目的地路径&#x2F;名称</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r  /etc/hosts  root@slave01:/etc/</span><br></pre></td></tr></table></figure>
+<p><strong><font color="orange">注意 目的地路径文件夹需存在！</font></strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@nano ~]# scp -r  /opt/module/jdk1.8.0_181 root@192.168.100.201:/opt/module</span><br><span class="line"></span><br><span class="line">如果前面步骤配置好了域名(hosts)可以把地址简写如：</span><br><span class="line">[root@nano ~]# scp -r  /opt/module/jdk1.8.0_181 root@slave01:/opt/module</span><br></pre></td></tr></table></figure>
 
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/danmiao/p/9963170.html">scp命令详解</a></p>
-<h2 id="3-关闭防火墙"><a href="#3-关闭防火墙" class="headerlink" title="3.关闭防火墙"></a>3.关闭防火墙</h2><p>分别登录3台机器，关闭防火墙。</p>
+<p><strong>最后要确保三台都配置了Java环境,再进行下一步!!!</strong></p>
+<h2 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h2><p>分别登录3台机器，关闭防火墙。</p>
 <p><a target="_blank" rel="noopener" href="https://blog.51cto.com/u_9153232/2318194">hadoop安装为什么需要关闭防火墙?</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44192363/article/details/116810814?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522166006173416782184676521%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=166006173416782184676521&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-116810814-null-null.142%5Ev40%5Epc_rank_34_1,185%5Ev2%5Econtrol&utm_term=Linux%20%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99&spm=1018.2226.3001.4187">Linux关闭防火墙命令</a></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@nano ~]# systemctl stop firewall.service</span><br><span class="line">[root@nano ~]# systemctl disable firewsalld</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">systemctl status firewalld 查看防火状态</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="4-准备Hadoop-tar-gz安装包"><a href="#4-准备Hadoop-tar-gz安装包" class="headerlink" title="4.准备Hadoop.tar.gz安装包"></a>4.<strong>准备Hadoop.tar.gz安装包</strong></h2><p><a target="_blank" rel="noopener" href="https://archive.apache.org/dist/hadoop/common/">Hadoop下载</a></p>
+<h2 id="准备Hadoop-tar-gz安装包"><a href="#准备Hadoop-tar-gz安装包" class="headerlink" title="准备Hadoop.tar.gz安装包"></a><strong>准备Hadoop.tar.gz安装包</strong></h2><p><a target="_blank" rel="noopener" href="https://archive.apache.org/dist/hadoop/common/">Hadoop下载</a></p>
 <blockquote>
 <p>例：下载  hadoop-3.0.0.tar.gz版本</p>
 </blockquote>
 <img src="/posts/803094f7/1.png" style="zoom: 50%;">
 
-<h1 id="安装Hadoop"><a href="#安装Hadoop" class="headerlink" title="安装Hadoop"></a>安装Hadoop</h1>
+<h1 id="安装Hadoop"><a href="#安装Hadoop" class="headerlink" title="安装Hadoop"></a>安装Hadoop</h1><h2 id="Hadoop-环境变量"><a href="#Hadoop-环境变量" class="headerlink" title="Hadoop 环境变量"></a>Hadoop 环境变量</h2><p><strong>三台主机需创建 &#x2F;opt&#x2F;module 目录</strong></p>
+<ul>
+<li><blockquote>
+<p><strong>mkdir &#x2F;opt&#x2F;module</strong></p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li><strong>进入到安装包目录下，解压安装包到&#x2F;opt&#x2F;module目录</strong></li>
+</ol>
+<ul>
+<li><blockquote>
+<p><strong>tar -zxvf hadoop-3.0.0.tar.gz  -C &#x2F;opt&#x2F;module&#x2F;</strong></p>
+</blockquote>
+</li>
+</ul>
+<ol start="2">
+<li><strong>配置Hadoop环境配置</strong>     进入root 目录下.bash_profile</li>
+</ol>
+<p><strong><font color="orange">root 目录下 ls -a 查看隐藏文件</font></strong></p>
+<ul>
+<li><blockquote>
+<p><strong>[root@nano ~]# vim .bash_profile</strong></p>
+</blockquote>
+</li>
+<li><blockquote>
+<p><strong>export HADOOP_HOME&#x3D;&#x2F;opt&#x2F;module&#x2F;hadoop-3.0.0</strong>    —实际安装包路径</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p><strong>export PATH&#x3D;$PATH:$HADOOP_HOME&#x2F;bin</strong></p>
+</blockquote>
+</li>
+<li><blockquote>
+<p><strong>export PATH&#x3D;$PATH:$HADOOP_HOME&#x2F;sbin</strong></p>
+</blockquote>
+</li>
+<li><blockquote>
+<p><strong>source &#x2F;etc&#x2F;profile</strong>      —-重新加载配置文件</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Hadoop文件目录结构"><a href="#Hadoop文件目录结构" class="headerlink" title="Hadoop文件目录结构"></a>Hadoop文件目录结构</h2><ul>
+<li>bin目录：存放对Hadoop相关服务（hdfs，yarn，mapred）进行操作的脚本</li>
+<li>etc目录：Hadoop的配置文件目录，存放Hadoop的配置文件</li>
+<li>lib目录：存放Hadoop的本地库（对数据进行压缩解压缩功能）</li>
+<li>sbin目录：存放启动或停止Hadoop相关服务的脚本</li>
+<li>share目录：存放Hadoop的依赖jar包、文档、和官方案例</li>
+</ul>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p><strong><font color="red">【hadoop配置文件存放在hadoop安装路径的Hadoop-3.0.0&#x2F;etc&#x2F;hadoop目录下】</font></strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@nano ~]# cd /opt/module/hadoop-3.0.0/etc/hadoop/</span><br></pre></td></tr></table></figure>
+
+<h3 id="hadoop-env-sh"><a href="#hadoop-env-sh" class="headerlink" title="hadoop-env.sh"></a>hadoop-env.sh</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@nano hadoop]# vim hadoop-env.sh</span><br></pre></td></tr></table></figure>
+<p><strong><font color="orange">注意：Hadoop 3 版本之后要定义 HDFS_NAMENODE_US  下图为报错</font></strong></p>
+<p><strong><font color="ondine">黄老师 的版本为Hadoop 2.9 只需要 填写JAVA_HOME 就好了不用这么麻烦</font></strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35896718/article/details/125615091">hadoop 3 启动错误</a></p>
+<img src="/posts/803094f7/13.png" style="zoom:50%;">
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> HDFS_NAMENODE_USER=root</span><br><span class="line"><span class="built_in">export</span> HDFS_DATANODE_USER=root</span><br><span class="line"><span class="built_in">export</span> HDFS_SECONDARYNAMENODE_USER=root</span><br><span class="line"><span class="built_in">export</span> YARN_RESOURCEMANAGER_USER=root</span><br><span class="line"><span class="built_in">export</span> YARN_NODEMANAGER_USER=root</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> JAVA_HOEM=/opt/module/jdk1.8.0_181</span><br><span class="line"><span class="built_in">export</span> HADOOP_HOME=/opt/module/hadoop-3.0.0</span><br></pre></td></tr></table></figure>
+
+<img src="/posts/803094f7/4.png" style="zoom:50%;">
+
+<h3 id="Core：core-site-xml"><a href="#Core：core-site-xml" class="headerlink" title="Core：core-site.xml"></a>Core：core-site.xml</h3><p><strong>回到Hadoop-3.0.0安装目录，创建 data目录</strong></p>
+<p><img src="/posts/803094f7/6.png"></p>
+<p><strong>继续进入配置文件目录</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@nano hadoop]# vim core-site.xml</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">&lt;!-- 指定NameNode的地址 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.defaultFS<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://master:8020<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 指定hadoop数据的存储目录 ，data 目录需要创建 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">value</span>&gt;</span>/opt/module/hadoop-3.0.0/data<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 配置HDFS网页登录使用的静态用户为root --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.http.staticuser.user<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">value</span>&gt;</span>root<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="/posts/803094f7/7.png" style="zoom: 50%;">
+
+<h3 id="HDFS：hdfs-site-xml"><a href="#HDFS：hdfs-site-xml" class="headerlink" title="HDFS：hdfs-site.xml"></a>HDFS：hdfs-site.xml</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@nano hadoop]# vim hdfs-site.xml</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">&lt;!-- nn web端访问地址--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.namenode.http-address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">value</span>&gt;</span>master:50070<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 2nn web端访问地址--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.namenode.secondary.http-address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">value</span>&gt;</span>slave02:50090<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="/posts/803094f7/8.png" style="zoom:50%;">
+
+<h3 id="YARN：yarn-site-xml"><a href="#YARN：yarn-site-xml" class="headerlink" title="YARN：yarn-site.xml"></a>YARN：yarn-site.xml</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@nano hadoop]# vim yarn-site.xml</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">&lt;!-- 指定MR走shuffle --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">value</span>&gt;</span>mapreduce_shuffle<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 指定ResourceManager的地址--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.hostname<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">value</span>&gt;</span>slave01<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span>	</span><br></pre></td></tr></table></figure>
+
+<img src="/posts/803094f7/9.png" style="zoom:50%;">
+
+<h3 id="MapReduce：mapred-site-xml"><a href="#MapReduce：mapred-site-xml" class="headerlink" title="MapReduce：mapred-site.xml"></a>MapReduce：mapred-site.xml</h3><p>**目录下找不到mapred-site.xml文件，需要将mapred-site.xml.template重命名为：mapred-site.xml **</p>
+<p>**<font color="ondine">PS:Hadoop3.0.0这个版本不用重新命名,2.9 版本要重新命名</font> ** </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@nano hadoop]# vim mapred-site.xml</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 指定MapReduce程序运行在Yarn上 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.framework.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">value</span>&gt;</span>yarn<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="/posts/803094f7/10.png" style="zoom:50%;">
+
+<h3 id="集群文件：workers"><a href="#集群文件：workers" class="headerlink" title="集群文件：workers"></a>集群文件：workers</h3><p><strong><font color="orange">hadoop3.0以后slaves更名为workers,这里我们使用的是3.0以后的版本所以就变成了 workers</font></strong></p>
+<p>清空文件原来的内容,填写以下内容,这里对应域名:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@nano hadoop]# vim workers</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">master</span><br><span class="line">slave01</span><br><span class="line">slave02</span><br></pre></td></tr></table></figure>
+
+<h2 id="复制至其他主机"><a href="#复制至其他主机" class="headerlink" title="复制至其他主机"></a>复制至其他主机</h2><ul>
+<li><strong>将 配置的&#x2F;etc&#x2F;profile Hadoop环境变量文件复制到slave01,slave02,再更新环境配置</strong></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@nano ~]# scp -r /etc/profile root@slave01:/etc/</span><br><span class="line">[root@nano ~]# scp -r /etc/profile root@slave02:/etc/</span><br><span class="line"></span><br><span class="line">[root@nano ~]# ssh slave01</span><br><span class="line">[root@nano-slave01 ~]# source /etc/profile</span><br><span class="line">[root@nano-slave01 ~]# ssh slave02</span><br><span class="line">[root@nano-slave02 ~]# source /etc/profile</span><br></pre></td></tr></table></figure>
+<p><img src="/posts/803094f7/11.png"></p>
+<ul>
+<li><strong>将&#x2F;opt&#x2F;module 目录下的 jdk、hadoop 安装路径复制到salve01,salve02</strong></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@nano ~]# scp -r /opt/module root@slave01:/opt/</span><br><span class="line">[root@nano ~]# scp -r /opt/module root@slave02:/opt/</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="ondine">scp 时间可能有点长，等一会~ 马上就启动了！</font></strong></p>
+<h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><p><strong>主机格式化NameNode（第一次安装启动），全部集群格式化一遍</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@nano ~]# hdfs namenode -format</span><br></pre></td></tr></table></figure>
+
+<img src="/posts/803094f7/12.png" style="zoom: 25%;">
+
+<img src="/posts/803094f7/18.png" style="zoom:25%;">
+
+<img src="/posts/803094f7/19.png" style="zoom:25%;">
+
+<h2 id="参考规划表"><a href="#参考规划表" class="headerlink" title="参考规划表"></a><strong>参考规划表</strong></h2><table>
+<thead>
+<tr>
+<th></th>
+<th>master</th>
+<th>slave01</th>
+<th>slave02</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HDFS</td>
+<td>NameNode DataNode</td>
+<td>DataNode</td>
+<td>SecondaryNameNode DataNode</td>
+</tr>
+<tr>
+<td>YARN</td>
+<td>NodeManager</td>
+<td>NodeManager ResourceManager</td>
+<td>NodeManager</td>
+</tr>
+</tbody></table>
+<h2 id="hdfs"><a href="#hdfs" class="headerlink" title="hdfs"></a><strong>hdfs</strong></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start-dfs.sh</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stop-dfs.sh</span><br></pre></td></tr></table></figure>
+
+<img src="/posts/803094f7/14.png" style="zoom:50%;">
+
+<h2 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start-yarn.sh</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stop-yarn.sh</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><strong>jsp查看进程</strong></li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jsp</span><br></pre></td></tr></table></figure>
+
+<p><img src="/posts/803094f7/15.png"></p>
+<p><img src="/posts/803094f7/20.png"></p>
+<p><img src="/posts/803094f7/21.png"></p>
+<p><strong><font color="ondine">上图可以看到，已经启动了hdfs,yarn</font></strong></p>
+<ol start="2">
+<li><strong>在windows主机用web端口打开hdfs</strong></li>
+</ol>
+<p><a target="_blank" rel="noopener" href="http://192.168.100.200:50070/">http://192.168.100.200:50070</a></p>
+<img src="/posts/803094f7/16.png" style="zoom:50%;">
+
+<img src="/posts/803094f7/17.png" style="zoom:50%;">
+
+<h1 id="Hadoop-的坑"><a href="#Hadoop-的坑" class="headerlink" title="Hadoop 的坑"></a>Hadoop 的坑</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45988680/article/details/120635770">DataNode 启动不了</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/jancy_su/article/details/89163317?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-89163317-blog-51659080.pc_relevant_multi_platform_whitelistv3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-89163317-blog-51659080.pc_relevant_multi_platform_whitelistv3&utm_relevant_index=2">hadoop遇到的坑</a></p>
+<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><p>更详细笔记来源<strong>黄老师</strong>，本所有步骤笔记根据<a target="_blank" rel="noopener" href="https://www.yuque.com/books/share/5c23bbc1-da78-4445-a204-0a5bb294b72e/wcz67y#vxaMt">Hadoop环境搭建</a>步骤完成，大功告成！</p>
+<hr>
+<center><font color="pink">✿✿ヽ(°▽°)ノ✿完结撒花！</font></center>
+
+
       
     </div>
     
@@ -738,7 +942,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">虚拟机环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E9%9B%86%E7%BE%A4"><span class="nav-number">1.1.</span> <span class="nav-text">准备集群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9hostname"><span class="nav-number">1.2.</span> <span class="nav-text">修改hostname</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9hosts"><span class="nav-number">1.3.</span> <span class="nav-text">修改hosts</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hadoop%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">2.</span> <span class="nav-text">Hadoop环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-SSH%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95"><span class="nav-number">2.1.</span> <span class="nav-text">1.SSH免密登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AEJAVA%E7%8E%AF%E5%A2%83"><span class="nav-number">2.2.</span> <span class="nav-text">2.集群配置JAVA环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99"><span class="nav-number">2.3.</span> <span class="nav-text">3.关闭防火墙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%87%86%E5%A4%87Hadoop-tar-gz%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-number">2.4.</span> <span class="nav-text">4.准备Hadoop.tar.gz安装包</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Hadoop"><span class="nav-number">3.</span> <span class="nav-text">安装Hadoop</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">虚拟机环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEhostname-%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="nav-number">1.1.</span> <span class="nav-text">配置hostname(主机名)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95"><span class="nav-number">1.2.</span> <span class="nav-text">SSH免密登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEhosts-%E5%9F%9F%E5%90%8D"><span class="nav-number">1.3.</span> <span class="nav-text">配置hosts(域名)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hadoop%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">2.</span> <span class="nav-text">Hadoop环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AEJAVA%E7%8E%AF%E5%A2%83"><span class="nav-number">2.1.</span> <span class="nav-text">集群配置JAVA环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99"><span class="nav-number">2.2.</span> <span class="nav-text">关闭防火墙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87Hadoop-tar-gz%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-number">2.3.</span> <span class="nav-text">准备Hadoop.tar.gz安装包</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Hadoop"><span class="nav-number">3.</span> <span class="nav-text">安装Hadoop</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-number">3.1.</span> <span class="nav-text">Hadoop 环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-number">3.2.</span> <span class="nav-text">Hadoop文件目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">3.3.</span> <span class="nav-text">配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hadoop-env-sh"><span class="nav-number">3.3.1.</span> <span class="nav-text">hadoop-env.sh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Core%EF%BC%9Acore-site-xml"><span class="nav-number">3.3.2.</span> <span class="nav-text">Core：core-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HDFS%EF%BC%9Ahdfs-site-xml"><span class="nav-number">3.3.3.</span> <span class="nav-text">HDFS：hdfs-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#YARN%EF%BC%9Ayarn-site-xml"><span class="nav-number">3.3.4.</span> <span class="nav-text">YARN：yarn-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MapReduce%EF%BC%9Amapred-site-xml"><span class="nav-number">3.3.5.</span> <span class="nav-text">MapReduce：mapred-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E7%BE%A4%E6%96%87%E4%BB%B6%EF%BC%9Aworkers"><span class="nav-number">3.3.6.</span> <span class="nav-text">集群文件：workers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E5%88%B6%E8%87%B3%E5%85%B6%E4%BB%96%E4%B8%BB%E6%9C%BA"><span class="nav-number">3.4.</span> <span class="nav-text">复制至其他主机</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8"><span class="nav-number">4.</span> <span class="nav-text">启动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%A7%84%E5%88%92%E8%A1%A8"><span class="nav-number">4.1.</span> <span class="nav-text">参考规划表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hdfs"><span class="nav-number">4.2.</span> <span class="nav-text">hdfs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yarn"><span class="nav-number">4.3.</span> <span class="nav-text">yarn</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hadoop-%E7%9A%84%E5%9D%91"><span class="nav-number">5.</span> <span class="nav-text">Hadoop 的坑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9D%A5%E6%BA%90"><span class="nav-number">6.</span> <span class="nav-text">来源</span></a></li></ol></div>
             
 
           </div>
@@ -771,7 +975,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">55.8k</span>
+    <span title="Site words total count">57.1k</span>
   
 </div>
 
