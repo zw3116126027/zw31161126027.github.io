@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="禁用缓存  修改代码之后，刷新页面没有更新，看有没有禁止缓存，不要犯这种低级错误。 HTTP请求数据格式请求数据总共分为三部分内容 请求行：  HTTP请求中的第一行数据，请求行包含三块内容，分别是 GET[请求方式] &#x2F;[请求URL路径] HTTP&#x2F;1.1[HTTP协议及版本]  请求方式有七种,最常用的是**GET和POST** 请求头：  第二行开始，格式为**key:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaWeb笔记">
+<meta property="og:url" content="http://blog-zw.top/posts/bc07bc32/index.html">
+<meta property="og:site_name" content="&#x3D;-&#x3D;">
+<meta property="og:description" content="禁用缓存  修改代码之后，刷新页面没有更新，看有没有禁止缓存，不要犯这种低级错误。 HTTP请求数据格式请求数据总共分为三部分内容 请求行：  HTTP请求中的第一行数据，请求行包含三块内容，分别是 GET[请求方式] &#x2F;[请求URL路径] HTTP&#x2F;1.1[HTTP协议及版本]  请求方式有七种,最常用的是**GET和POST** 请求头：  第二行开始，格式为**key:">
+<meta property="og:locale">
+<meta property="og:image" content="http://blog-zw.top/posts/bc07bc32/1.png">
+<meta property="og:image" content="http://blog-zw.top/posts/bc07bc32/2.png">
+<meta property="og:image" content="http://blog-zw.top/posts/bc07bc32/3.png">
+<meta property="og:image" content="http://blog-zw.top/posts/bc07bc32/4.png">
+<meta property="og:image" content="http://blog-zw.top/posts/bc07bc32/5.png">
+<meta property="og:image" content="http://blog-zw.top/posts/bc07bc32/6.png">
+<meta property="og:image" content="http://blog-zw.top/posts/bc07bc32/7.png">
+<meta property="og:image" content="http://blog-zw.top/posts/bc07bc32/8.png">
+<meta property="og:image" content="http://blog-zw.top/posts/bc07bc32/9.png">
+<meta property="og:image" content="http://blog-zw.top/posts/bc07bc32/10.png">
+<meta property="og:image" content="http://blog-zw.top/posts/bc07bc32/11.png">
+<meta property="og:image" content="http://blog-zw.top/posts/bc07bc32/12.png">
+<meta property="og:image" content="http://blog-zw.top/posts/bc07bc32/13.png">
+<meta property="article:published_time" content="2022-09-13T14:44:08.000Z">
+<meta property="article:modified_time" content="2022-09-18T08:36:04.729Z">
+<meta property="article:author" content="Kli_zw">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog-zw.top/posts/bc07bc32/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog-zw.top/posts/bc07bc32/"/>
+
+
+
+
+
+  <title>JavaWeb笔记 | =-=</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body itemscope itemtype="https://github.com/" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+      <a target="_blank" rel="noopener" href="https://github.com/zw3116126027" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">=-=</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">如果我们不曾相遇</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog-zw.top/posts/bc07bc32/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/embrace.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="=-=">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaWeb笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-09-13T22:44:08+08:00">
+                2022-09-13
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2022-09-18T16:36:04+08:00">
+                2022-09-18
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读数 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="禁用缓存"><a href="#禁用缓存" class="headerlink" title="禁用缓存"></a>禁用缓存</h1><img src="/posts/bc07bc32/1.png" style="zoom:50%;">
+
+<p><strong><font color="ondine">修改代码之后，刷新页面没有更新，看有没有禁止缓存，不要犯这种低级错误。</font></strong></p>
+<h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><h2 id="请求数据格式"><a href="#请求数据格式" class="headerlink" title="请求数据格式"></a>请求数据格式</h2><p><strong>请求数据总共分为三部分内容</strong></p>
+<p><strong><font color="blue">请求行：</font></strong></p>
+<ul>
+<li>HTTP请求中的第一行数据，请求行包含三块内容，分别是 <strong>GET[请求方式]</strong> &#x2F;<strong>[请求URL路径]</strong> <strong>HTTP&#x2F;1.1[HTTP协议及版本]</strong></li>
+</ul>
+<p>请求方式有七种,最常用的是**<font color="red">GET</font><strong>和</strong><font color="red">POST</font>**</p>
+<p><strong><font color="blue">请求头：</font></strong></p>
+<ul>
+<li>第二行开始，格式为**<font color="red">key: value</font>**形式,请求头中会包含若干个属性，常见的HTTP请求头有</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Host: 表示请求的主机名</span><br><span class="line">User-Agent: 浏览器版本,例如Chrome浏览器的标识类似Mozilla/5.0 ...Chrome/79，IE浏览器的标识类似</span><br><span class="line">Mozilla/5.0 (Windows NT ...)like Gecko；</span><br><span class="line">Accept：表示浏览器能接收的资源类型，如text/*，image/*或者*/*表示所有；</span><br><span class="line">Accept-Language：表示浏览器偏好的语言，服务器可以据此返回不同语言的网页；</span><br><span class="line">Accept-Encoding：表示浏览器可以支持的压缩类型，例如gzip, deflate等。</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="blue">请求体：</font></strong></p>
+<ul>
+<li>POST请求的最后一部分，存储请求参数如：</li>
+</ul>
+<blockquote>
+<p>username&#x3D;superbaby&amp;password&#x3D;1234</p>
+</blockquote>
+<p>如上内容就是请求体的内容，请求体和请求头之间是有一个空行隔开。此时浏览器发送的是POST请 求，为什么不能使用GET呢?这时就需要回顾GET和POST两个请求之间的区别了:</p>
+<p>get方式，没有请求体，但是有一个queryString</p>
+<p>post方式，没有请求体，form data</p>
+<p>json格式，有请求体 request payload</p>
+<ul>
+<li>GET请求请求参数在请求行中，没有请求体，POST请求请求参数在请求体中</li>
+<li>GET请求请求参数大小有限制，POST没有</li>
+</ul>
+<p><strong><font color="orange">小结：</font></strong></p>
+<ol>
+<li>请求数据中包含三部分内容，分别是请求行、请求头和请求体</li>
+<li>POST请求数据在请求体中，GET请求数据在请求行上</li>
+</ol>
+<h2 id="响应数据格式"><a href="#响应数据格式" class="headerlink" title="响应数据格式"></a>响应数据格式</h2><p><strong><font color="blue">响应行：</font></strong></p>
+<ul>
+<li>响应数据的第一行,响应行包含三块内容，分别是 <strong>HTTP&#x2F;1.1[HTTP协议及版本]</strong>| <strong>200[响应状态码] ok</strong>|<strong>[状 态码的描述]</strong></li>
+</ul>
+<p><strong><font color="blue">响应头：</font></strong></p>
+<ul>
+<li>第二行开始，格式为**<font color="red">key：value</font>**形式响应头中会包含若干个属性，常见的HTTP响应头有:</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Content-Type：表示该响应内容的类型，例如text/html，image/jpeg；</span><br><span class="line">Content-Length：表示该响应内容的长度（字节数）；</span><br><span class="line">Content-Encoding：表示该响应压缩算法，例如gzip；</span><br><span class="line">Cache-Control：指示客户端应如何缓存，例如max-age=300表示可以最多缓存300秒</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="blue">响应体：</font></strong></p>
+<ul>
+<li>响应体就是服务器返回的HTML页面或者json数据</li>
+</ul>
+<p><strong><font color="blue">响应状态码：</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">100-199：表示服务器成功接收部分请求，要求客户端继续提交其余请求才能完成整个 处理过程。</span><br><span class="line"></span><br><span class="line">200-299：表示服务器成功接收请求并已完成整个处理过程。常用 200(OK 请求成功)。</span><br><span class="line"></span><br><span class="line">300~399：为完成请求，客户需进一步细化请求。例如：请求的资源已经移动一个新地 址、常用 302(所请求的页面已经临时转移至新的 url)、307 和 304(使用缓存资源)</span><br><span class="line"></span><br><span class="line">400-499：客户端的请求有错误，常用 404(服务器无法找到被请求的页面)、403(服 务 器拒绝访问，权限不够—DDos)。</span><br><span class="line"></span><br><span class="line">500~599：服务器端出现错误，常用 500(请求未完成。服务器遇到不可预知的情况)。</span><br></pre></td></tr></table></figure>
+
+<h1 id="Request-amp-Response"><a href="#Request-amp-Response" class="headerlink" title="Request&amp;Response"></a>Request&amp;Response</h1><p>Request是请求对象，Response是响应对象</p>
+<p><strong><font color="blue">request:&#x3D;&#x3D;获取&#x3D;&#x3D;请求数据：</font></strong></p>
+<ul>
+<li>浏览器会发送HTTP请求到后台服务器[Tomcat]</li>
+<li>HTTP的请求中会包含很多请求数据[请求行+请求头+请求体]</li>
+<li><strong><font color="red">后台服务器[Tomcat]会对HTTP请求中的数据进行解析并把解析结果存入到一个对象中</font></strong></li>
+<li><strong><font color="red">所存入的对象即为request对象，所以我们可以从request对象中获取请求的相关参数</font></strong></li>
+<li>获取到数据后就可以继续后续的业务，比如获取用户名和密码就可以实现登录操作的相关业务</li>
+</ul>
+<p><strong><font color="blue">response:&#x3D;&#x3D;设置&#x3D;&#x3D;响应数据</font></strong></p>
+<ul>
+<li>业务处理完后，后台就需要给前端返回业务处理的结果即响应数据</li>
+<li><strong><font color="red">把响应数据封装到response对象中</font></strong></li>
+<li><strong><font color="red">后台服务器[Tomcat]会解析response对象,按照[响应行+响应头+响应体]格式拼接结果</font></strong></li>
+<li>浏览器最终解析结果，把内容展示在浏览器给用户浏览</li>
+</ul>
+<h2 id="Request对象"><a href="#Request对象" class="headerlink" title="Request对象"></a>Request对象</h2><p>Request的继承体系:</p>
+<p><img src="/posts/bc07bc32/2.png"></p>
+<p>ServletRequest和HttpServletRequest是继承关系，并且两个都是接口，接口是无法创建对象</p>
+<p>这个时候，我们就需要用到Request继承体系中的 RequestFacade </p>
+<ul>
+<li>该类实现了HttpServletRequest接口，也间接实现了ServletRequest接口。</li>
+</ul>
+<p><strong><font color="orange">小结：</font></strong></p>
+<ol>
+<li>Request的继承体系为ServletRequest–&gt;HttpServletRequest–&gt;RequestFacade</li>
+<li>Tomcat需要解析请求数据，封装为request对象,并且创建request对象传递到service方法</li>
+</ol>
+<h2 id="Request获取请求数据"><a href="#Request获取请求数据" class="headerlink" title="Request获取请求数据"></a>Request获取请求数据</h2><h3 id="获取请求行数据"><a href="#获取请求行数据" class="headerlink" title="获取请求行数据"></a>获取请求行数据</h3><p>请求行包含三块内容，分别是 <strong><font color="red">请求方式</font></strong> 、 <strong><font color="red">请求资源路径</font></strong> 、 <strong><font color="red">HTTP协议及版本</font></strong></p>
+<p><img src="/posts/bc07bc32/3.png"></p>
+<p>对于这三部分内容，request对象都提供了对应的API方法来获取，具体如下:</p>
+<p><strong><font color="ondine">获取请求方式: GET</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String getMethod()</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="ondine">获取虚拟目录(项目访问路径): &#x2F;request-demo</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String getContextPath()</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="ondine">获取URL(统一资源定位符): <a target="_blank" rel="noopener" href="http://localhost:8080/request-demo/req1">http://localhost:8080/request-demo/req1</a></font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">StringBuffer getRequestURL()</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="ondine">获取URI(统一资源标识符): &#x2F;request-demo&#x2F;req1</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String getRequestURI()</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="ondine">获取请求参数(GET方式): username&#x3D;zhangsan&amp;password&#x3D;123</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String getQueryString()</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取请求头数据"><a href="#获取请求头数据" class="headerlink" title="获取请求头数据"></a>获取请求头数据</h3><p><strong><font color="ondine">对于请求头的数据，格式为 key: value 如下:</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String getHeader(String name)</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取请求体数据"><a href="#获取请求体数据" class="headerlink" title="获取请求体数据"></a>获取请求体数据</h3><p>浏览器在 **<font color="red">发送GET请求的时候是没有请求体</font><strong>的，所以需要把请求方式变更为</strong><font color="red">POST</font>**，请求体中的数据格式如下:</p>
+<p><img src="/posts/bc07bc32/4.png"></p>
+<p><strong><font color="ondine">获取字符输入流，如果前端发送的是纯文本数据，则使用该方法</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BufferedReader getReader()</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="ondine">获取字节输入流，如果前端发送的是字节数据，比如传递的是文件数据，则使用该方法</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ServletInputStream getInputStream()</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="orange">注意：</font></strong></p>
+<p><strong>BufferedReader流是通过request对象来获取的，当请求完成后request对象就会被销毁，request对象被销毁后， BufferedReader流就会自动关闭，所以此处就不需要手动关闭流了。</strong></p>
+<h3 id="获取请求参数的通用方式"><a href="#获取请求参数的通用方式" class="headerlink" title="获取请求参数的通用方式"></a>获取请求参数的通用方式</h3><p>对于**<font color="red">请求参数的获取</font>**,常用的有以下两种:</p>
+<p><strong><font color="blue">全部参数获取</font></strong></p>
+<ul>
+<li>GET方式:</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String getQueryString()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>POST方式:</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BufferedReader getReader();</span><br></pre></td></tr></table></figure>
+
+<p><strong>基于上述,request对象为我们提供了如下方法:</strong> </p>
+<p><strong><font color="ondine">获取所有参数Map集合</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String,String[]&gt; getParameterMap()</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="ondine">根据名称获取参数值(数组)</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String[] getParameterValues(String name)</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="ondine">根据名称获取参数值(单个值)</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String getParameter(String name)</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="orange">小结：</font></strong></p>
+<ol>
+<li>req.getParameter()方法使用的频率会比较高</li>
+</ol>
+<h2 id="请求参数中文乱码问题"><a href="#请求参数中文乱码问题" class="headerlink" title="请求参数中文乱码问题"></a>请求参数中文乱码问题</h2><p><strong><font color="ondine">POST:</font></strong></p>
+<p>请求解决方案是:设置输入流的编码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">request.setCharacterEncoding(&quot;UTF-8&quot;);</span><br><span class="line">注意:设置的字符集要和页面保持一致</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="ondine">GET:</font></strong></p>
+<p>POST请求和GET请求的参数中如果有中文，后台接收数据就会出现中文乱码问题 GET请求在Tomcat8.0以后的版本就不会出现了</p>
+<p><strong><font color="ondine">通用方式（GET&#x2F;POST）：需要先解码，再编码</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new String(username.getBytes(&quot;ISO-8859-1&quot;),&quot;UTF-8&quot;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Request请求转发"><a href="#Request请求转发" class="headerlink" title="Request请求转发"></a>Request请求转发</h2><p><strong><font color="ondine">请求转发的实现方式:</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">req.getRequestDispatcher(&quot;资源B路径&quot;).forward(req,resp);</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="ondine">请求转发资源间共享数据:使用Request对象</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void setAttribute(String name,Object o);</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="ondine">根据key获取值</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object getAttribute(String name);</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="ondine">根据key删除该键值对</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void removeAttribute(String name);</span><br></pre></td></tr></table></figure>
+
+<p><strong>例子：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet(&quot;/req5&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RequestDemo5</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span></span><br><span class="line">ServletException, IOException &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;demo5...&quot;</span>);</span><br><span class="line">		<span class="comment">//存储数据</span></span><br><span class="line">		request.setAttribute(<span class="string">&quot;msg&quot;</span>,<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">		<span class="comment">//请求转发</span></span><br><span class="line">		request.getRequestDispatcher(<span class="string">&quot;/req6&quot;</span>).forward(request,response);</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span></span><br><span class="line">		ServletException, IOException &#123;</span><br><span class="line">		<span class="built_in">this</span>.doGet(request, response);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 请求转发</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@WebServlet(&quot;/req6&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RequestDemo6</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span></span><br><span class="line">ServletException, IOException &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;demo6...&quot;</span>);</span><br><span class="line">		<span class="comment">//获取数据</span></span><br><span class="line">		<span class="type">Object</span> <span class="variable">msg</span> <span class="operator">=</span> request.getAttribute(<span class="string">&quot;msg&quot;</span>);</span><br><span class="line">		System.out.println(msg);</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span></span><br><span class="line">ServletException, IOException &#123;</span><br><span class="line">		<span class="built_in">this</span>.doGet(request, response);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>只能转发到当前服务器的内部资源,能从一个服务器通过转发访问另一台服务器</li>
+<li>一次请求，可以在转发资源间使用request共享数据,虽然后台从 &#x2F;req5 转发到 &#x2F;req6 ，但是这个&#x3D;&#x3D;只有一次请求&#x3D;&#x3D;</li>
+</ul>
+<h1 id="Response对象"><a href="#Response对象" class="headerlink" title="Response对象"></a>Response对象</h1><p>Reponse的继承体系和Request的继承体系也非常相似:</p>
+<p><img src="/posts/bc07bc32/5.png"></p>
+<h2 id="Response响应数据功能介绍"><a href="#Response响应数据功能介绍" class="headerlink" title="Response响应数据功能介绍"></a>Response响应数据功能介绍</h2><p><strong><font color="blue">响应行：</font></strong></p>
+<p><img src="/posts/bc07bc32/6.png"></p>
+<p>对于响应头，比较常用的就是设置响应状态码:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void setStatus(int sc);</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="blue">响应头：</font></strong></p>
+<p><img src="/posts/bc07bc32/7.png"></p>
+<p>设置响应头键值对：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void setHeader(String name,String value);</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="blue">响应体：</font></strong></p>
+<p><img src="/posts/bc07bc32/8.png"></p>
+<p>对于响应体，是通过字符、字节输出流的方式往浏览器写:</p>
+<p><strong><font color="ondine">获取字符输出流:</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PrintWriter getWriter();</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="ondine">获取字节输出流:</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ServletOutputStream getOutputStream();</span><br></pre></td></tr></table></figure>
+
+<h2 id="Respones请求重定向"><a href="#Respones请求重定向" class="headerlink" title="Respones请求重定向"></a>Respones请求重定向</h2><p><strong><font color="orange">Response重定向(redirect):一种资源跳转方式。</font></strong></p>
+<p><img src="/posts/bc07bc32/9.png"></p>
+<ol>
+<li>浏览器发送请求给服务器，服务器中对应的资源A接收到请求</li>
+<li>资源A现在无法处理该请求，就会给浏览器响应一个302的状态码+location的一个访问资源B的路径</li>
+<li>浏览器接收到响应状态码为302就会重新发送请求到location对应的访问地址去访问资源B</li>
+<li>资源B接收到请求后进行处理并最终给浏览器响应结果，这整个过程就叫<strong>重定向</strong></li>
+</ol>
+<p><img src="/posts/bc07bc32/10.png"></p>
+<p><strong><font color="ondine">重定向的实现方式:</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">resp.setStatus(302);</span><br><span class="line">resp.setHeader(&quot;location&quot;,&quot;资源B的访问路径&quot;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 创建一个Demo1类，接收/resp1的请求，在doGet方法中打印 resp1.... </span><br><span class="line">2. 创建一个Demo2类，接收/resp2的请求，在doGet方法中打印 resp2....</span><br><span class="line">3. 在Demo1的方法中使response.setStatus(302);response.setHeader(&quot;Location&quot;,&quot;/request-demo/resp2&quot;) 来给前端响应结果数据 </span><br><span class="line">4. 启动测试</span><br></pre></td></tr></table></figure>
+
+<p><strong>虽然功能已经实现，但是从设置重定向的两行代码来看，会发现除了重定向的地址不一样，其他的内容都是一模一 样，所以request对象给我们提供了简化的编写方式为:</strong></p>
+<p><strong><font color="ondine">重定向简化</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(&quot;/request-demo/resp2&quot;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>例子：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet(&quot;/resp1&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ResponseDemo1</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span></span><br><span class="line">ServletException, IOException &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;resp1....&quot;</span>);</span><br><span class="line">		<span class="comment">//重定向</span></span><br><span class="line">		resposne.sendRedirect(<span class="string">&quot;/request-demo/resp2&quot;</span>)；</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span></span><br><span class="line">ServletException, IOException &#123;</span><br><span class="line">		<span class="built_in">this</span>.doGet(request, response);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>重定向特点</th>
+<th>请求转发特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>浏览器地址栏发送变化</td>
+<td>浏览器地址路径不发生变化</td>
+</tr>
+<tr>
+<td>可以重定向到任意位置的只有(服务器内部、外部均可)</td>
+<td>只能转发到当前服务器的内部资源</td>
+</tr>
+<tr>
+<td>两次请求，不能在多个资源使用request共享数据</td>
+<td>一次请求，可以在转发的资源间使用request共享数据</td>
+</tr>
+</tbody></table>
+<p>到底用哪个，还是需要根据具体的业务来决定。</p>
+<h3 id="路径问题"><a href="#路径问题" class="headerlink" title="路径问题"></a>路径问题</h3><p><img src="/posts/bc07bc32/11.png"></p>
+<p><strong>其实判断的依据很简单，只需要记住下面的规则即可:</strong></p>
+<ul>
+<li>浏览器使用:需要加虚拟目录(项目访问路径)</li>
+<li>服务端使用:不需要加虚拟目录</li>
+</ul>
+<p><strong><font color="ondine">对于转发来说，因为是在服务端进行的，所以不需要加虚拟目录</font></strong> </p>
+<p><strong><font color="ondine">对于重定向来说，路径最终是由浏览器来发送请求，就需要添加虚拟目录。</font></strong></p>
+<h2 id="Response响应字符数据"><a href="#Response响应字符数据" class="headerlink" title="Response响应字符数据"></a>Response响应字符数据</h2><p><strong><font color="ondine">通过Response对象获取字符输出流：</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PrintWriter writer = resp.getWriter();</span><br></pre></td></tr></table></figure>
+
+<p><strong><font color="ondine">通过字符输出流写数据:</font></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">writer.write(&quot;aaa&quot;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>例子：</strong></p>
+<p> 返回一个简单的字符串 aaa</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 响应字符数据：设置字符数据的响应体</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@WebServlet(&quot;/resp3&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ResponseDemo3</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span></span><br><span class="line">ServletException, IOException &#123;</span><br><span class="line">		response.setContentType(<span class="string">&quot;text/html;charset=utf-8&quot;</span>);</span><br><span class="line">		<span class="comment">//1. 获取字符输出流</span></span><br><span class="line">		<span class="type">PrintWriter</span> <span class="variable">writer</span> <span class="operator">=</span> response.getWriter();</span><br><span class="line">		writer.write(<span class="string">&quot;aaa&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span></span><br><span class="line">ServletException, IOException &#123;</span><br><span class="line">		<span class="built_in">this</span>.doGet(request, response);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Response响应字节数据"><a href="#Response响应字节数据" class="headerlink" title="Response响应字节数据"></a>Response响应字节数据</h2><p>使用**<font color="orange">org.apache.commons.io.IOUtils</font>**包,maven导入</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-io<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-io<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zw;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.commons.io.IOUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletOutputStream;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ClassName</span> ResponseDemo3</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span> Response响应字节数据</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> kli</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@DATE</span> 2022/9/13 19:33</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Version</span> 1.0</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="comment">//@WebServlet(&quot;/resp3&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ResponseDemo3</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;resp3...get&quot;</span>);</span><br><span class="line">        <span class="comment">//读取文件</span></span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;d://zw.jpg&quot;</span>);</span><br><span class="line">        <span class="comment">//获取response字节输出流</span></span><br><span class="line">        <span class="type">ServletOutputStream</span> <span class="variable">os</span> <span class="operator">=</span> resp.getOutputStream();</span><br><span class="line">        <span class="comment">//完成流的copy</span></span><br><span class="line">        <span class="comment">//需要导包  commons-io  然后进入项目文件设置Artifacts-&gt; 创建lib目录 put into output root</span></span><br><span class="line">        IOUtils.copy(fis,os);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//关闭资源</span></span><br><span class="line">        fis.close();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        <span class="built_in">this</span>.doPost(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/posts/bc07bc32/12.png"></p>
+<h1 id="会话跟踪技术"><a href="#会话跟踪技术" class="headerlink" title="会话跟踪技术"></a>会话跟踪技术</h1><ul>
+<li><p>客户端第一次发请求给服务器，服务器获取session,获取不到,则创建新的，然后响应给客户端</p>
+</li>
+<li><p>下次客户端给服务器发请求时，会把sessionID带给服务器，那么服务器就能获取到了，那么服务器就判断这一次请求和上回是否一致</p>
+</li>
+</ul>
+<p><strong>常用的API:</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">req.getSession();   -&gt;获取当前的会话，没有则创建一个新的会话</span><br><span class="line">req.getSession(<span class="literal">true</span>); -&gt; 效果和不带参数相同</span><br><span class="line">req.getSession(<span class="literal">false</span>); -&gt; 获取当前会话，没有则返回<span class="literal">null</span>，不会创建新的</span><br><span class="line">session.getId();       -&gt; 获取sessinID</span><br><span class="line">session.isNew();       -&gt; 判断当前session是否是新的</span><br><span class="line">session.getMaxInactiveInterval();   -&gt; session的非激活间隔时长，默认<span class="number">1800</span>秒</span><br><span class="line">session.setMaxInactiveInterval();</span><br><span class="line">session.invalidate();  -&gt; 强制性让会话立即生效</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
+
+<p><strong>例子：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">   <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">       <span class="type">HttpSession</span> <span class="variable">session</span> <span class="operator">=</span> req.getSession();</span><br><span class="line">       System.out.println(session.getId());</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/posts/bc07bc32/13.png" style="zoom: 33%;">
+
+<h1 id="Servlet-thymeleaf"><a href="#Servlet-thymeleaf" class="headerlink" title="Servlet-thymeleaf"></a>Servlet-thymeleaf</h1><p>视图模板技术</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/4b2a10e2/" rel="next" title="部署Hive">
+                <i class="fa fa-chevron-left"></i> 部署Hive
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+   
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC81NjExOC8zMjU4MQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/embrace.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zw3116126027" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/6582101683" target="_blank" title="weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://space.bilibili.com/267615120" target="_blank" title="bilibili">
+                      
+                        <i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/zhengwei06?spm=1000.2115.3001.5343" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-CSDN"></i>CSDN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://space.bilibili.com/267615120" title="bilibili" target="_blank">bilibili</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://translate.google.cn/" title="Google翻译" target="_blank">Google翻译</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kaifa.baidu.com/" title="百度" target="_blank">百度</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A6%81%E7%94%A8%E7%BC%93%E5%AD%98"><span class="nav-number">1.</span> <span class="nav-text">禁用缓存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP"><span class="nav-number">2.</span> <span class="nav-text">HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.1.</span> <span class="nav-text">请求数据格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.2.</span> <span class="nav-text">响应数据格式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Request-amp-Response"><span class="nav-number">3.</span> <span class="nav-text">Request&amp;Response</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Request%E5%AF%B9%E8%B1%A1"><span class="nav-number">3.1.</span> <span class="nav-text">Request对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Request%E8%8E%B7%E5%8F%96%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE"><span class="nav-number">3.2.</span> <span class="nav-text">Request获取请求数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E8%AF%B7%E6%B1%82%E8%A1%8C%E6%95%B0%E6%8D%AE"><span class="nav-number">3.2.1.</span> <span class="nav-text">获取请求行数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E8%AF%B7%E6%B1%82%E5%A4%B4%E6%95%B0%E6%8D%AE"><span class="nav-number">3.2.2.</span> <span class="nav-text">获取请求头数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E8%AF%B7%E6%B1%82%E4%BD%93%E6%95%B0%E6%8D%AE"><span class="nav-number">3.2.3.</span> <span class="nav-text">获取请求体数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">3.2.4.</span> <span class="nav-text">获取请求参数的通用方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98"><span class="nav-number">3.3.</span> <span class="nav-text">请求参数中文乱码问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Request%E8%AF%B7%E6%B1%82%E8%BD%AC%E5%8F%91"><span class="nav-number">3.4.</span> <span class="nav-text">Request请求转发</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Response%E5%AF%B9%E8%B1%A1"><span class="nav-number">4.</span> <span class="nav-text">Response对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Response%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D"><span class="nav-number">4.1.</span> <span class="nav-text">Response响应数据功能介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Respones%E8%AF%B7%E6%B1%82%E9%87%8D%E5%AE%9A%E5%90%91"><span class="nav-number">4.2.</span> <span class="nav-text">Respones请求重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98"><span class="nav-number">4.2.1.</span> <span class="nav-text">路径问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Response%E5%93%8D%E5%BA%94%E5%AD%97%E7%AC%A6%E6%95%B0%E6%8D%AE"><span class="nav-number">4.3.</span> <span class="nav-text">Response响应字符数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Response%E5%93%8D%E5%BA%94%E5%AD%97%E8%8A%82%E6%95%B0%E6%8D%AE"><span class="nav-number">4.4.</span> <span class="nav-text">Response响应字节数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA%E6%8A%80%E6%9C%AF"><span class="nav-number">5.</span> <span class="nav-text">会话跟踪技术</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Servlet-thymeleaf"><span class="nav-number">6.</span> <span class="nav-text">Servlet-thymeleaf</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kli_zw</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">61.3k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+    <span class="site-uv">
+      本站访问数 <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量 <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+</body>
+</html>
