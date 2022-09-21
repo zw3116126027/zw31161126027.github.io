@@ -86,18 +86,17 @@
 
 
 
-<meta name="description" content="虚拟机环境准备例如：三台主机，nano为Master(主人)，其他主机为slave(奴隶)    我的计算机 nano nano01-slave nano02-slave    IP 192.168.100.200 192.168.100.201 192.168.100.202   hostname master slave1 slave2   域名(hosts) master slave1 sl">
+<meta name="description" content="虚拟机环境准备例如：三台主机，nano为Master(主人)，其他主机为Slave(奴隶)    我的计算机 nano nano-slave1 nano-slave1    IP 192.168.100.200 192.168.100.201 192.168.100.202   hostname master slave1 slave2   hosts(域名) master slave1 slav">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hadoop全分布式搭建">
 <meta property="og:url" content="http://blog-zw.top/posts/803094f7/index.html">
 <meta property="og:site_name" content="&#x3D;-&#x3D;">
-<meta property="og:description" content="虚拟机环境准备例如：三台主机，nano为Master(主人)，其他主机为slave(奴隶)    我的计算机 nano nano01-slave nano02-slave    IP 192.168.100.200 192.168.100.201 192.168.100.202   hostname master slave1 slave2   域名(hosts) master slave1 sl">
+<meta property="og:description" content="虚拟机环境准备例如：三台主机，nano为Master(主人)，其他主机为Slave(奴隶)    我的计算机 nano nano-slave1 nano-slave1    IP 192.168.100.200 192.168.100.201 192.168.100.202   hostname master slave1 slave2   hosts(域名) master slave1 slav">
 <meta property="og:locale">
 <meta property="og:image" content="http://blog-zw.top/posts/803094f7/2.png">
 <meta property="og:image" content="http://blog-zw.top/posts/803094f7/3.png">
 <meta property="og:image" content="http://blog-zw.top/posts/803094f7/6.png">
 <meta property="og:image" content="http://blog-zw.top/posts/803094f7/10.png">
-<meta property="og:image" content="http://blog-zw.top/posts/803094f7/11.png">
 <meta property="og:image" content="http://blog-zw.top/posts/803094f7/12.png">
 <meta property="og:image" content="http://blog-zw.top/posts/803094f7/18.png">
 <meta property="og:image" content="http://blog-zw.top/posts/803094f7/19.png">
@@ -105,7 +104,7 @@
 <meta property="og:image" content="http://blog-zw.top/posts/803094f7/17.png">
 <meta property="og:image" content="http://blog-zw.top/posts/803094f7/22.png">
 <meta property="article:published_time" content="2022-08-09T12:23:58.000Z">
-<meta property="article:modified_time" content="2022-09-18T08:39:07.307Z">
+<meta property="article:modified_time" content="2022-09-21T15:27:02.199Z">
 <meta property="article:author" content="Kli_zw">
 <meta property="article:tag" content="Hadoop全分布式搭建">
 <meta name="twitter:card" content="summary">
@@ -351,8 +350,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-09-18T16:39:07+08:00">
-                2022-09-18
+              <time title="更新于" itemprop="dateModified" datetime="2022-09-21T23:27:02+08:00">
+                2022-09-21
               </time>
             
           </span>
@@ -406,7 +405,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.9k
+                  2k
                 </span>
               
 
@@ -443,14 +442,14 @@
       
 
       
-        <h1 id="虚拟机环境准备"><a href="#虚拟机环境准备" class="headerlink" title="虚拟机环境准备"></a>虚拟机环境准备</h1><p><strong>例如：三台主机，nano为Master(主人)，其他主机为slave(奴隶)</strong></p>
+        <h1 id="虚拟机环境准备"><a href="#虚拟机环境准备" class="headerlink" title="虚拟机环境准备"></a>虚拟机环境准备</h1><p><strong>例如：三台主机，nano为Master(主人)，其他主机为Slave(奴隶)</strong></p>
 <table>
 <thead>
 <tr>
 <th>我的计算机</th>
 <th>nano</th>
-<th>nano01-slave</th>
-<th>nano02-slave</th>
+<th>nano-slave1</th>
+<th>nano-slave1</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -466,7 +465,7 @@
 <td>slave2</td>
 </tr>
 <tr>
-<td>域名(hosts)</td>
+<td>hosts(域名)</td>
 <td>master</td>
 <td>slave1</td>
 <td>slave2</td>
@@ -479,11 +478,13 @@
 </tr>
 <tr>
 <td>hadoop</td>
-<td>hadoop-2.7.7.tar.gz</td>
-<td>hadoop-2.7.7.tar.gz</td>
-<td>hadoop-2.7.7.tar.gz</td>
+<td>hadoop-2.7.7</td>
+<td>hadoop-2.7.7</td>
+<td>hadoop-2.7.7</td>
 </tr>
 </tbody></table>
+<p><strong>先确保安装了jdk</strong></p>
+<p><a href="https://blog-zw.top/posts/cccf557c/">在Linux里安装jdk</a></p>
 <h2 id="配置hostname-主机名"><a href="#配置hostname-主机名" class="headerlink" title="配置hostname(主机名)"></a>配置hostname(主机名)</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@nano ~]vim /etc/hostname</span><br></pre></td></tr></table></figure>
 
 <p><code>主机名改为：master 其余主机名改为，slave1、slave2</code></p>
@@ -630,9 +631,8 @@
 <li><strong>将 配置的 &#x2F;root&#x2F;.bash_profile  Hadoop环境变量文件复制到slave1,slave2,再更新环境配置</strong></li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@nano ~]# scp -r /etc/profile root@slave1:/etc/</span><br><span class="line">[root@nano ~]# scp -r /etc/profile root@slave2:/etc/</span><br><span class="line"></span><br><span class="line">[root@nano ~]# ssh slave1</span><br><span class="line">[root@nano-slave1 ~]# source /etc/profile</span><br><span class="line">[root@nano-slave1 ~]# ssh slave2</span><br><span class="line">[root@nano-slave2 ~]# source /etc/profile</span><br></pre></td></tr></table></figure>
-<p><img src="/posts/803094f7/11.png"></p>
 <ul>
-<li><strong>将&#x2F;opt&#x2F;module 目录下的 jdk、hadoop 安装路径复制到salve01,salve02</strong></li>
+<li><strong>将&#x2F;opt&#x2F;module 目录下的 jdk、hadoop 安装路径复制到salve1,salve2</strong></li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@nano ~]# scp -r /opt/module root@slave1:/opt/</span><br><span class="line">[root@nano ~]# scp -r /opt/module root@slave2:/opt/</span><br></pre></td></tr></table></figure>
 
@@ -853,7 +853,7 @@ start-yarn.sh
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -875,7 +875,7 @@ start-yarn.sh
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -991,7 +991,7 @@ start-yarn.sh
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">61.3k</span>
+    <span title="Site words total count">62.3k</span>
   
 </div>
 

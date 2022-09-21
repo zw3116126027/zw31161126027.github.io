@@ -86,19 +86,20 @@
 
 
 
-<meta name="description" content="安装MySQL先确保安装了mysql 在Linux里安装mysql 准备下载hive下载至对应hive安装包 Index of &#x2F;apache&#x2F;hive 下载 apache-hive-3.1.2-bin.tar.gz 解压安装包在opt目录下创建 module目录 1mkdir &#x2F;opt&#x2F;module 解压安装包至opt&#x2F;module目录,并重命名 1tar -zxv">
+<meta name="description" content="虚拟机环境准备例如：三台主机，nano为Master(主人)，其他主机为Slave(奴隶)    我的计算机 nano nano-slave1 nano-slave2    IP 192.168.100.200 192.168.100.201 192.168.100.202   hostname master slave1 slave2   hosts(域名) master slave1 slav">
 <meta property="og:type" content="article">
 <meta property="og:title" content="部署Hive">
 <meta property="og:url" content="http://blog-zw.top/posts/4b2a10e2/index.html">
 <meta property="og:site_name" content="&#x3D;-&#x3D;">
-<meta property="og:description" content="安装MySQL先确保安装了mysql 在Linux里安装mysql 准备下载hive下载至对应hive安装包 Index of &#x2F;apache&#x2F;hive 下载 apache-hive-3.1.2-bin.tar.gz 解压安装包在opt目录下创建 module目录 1mkdir &#x2F;opt&#x2F;module 解压安装包至opt&#x2F;module目录,并重命名 1tar -zxv">
+<meta property="og:description" content="虚拟机环境准备例如：三台主机，nano为Master(主人)，其他主机为Slave(奴隶)    我的计算机 nano nano-slave1 nano-slave2    IP 192.168.100.200 192.168.100.201 192.168.100.202   hostname master slave1 slave2   hosts(域名) master slave1 slav">
 <meta property="og:locale">
 <meta property="og:image" content="http://blog-zw.top/posts/4b2a10e2/1.png">
-<meta property="og:image" content="http://blog-zw.top/posts/4b2a10e2/2.png">
-<meta property="og:image" content="http://blog-zw.top/posts/4b2a10e2/3.png">
-<meta property="og:image" content="http://blog-zw.top/posts/4b2a10e2/4.png">
+<meta property="og:image" content="http://blog-zw.top/posts/4b2a10e2/5.png">
+<meta property="og:image" content="http://blog-zw.top/posts/4b2a10e2/6.png">
+<meta property="og:image" content="http://blog-zw.top/posts/4b2a10e2/7.png">
+<meta property="og:image" content="http://blog-zw.top/posts/4b2a10e2/8.png">
 <meta property="article:published_time" content="2022-08-13T11:47:29.000Z">
-<meta property="article:modified_time" content="2022-09-18T08:44:30.572Z">
+<meta property="article:modified_time" content="2022-09-21T15:26:43.976Z">
 <meta property="article:author" content="Kli_zw">
 <meta property="article:tag" content="部署Hive">
 <meta name="twitter:card" content="summary">
@@ -344,8 +345,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-09-18T16:44:30+08:00">
-                2022-09-18
+              <time title="更新于" itemprop="dateModified" datetime="2022-09-21T23:26:43+08:00">
+                2022-09-21
               </time>
             
           </span>
@@ -399,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  616
+                  725
                 </span>
               
 
@@ -436,57 +437,120 @@
       
 
       
-        <h1 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h1><p><strong>先确保安装了mysql</strong></p>
+        <h1 id="虚拟机环境准备"><a href="#虚拟机环境准备" class="headerlink" title="虚拟机环境准备"></a>虚拟机环境准备</h1><p><strong>例如：三台主机，nano为Master(主人)，其他主机为Slave(奴隶)</strong></p>
+<table>
+<thead>
+<tr>
+<th>我的计算机</th>
+<th>nano</th>
+<th>nano-slave1</th>
+<th>nano-slave2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IP</td>
+<td>192.168.100.200</td>
+<td>192.168.100.201</td>
+<td>192.168.100.202</td>
+</tr>
+<tr>
+<td>hostname</td>
+<td>master</td>
+<td>slave1</td>
+<td>slave2</td>
+</tr>
+<tr>
+<td>hosts(域名)</td>
+<td>master</td>
+<td>slave1</td>
+<td>slave2</td>
+</tr>
+<tr>
+<td>mysql</td>
+<td>mysql-5.7.37</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>hive</td>
+<td>hive-2.3.4</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>先确保安装了mysql</strong></p>
 <p><a href="https://blog-zw.top/posts/a91489ef/">在Linux里安装mysql</a></p>
-<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><h2 id="下载hive"><a href="#下载hive" class="headerlink" title="下载hive"></a>下载hive</h2><p><strong>下载至对应hive安装包</strong></p>
-<p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/apache/hive/">Index of &#x2F;apache&#x2F;hive</a></p>
-<p><code>下载 apache-hive-3.1.2-bin.tar.gz</code></p>
-<h2 id="解压安装包"><a href="#解压安装包" class="headerlink" title="解压安装包"></a>解压安装包</h2><p><strong>在opt目录下创建 module目录</strong></p>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><h2 id="准备hive-tar-gz安装包"><a href="#准备hive-tar-gz安装包" class="headerlink" title="准备hive.tar.gz安装包"></a>准备hive.tar.gz安装包</h2><p><a target="_blank" rel="noopener" href="https://archive.apache.org/dist/hadoop/common/">hive下载</a></p>
+<blockquote>
+<p>例：下载  hive-2.3.4-bin.tar.gz版本</p>
+</blockquote>
+<h2 id="解压安装包，配置环境"><a href="#解压安装包，配置环境" class="headerlink" title="解压安装包，配置环境"></a>解压安装包，配置环境</h2><p><strong><font color="blue">在opt目录下创建 module目录</font></strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/module</span><br></pre></td></tr></table></figure>
-<p><strong>解压安装包至opt&#x2F;module目录,并重命名</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-hive-3.1.2-bin.tar.gz -C /opt/module/</span><br></pre></td></tr></table></figure>
+<p><strong><font color="blue">解压安装包至opt&#x2F;module目录,并重命名</font></strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-hive-2.3.4-bin.tar.gz -C /opt/module/</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv apache-hive-3.1.2-bin/ hive-3.1.2</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv apache-hive-2.3.4-bin/ hive-2.3.4</span><br></pre></td></tr></table></figure>
 
-<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+<p><strong><font color="blue">配置环境变量</font></strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
 
-<p><strong>对应实际安装目录路径</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export HIVE_HOME=/opt/module/hive-3.1.2</span><br><span class="line">export PATH=$PATH:$HIVE_HOME/bin</span><br></pre></td></tr></table></figure>
+<p><strong><font color="blue">对应实际安装目录路径</font></strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export HIVE_HOME=/opt/module/hive-2.3.4</span><br><span class="line">export PATH=$PATH:$HIVE_HOME/bin</span><br></pre></td></tr></table></figure>
 
-<p><strong>刷新</strong></p>
+<p><strong><font color="blue">刷新</font></strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profil</span><br></pre></td></tr></table></figure>
 
 <h2 id="配置元数据到MySql"><a href="#配置元数据到MySql" class="headerlink" title="配置元数据到MySql"></a>配置元数据到MySql</h2><p><strong>jdbc驱动版本与mysql数据库版本有一定的对应关系</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connector/J 5.1 支持Mysql 4.1、Mysql 5.0、Mysql 5.1、Mysql 6.0 alpha这些版本。</span><br></pre></td></tr></table></figure>
+
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/developer_chan/p/8602267.html">MySQL JDBC驱动版本与MySQL数据库版本对应关系</a></p>
 <p><strong><font color="ondine">我们的mysql版本为 5.7.37，所以我们选择 JDBC 5.1.37（5.1版本） 驱动版本进行下载</font></strong></p>
 <p><a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/c-j/">MySQL的 JDBC驱动程序下载</a></p>
 <p><strong>将 MySQL的 JDBC驱动上传到 Hive的 lib目录下</strong></p>
 <img src="/posts/4b2a10e2/1.png" style="zoom:50%;">
 
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="hive-site-xml"><a href="#hive-site-xml" class="headerlink" title="hive-site.xml"></a>hive-site.xml</h2><p><strong>在$HIVE_HOME&#x2F;conf目录下新建 hive-site.xml文件</strong></p>
-<p><strong><font color="orange">注意这里的密码为mysql的密码</font></strong></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span>?&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml-stylesheet type=<span class="string">&quot;text/xsl&quot;</span> href=<span class="string">&quot;configuration.xsl&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- jdbc连接的 URL --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionURL<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">value</span>&gt;</span>jdbc:mysql://master:3306/metastore?useSSL=false<span class="symbol">&amp;amp;</span>serverTimezone=GMT<span class="tag">&lt;/<span class="name">value</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- jdbc连接的 Driver--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionDriverName<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">value</span>&gt;</span>com.mysql.jdbc.Driver<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- jdbc连接的 username--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionUserName<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;<span class="name">value</span>&gt;</span>root<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- jdbc连接的 password --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionPassword<span class="tag">&lt;/<span class="name">name</span>&gt;</span> <span class="tag">&lt;<span class="name">value</span>&gt;</span>root<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Hive元数据存储版本的验证 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>hive.metastore.schema.verification<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">value</span>&gt;</span>false<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--元数据存储授权--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>hive.metastore.event.db.notification.api.auth<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">value</span>&gt;</span>false<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Hive默认在 HDFS的工作目录 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>hive.metastore.warehouse.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">value</span>&gt;</span>/user/hive/warehouse<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><h2 id="hive-site-xml"><a href="#hive-site-xml" class="headerlink" title="hive-site.xml"></a>hive-site.xml</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd $HIVE_HOME/conf</span><br></pre></td></tr></table></figure>
 
-<h2 id="在mysql新建-Hive元数据库"><a href="#在mysql新建-Hive元数据库" class="headerlink" title="在mysql新建 Hive元数据库"></a>在mysql新建 Hive元数据库</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database metastore;</span><br></pre></td></tr></table></figure>
+<p><strong>在$HIVE_HOME&#x2F;conf目录下新建 hive-site.xml文件</strong></p>
+<p><strong><font color="orange">注意！这里配置对应MySQL的账号密码,这里创建的元数据库名字为：hive,对应MySQL</font></strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span>?&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml-stylesheet type=<span class="string">&quot;text/xsl&quot;</span> href=<span class="string">&quot;configuration.xsl&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--连接数据库URL(必选参数)--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionURL<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>jdbc:mysql://192.168.100.200:3306/hive?createDatabaseIfNotExist=true<span class="symbol">&amp;amp;</span>useSSL=false<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--连接数据驱动(必选参数)--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionDriverName<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>com.mysql.jdbc.Driver<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--数据库连接用户名(必选参数)--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionUserName<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>root<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--数据库连接密码(必选参数)--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionPassword<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>123456<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--验证元数据的一致性，默认为false(可选参数)--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>hive.metastore.schema.verification<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>false<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="初始化元数据库"><a href="#初始化元数据库" class="headerlink" title="初始化元数据库"></a>初始化元数据库</h2><p><strong>进入 hive-3.1.2&#x2F;bin 目录</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schematool -initSchema -dbType mysql -verbose</span><br></pre></td></tr></table></figure>
+<h2 id="初始化元数据库"><a href="#初始化元数据库" class="headerlink" title="初始化元数据库"></a>初始化元数据库</h2><p><strong>进入 hive-2.3.4&#x2F;bin 目录</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd $HIVE_HOME/bin</span><br></pre></td></tr></table></figure>
 
-<p><img src="/posts/4b2a10e2/2.png"></p>
-<h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><p><strong>先启动hadoop，再启动Hive。</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schematool -dbType mysql -initSchema</span><br></pre></td></tr></table></figure>
+
+<p><img src="/posts/4b2a10e2/5.png"></p>
+<h1 id="进入hive-shell"><a href="#进入hive-shell" class="headerlink" title="进入hive shell"></a>进入hive shell</h1><p><strong><font color="blue">启动HDFS以及YARN集群</font><font color="orange">确保都启动了！！！</font></strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start-dfs.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start-yarn.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hive</span><br></pre></td></tr></table></figure>
 
-<img src="/posts/4b2a10e2/3.png" style="zoom: 50%;">
+<img src="/posts/4b2a10e2/6.png" style="zoom:50%;">
 
-<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p><strong>创建数据库和数据表</strong></p>
-<img src="/posts/4b2a10e2/4.png" style="zoom:50%;">
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p> <strong><font color="ondine">创建数据库和数据表</font></strong></p>
+<p><strong><font color="blue">创建数据库</font></strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> database db_test;</span><br></pre></td></tr></table></figure>
+<p><strong><font color="blue">打开数据库</font></strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use db_test;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> test(id <span class="type">int</span>,name <span class="type">varchar</span>(<span class="number">8</span>));</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> name <span class="keyword">values</span>(<span class="number">1</span>,<span class="string">&#x27;zw&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong><font color="blue">创建表</font></strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tb_test(id <span class="type">int</span>,name <span class="type">varchar</span>(<span class="number">8</span>));</span><br></pre></td></tr></table></figure>
+<p><strong><font color="blue">显示表</font></strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> tables;</span><br></pre></td></tr></table></figure>
 
+<p><strong><font color="blue">插入数据</font></strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tb_test <span class="keyword">values</span>(<span class="number">1</span>,<span class="string">&#x27;zw&#x27;</span>);</span><br></pre></td></tr></table></figure>
 
+<p><strong><font color="blue">查询数据</font></strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> tb_test;</span><br></pre></td></tr></table></figure>
 
-<p>show create table test;</p>
-<p>展示创建表</p>
+<p> <img src="/posts/4b2a10e2/7.png"></p>
+<p><strong><font color="ondine">打开hadoop  查看数据文件</font></strong></p>
+<p><img src="/posts/4b2a10e2/8.png"></p>
+<hr>
+<center><font color="pink">✿✿ヽ(°▽°)ノ✿完结撒花！</font></center>
+
 
       
     </div>
@@ -612,7 +676,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -634,7 +698,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -717,7 +781,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85MySQL"><span class="nav-number">1.</span> <span class="nav-text">安装MySQL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%86%E5%A4%87"><span class="nav-number">2.</span> <span class="nav-text">准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDhive"><span class="nav-number">2.1.</span> <span class="nav-text">下载hive</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%8E%8B%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-number">2.2.</span> <span class="nav-text">解压安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-number">2.3.</span> <span class="nav-text">配置环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%85%83%E6%95%B0%E6%8D%AE%E5%88%B0MySql"><span class="nav-number">2.4.</span> <span class="nav-text">配置元数据到MySql</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hive-site-xml"><span class="nav-number">3.1.</span> <span class="nav-text">hive-site.xml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8mysql%E6%96%B0%E5%BB%BA-Hive%E5%85%83%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">3.2.</span> <span class="nav-text">在mysql新建 Hive元数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%85%83%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">3.3.</span> <span class="nav-text">初始化元数据库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8"><span class="nav-number">4.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">5.</span> <span class="nav-text">测试</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">虚拟机环境准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%86%E5%A4%87"><span class="nav-number">2.</span> <span class="nav-text">准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87hive-tar-gz%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-number">2.1.</span> <span class="nav-text">准备hive.tar.gz安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%8E%8B%E5%AE%89%E8%A3%85%E5%8C%85%EF%BC%8C%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83"><span class="nav-number">2.2.</span> <span class="nav-text">解压安装包，配置环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%85%83%E6%95%B0%E6%8D%AE%E5%88%B0MySql"><span class="nav-number">2.3.</span> <span class="nav-text">配置元数据到MySql</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hive-site-xml"><span class="nav-number">3.1.</span> <span class="nav-text">hive-site.xml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%85%83%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">3.2.</span> <span class="nav-text">初始化元数据库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5hive-shell"><span class="nav-number">4.</span> <span class="nav-text">进入hive shell</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">5.</span> <span class="nav-text">测试</span></a></li></ol></div>
             
 
           </div>
@@ -750,7 +814,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">61.3k</span>
+    <span title="Site words total count">62.3k</span>
   
 </div>
 
