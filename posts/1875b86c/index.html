@@ -94,7 +94,7 @@
 <meta property="og:description" content="虚拟机环境准备例如：三台主机，nano为Master(主人)，其他主机为Slave(奴隶)    我的计算机 nano nano-slave1 nano-slave1    IP 192.168.100.200 192.168.100.201 192.168.100.202   hostname master slave1 slave2   hosts(域名) master slave1 slav">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-07-11T15:20:20.000Z">
-<meta property="article:modified_time" content="2022-09-25T08:31:01.128Z">
+<meta property="article:modified_time" content="2022-09-26T13:45:52.337Z">
 <meta property="article:author" content="Kli_zw">
 <meta property="article:tag" content="部署ZooKeeper">
 <meta name="twitter:card" content="summary">
@@ -339,8 +339,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-09-25T16:31:01+08:00">
-                2022-09-25
+              <time title="更新于" itemprop="dateModified" datetime="2022-09-26T21:45:52+08:00">
+                2022-09-26
               </time>
             
           </span>
@@ -486,7 +486,7 @@
 <blockquote>
 <p>例：下载 zookeeper-3.4.6.tar.gz 版本</p>
 </blockquote>
-<h1 id="集群安装"><a href="#集群安装" class="headerlink" title="集群安装"></a>集群安装</h1><h2 id="解压安装包"><a href="#解压安装包" class="headerlink" title="解压安装包"></a>解压安装包</h2><p><strong><font color="blue">在opt目录下创建 module目录</font></strong></p>
+<h1 id="集群部署"><a href="#集群部署" class="headerlink" title="集群部署"></a>集群部署</h1><h2 id="解压安装包"><a href="#解压安装包" class="headerlink" title="解压安装包"></a>解压安装包</h2><p><strong><font color="blue">在opt目录下创建 module目录</font></strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/module</span><br></pre></td></tr></table></figure>
 
 <p><strong><font color="blue">解压安装包至opt&#x2F;module目录</font></strong></p>
@@ -672,7 +672,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -694,7 +694,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -777,7 +777,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">虚拟机环境准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%86%E5%A4%87"><span class="nav-number">2.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%86%E7%BE%A4%E5%AE%89%E8%A3%85"><span class="nav-number">3.</span> <span class="nav-text">集群安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%8E%8B%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-number">3.1.</span> <span class="nav-text">解压安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BC%96%E5%8F%B7"><span class="nav-number">3.2.</span> <span class="nav-text">配置服务器编号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEzoo-cfg%E6%96%87%E4%BB%B6"><span class="nav-number">3.3.</span> <span class="nav-text">配置zoo.cfg文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E7%BE%A4%E5%90%AF%E5%8A%A8"><span class="nav-number">3.4.</span> <span class="nav-text">集群启动</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">虚拟机环境准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%86%E5%A4%87"><span class="nav-number">2.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2"><span class="nav-number">3.</span> <span class="nav-text">集群部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%8E%8B%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-number">3.1.</span> <span class="nav-text">解压安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BC%96%E5%8F%B7"><span class="nav-number">3.2.</span> <span class="nav-text">配置服务器编号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEzoo-cfg%E6%96%87%E4%BB%B6"><span class="nav-number">3.3.</span> <span class="nav-text">配置zoo.cfg文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E7%BE%A4%E5%90%AF%E5%8A%A8"><span class="nav-number">3.4.</span> <span class="nav-text">集群启动</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -810,7 +810,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">63.7k</span>
+    <span title="Site words total count">64.8k</span>
   
 </div>
 
