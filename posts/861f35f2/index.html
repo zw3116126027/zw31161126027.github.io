@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,7 +19,7 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+  <link href="/lib/pace/pace-theme:minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -86,12 +86,12 @@
 
 
 
-<meta name="description" content="关于HTML盒子模型的笔记样式图 建议：连接css文件(在css打代码更方便些)  1&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;.&#x2F;css&#x2F;master.css&quot;&gt;  &lt;!-- herf：实际文件地址--&gt; 盒子模型 浏览器默认样式 所有元素都是矩形 margin: 外边距 border: 边框，有很多样式，直角、圆角">
+<meta name="description" content="关于HTML盒子模型的笔记样式图 建议：连接css文件(在css打代码更方便些)  1&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;.&#x2F;css&#x2F;master.css&quot;&gt;  &lt;!-- herf：实际文件地址--&gt; 盒子模型 浏览器默认样式 所有元素都是矩形 margin: 外边距 border: 边框，有很多样式，直角、圆角、颜色等 padding: 内边距 co">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML盒子模型">
 <meta property="og:url" content="http://blog-zw.top/posts/861f35f2/index.html">
 <meta property="og:site_name" content="&#x3D;-&#x3D;">
-<meta property="og:description" content="关于HTML盒子模型的笔记样式图 建议：连接css文件(在css打代码更方便些)  1&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;.&#x2F;css&#x2F;master.css&quot;&gt;  &lt;!-- herf：实际文件地址--&gt; 盒子模型 浏览器默认样式 所有元素都是矩形 margin: 外边距 border: 边框，有很多样式，直角、圆角">
+<meta property="og:description" content="关于HTML盒子模型的笔记样式图 建议：连接css文件(在css打代码更方便些)  1&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;.&#x2F;css&#x2F;master.css&quot;&gt;  &lt;!-- herf：实际文件地址--&gt; 盒子模型 浏览器默认样式 所有元素都是矩形 margin: 外边距 border: 边框，有很多样式，直角、圆角、颜色等 padding: 内边距 co">
 <meta property="og:locale">
 <meta property="og:image" content="http://blog-zw.top/posts/861f35f2/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E9%A2%84%E8%A7%88.png">
 <meta property="og:image" content="http://blog-zw.top/posts/861f35f2/1.png">
@@ -109,7 +109,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -147,7 +147,9 @@
 
 
 
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 <body itemscope itemtype="https://github.com/" lang="zh-Hans">
 
@@ -398,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  535
+                  525
                 </span>
               
 
@@ -414,7 +416,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -436,7 +438,7 @@
 
       
         <h1 id="关于HTML盒子模型的笔记"><a href="#关于HTML盒子模型的笔记" class="headerlink" title="关于HTML盒子模型的笔记"></a>关于HTML盒子模型的笔记</h1><h3 id="样式图"><a href="#样式图" class="headerlink" title="样式图"></a>样式图</h3><p><img src="/posts/861f35f2/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E9%A2%84%E8%A7%88.png"></p>
-<p>建议：连接css文件(在css打代码更方便些)<br>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./css/master.css&quot;</span>&gt;</span>  <span class="comment">&lt;!-- herf：实际文件地址--&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>建议：连接css文件(在css打代码更方便些)<br>  </p><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"./css/master.css"</span>&gt;</span>  <span class="comment">&lt;!-- herf：实际文件地址--&gt;</span></span><br></pre></td></tr></tbody></table></figure><p></p>
 <h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><ul>
 <li>浏览器默认样式</li>
 <li>所有元素都是矩形</li>
@@ -447,13 +449,13 @@
 </ul>
 <p>在浏览器默认所有的元素和边缘有空白是怎么回事呢？</p>
 <p><code>其实就是浏览器默认的边距样式，而且不一样的浏览器，样式也可能不一样，我们可以吧默认样式去掉。</code></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* &#123;  <span class="comment">/*默认通配符 匹配所有标签 */</span></span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">0</span>;  <span class="comment">/*去掉外边距*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* {  <span class="comment">/*默认通配符 匹配所有标签 */</span></span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">0</span>;  <span class="comment">/*去掉外边距*/</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="说一说盒子"><a href="#说一说盒子" class="headerlink" title="说一说盒子"></a>说一说盒子</h3><p>所有界面的元素都可以看出一个盒子，盒子模型就是包围内容的一个盒子。<br><img src="/posts/861f35f2/1.png"></p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;              <span class="comment">/*盒子的大小，高宽也就是一个矩形*/</span></span><br><span class="line">    <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: aqua;    <span class="comment">/*背景颜色*/</span></span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">30px</span>;             <span class="comment">/*内边距*/</span></span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">300px</span>;             <span class="comment">/*外边距*/</span></span><br><span class="line">    <span class="attribute">border</span>: <span class="number">20px</span> solid black;  <span class="comment">/*边框样式为实线，颜色为黑色*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>{</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;              <span class="comment">/*盒子的大小，高宽也就是一个矩形*/</span></span><br><span class="line">    <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: aqua;    <span class="comment">/*背景颜色*/</span></span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">30px</span>;             <span class="comment">/*内边距*/</span></span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">300px</span>;             <span class="comment">/*外边距*/</span></span><br><span class="line">    <span class="attribute">border</span>: <span class="number">20px</span> solid black;  <span class="comment">/*边框样式为实线，颜色为黑色*/</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p>在设置了，<code>内边距</code>，<code>边框</code>，<code>外边距</code> 我们可以看出盒子似乎大了，不是一开始设置的300*150大小了，这是因为我们增加了内边距边框，但是为什么增加内边距边框,就导致盒子变大了呢？因为它默认的规则是，所有增加的边距边框都往外加！！！在内容高度宽度的基础上往外加！</p>
 <p>我们可以设置box-sizing:<br>一般默认的box-sizing为 content-box<br>我们设置为 border-box</p>
 <h3 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h3><p><img src="/posts/861f35f2/2.png"></p>
-<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*{</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p>自己的通俗理解:<br><code>也就是比如说，如果要建设一个房子,默认要装修就是在建好的房子里面装修，但是 未设置 box-sizing 就是反着来在初始房子大小往外扩建装修,但如果设置了box-sizing 为 border-box 就变成了在房子里面装修了，width:300px heigit:150 也就是基础房子的大小(盒子)</code></p>
 
@@ -608,9 +610,7 @@
                 </a>
               </div>
             
-
           </nav>
-
           
 
           
@@ -719,7 +719,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">97.5k</span>
+    <span title="Site words total count">91.6k</span>
   
 </div>
 
@@ -792,13 +792,14 @@
   
 
 
+
+
+
+
+
+
   
-
-
-
-
-
-
+  
 
 
 
@@ -836,7 +837,12 @@
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
   
 
 

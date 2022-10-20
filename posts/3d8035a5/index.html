@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,7 +19,7 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+  <link href="/lib/pace/pace-theme:minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -105,7 +105,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -143,7 +143,9 @@
 
 
 
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 <body itemscope itemtype="https://github.com/" lang="zh-Hans">
 
@@ -394,7 +396,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.6k
+                  1.5k
                 </span>
               
 
@@ -438,7 +440,7 @@
 <p>form &lt;模块名&gt; import&lt;代码元素&gt;  会导入模块名中的代码元素(变量)直接使用代码元素名字 在访问时不需要加前缀“模块名”</p>
 <p>form &lt;模块名&gt; import&lt;代码元素&gt; as &lt;代码元素别名&gt;<br>会导入模块名中的代码元素(变量) 但使用时需要使用别名 在访问时不需要加前缀“模块名”</p>
 <p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> world</span><br><span class="line"><span class="keyword">from</span> world <span class="keyword">import</span> Z</span><br><span class="line"><span class="keyword">from</span> world <span class="keyword">import</span> x <span class="keyword">as</span> x2</span><br><span class="line">x=<span class="number">100</span></span><br><span class="line">y=<span class="number">20</span></span><br><span class="line"><span class="built_in">print</span> (y)       <span class="comment">#访问当前模块变量y</span></span><br><span class="line"><span class="built_in">print</span> (world.y) <span class="comment">#访问world模块变量y</span></span><br><span class="line"><span class="built_in">print</span> (z)       <span class="comment">#访问world模块变量z</span></span><br><span class="line"><span class="built_in">print</span> (x2)      <span class="comment">#x2是wor1d模块x别名</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> world</span><br><span class="line"><span class="keyword">from</span> world <span class="keyword">import</span> Z</span><br><span class="line"><span class="keyword">from</span> world <span class="keyword">import</span> x <span class="keyword">as</span> x2</span><br><span class="line">x=<span class="number">100</span></span><br><span class="line">y=<span class="number">20</span></span><br><span class="line"><span class="built_in">print</span> (y)       <span class="comment">#访问当前模块变量y</span></span><br><span class="line"><span class="built_in">print</span> (world.y) <span class="comment">#访问world模块变量y</span></span><br><span class="line"><span class="built_in">print</span> (z)       <span class="comment">#访问world模块变量z</span></span><br><span class="line"><span class="built_in">print</span> (x2)      <span class="comment">#x2是wor1d模块x别名</span></span><br></pre></td></tr></tbody></table></figure>
 <h1 id="数字类型的数据"><a href="#数字类型的数据" class="headerlink" title="数字类型的数据"></a>数字类型的数据</h1><ul>
 <li><p>Python中有6种主要的内置数据类型：数字、字符串、列表、元组、集合和字典。</p>
 </li>
@@ -463,7 +465,7 @@
 <li>采用科学及算法表示科学计数法中会使用E(或e)表示10的指数，如e2表示10</li>
 </ol>
 <p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">3.36e2</span>)  //结果：<span class="number">336.0</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">3.36e-2</span>) //结果：<span class="number">0.0336</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">.36e-2</span>)  //结果：<span class="number">0.00336</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">3.36e2</span>)  //结果：<span class="number">336.0</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">3.36e-2</span>) //结果：<span class="number">0.0336</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">.36e-2</span>)  //结果：<span class="number">0.00336</span></span><br></pre></td></tr></tbody></table></figure>
 <h2 id="复数类型"><a href="#复数类型" class="headerlink" title="复数类型"></a>复数类型</h2><ul>
 <li>复数在数学中被表示为：a+bi,其中a被称为实部b被称为虚部，被称为虚数单位。</li>
 </ul>
@@ -472,7 +474,7 @@
 <li>复数有实数部分和虚数部分构成</li>
 </ol>
 <p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">1</span>+<span class="number">2j</span></span><br><span class="line">b=<span class="number">1</span>+<span class="number">4j</span></span><br><span class="line"><span class="built_in">print</span>(a+b)   // (<span class="number">2</span>+<span class="number">6j</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a)) // &lt;<span class="keyword">class</span> <span class="string">&#x27;complex&#x27;</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">1</span>+<span class="number">2j</span></span><br><span class="line">b=<span class="number">1</span>+<span class="number">4j</span></span><br><span class="line"><span class="built_in">print</span>(a+b)   // (<span class="number">2</span>+<span class="number">6j</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a)) // &lt;<span class="keyword">class</span> <span class="string">'complex'</span>&gt;</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h2><ul>
 <li>Python中的布尔类型为bool类：它只有两个值：True和False。</li>
 </ul>
@@ -481,7 +483,7 @@
 <li>在python只有True和False、</li>
 </ol>
 <p>注意可以进行转换：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(<span class="number">0</span>))   //整数<span class="number">0</span>被转换为<span class="literal">False</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(<span class="number">2</span>))   //其他非零整数例如<span class="number">2</span>被转换为<span class="literal">True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(<span class="string">&#x27;&#x27;</span>))  //其他非空字符串会被转换为<span class="literal">True</span> </span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>([]))  //(空列表）被转换为<span class="literal">False</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(&#123;&#125;))  //(空字典）被转换为<span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(<span class="number">0</span>))   //整数<span class="number">0</span>被转换为<span class="literal">False</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(<span class="number">2</span>))   //其他非零整数例如<span class="number">2</span>被转换为<span class="literal">True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(<span class="string">''</span>))  //其他非空字符串会被转换为<span class="literal">True</span> </span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>([]))  //(空列表）被转换为<span class="literal">False</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>({}))  //(空字典）被转换为<span class="literal">False</span></span><br></pre></td></tr></tbody></table></figure>
 <h2 id="数字类型的相互转换"><a href="#数字类型的相互转换" class="headerlink" title="数字类型的相互转换"></a>数字类型的相互转换</h2><ol>
 <li>隐式类型的转换（自动类型转换）</li>
 <li>显式类型的转换（通过某种手段转换）</li>
@@ -514,12 +516,12 @@
 </tr>
 </tbody></table>
 <p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">1</span>+<span class="literal">True</span>)      //布尔值<span class="literal">True</span>被转换为整数</span><br><span class="line"><span class="built_in">print</span>(<span class="number">1.0</span>+<span class="number">1</span>)       //整数<span class="number">1</span>被转换为浮点数</span><br><span class="line"><span class="built_in">print</span>(<span class="number">1.0</span>+<span class="literal">True</span>)    //布尔值<span class="literal">True</span>被转换为浮点数</span><br><span class="line"><span class="built_in">print</span>(<span class="number">1.0</span>+<span class="number">1</span>+<span class="literal">True</span>)  //整数<span class="number">1</span>和布尔值都被转换为浮点数</span><br><span class="line"><span class="built_in">print</span>(<span class="number">1.0</span>+<span class="number">1</span>+<span class="literal">False</span>) //整数<span class="number">1</span>和布尔值都被转换为浮点数</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">1</span>+<span class="literal">True</span>)      //布尔值<span class="literal">True</span>被转换为整数</span><br><span class="line"><span class="built_in">print</span>(<span class="number">1.0</span>+<span class="number">1</span>)       //整数<span class="number">1</span>被转换为浮点数</span><br><span class="line"><span class="built_in">print</span>(<span class="number">1.0</span>+<span class="literal">True</span>)    //布尔值<span class="literal">True</span>被转换为浮点数</span><br><span class="line"><span class="built_in">print</span>(<span class="number">1.0</span>+<span class="number">1</span>+<span class="literal">True</span>)  //整数<span class="number">1</span>和布尔值都被转换为浮点数</span><br><span class="line"><span class="built_in">print</span>(<span class="number">1.0</span>+<span class="number">1</span>+<span class="literal">False</span>) //整数<span class="number">1</span>和布尔值都被转换为浮点数</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="显式类型转换："><a href="#显式类型转换：" class="headerlink" title="显式类型转换："></a>显式类型转换：</h3><ul>
 <li>需要使用转换函数进行显示转换分别是 int()、float()和bool()函数，来实现数字类型之间的转换</li>
 </ul>
 <p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="number">1.0</span>+<span class="number">1</span>))   //<span class="built_in">int</span>(<span class="number">1.0</span>)被转换为整数<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="literal">False</span>))   //布尔数值<span class="literal">False</span>使用<span class="built_in">int</span>()函数返回<span class="number">0</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="literal">True</span>))    //布尔数值<span class="literal">True</span>使用<span class="built_in">int</span>()函数返回<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="number">0.6</span>))     //浮点数值使用<span class="built_in">int</span>()函数会截掉小数部分</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">float</span>(<span class="number">5</span>))     //整数值使用f1oat()函数会加上小数部分(<span class="number">.0</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">float</span>(<span class="literal">False</span>)) //布尔数值<span class="literal">False</span>使用<span class="built_in">float</span>()函数返回<span class="number">0.0</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">float</span>(<span class="literal">True</span>))  //与齿数值<span class="literal">True</span>使用<span class="built_in">float</span>()函数返回<span class="number">1.0</span></span><br><span class="line">结果：</span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">5.0</span></span><br><span class="line"><span class="number">0.0</span></span><br><span class="line"><span class="number">1.0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="number">1.0</span>+<span class="number">1</span>))   //<span class="built_in">int</span>(<span class="number">1.0</span>)被转换为整数<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="literal">False</span>))   //布尔数值<span class="literal">False</span>使用<span class="built_in">int</span>()函数返回<span class="number">0</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="literal">True</span>))    //布尔数值<span class="literal">True</span>使用<span class="built_in">int</span>()函数返回<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="number">0.6</span>))     //浮点数值使用<span class="built_in">int</span>()函数会截掉小数部分</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">float</span>(<span class="number">5</span>))     //整数值使用f1oat()函数会加上小数部分(<span class="number">.0</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">float</span>(<span class="literal">False</span>)) //布尔数值<span class="literal">False</span>使用<span class="built_in">float</span>()函数返回<span class="number">0.0</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">float</span>(<span class="literal">True</span>))  //与齿数值<span class="literal">True</span>使用<span class="built_in">float</span>()函数返回<span class="number">1.0</span></span><br><span class="line">结果：</span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">5.0</span></span><br><span class="line"><span class="number">0.0</span></span><br><span class="line"><span class="number">1.0</span></span><br></pre></td></tr></tbody></table></figure>
 <h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><ul>
 <li>算术运算符</li>
 <li>比较运算符</li>
@@ -554,9 +556,9 @@
 <td align="center">求a与b的积</td>
 </tr>
 <tr>
-<td align="center">&#x2F;</td>
+<td align="center">/</td>
 <td align="center">除</td>
-<td align="center">a&#x2F;b</td>
+<td align="center">a/b</td>
 <td align="center">求a除以b的商</td>
 </tr>
 <tr>
@@ -572,9 +574,9 @@
 <td align="center">求a的b次幂</td>
 </tr>
 <tr>
-<td align="center">&#x2F;&#x2F;</td>
+<td align="center">//</td>
 <td align="center">地板除法</td>
-<td align="center">a&#x2F;&#x2F;b</td>
+<td align="center">a//b</td>
 <td align="center">求小于a与b的商的最大整数</td>
 </tr>
 <tr>
@@ -585,7 +587,7 @@
 </tr>
 </tbody></table>
 </li>
-<li>除法和地板除法的区别：&#x2F; 除的数结果是float类型 地板除法除的结果是整数类型<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">1</span>    </span><br><span class="line"><span class="built_in">print</span>(-a)    //-a是对a的取反运算</span><br><span class="line"><span class="built_in">print</span>(<span class="number">3</span>//<span class="number">2</span>)  // <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">3</span>/<span class="number">2</span>)   // <span class="number">1.5</span></span><br><span class="line"><span class="built_in">print</span>(-<span class="number">3</span>//<span class="number">2</span>) </span><br><span class="line"><span class="built_in">print</span>(-<span class="number">8</span>/<span class="number">3</span>) // -<span class="number">2</span></span><br><span class="line">注意：</span><br><span class="line">//   负数的地板除法运算 和整数不同 得到商后 像上取整，结果也就变成-<span class="number">2</span> 了</span><br></pre></td></tr></table></figure>
+<li>除法和地板除法的区别：/ 除的数结果是float类型 地板除法除的结果是整数类型<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">1</span>    </span><br><span class="line"><span class="built_in">print</span>(-a)    //-a是对a的取反运算</span><br><span class="line"><span class="built_in">print</span>(<span class="number">3</span>//<span class="number">2</span>)  // <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">3</span>/<span class="number">2</span>)   // <span class="number">1.5</span></span><br><span class="line"><span class="built_in">print</span>(-<span class="number">3</span>//<span class="number">2</span>) </span><br><span class="line"><span class="built_in">print</span>(-<span class="number">8</span>/<span class="number">3</span>) // -<span class="number">2</span></span><br><span class="line">注意：</span><br><span class="line">//   负数的地板除法运算 和整数不同 得到商后 像上取整，结果也就变成-<span class="number">2</span> 了</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h2><table>
 <thead>
 <tr>
@@ -596,16 +598,16 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">&#x3D;&#x3D;</td>
+<td align="center">==</td>
 <td align="center">等于</td>
-<td align="center">a&#x3D;&#x3D;b</td>
+<td align="center">a==b</td>
 <td align="center">a等于b时返回True,否则返回False</td>
 </tr>
 <tr>
-<td align="center">!&#x3D;</td>
+<td align="center">!=</td>
 <td align="center">不等于</td>
-<td align="center">a!&#x3D;b</td>
-<td align="center">与&#x3D;&#x3D;相反</td>
+<td align="center">a!=b</td>
+<td align="center">与==相反</td>
 </tr>
 <tr>
 <td align="center">&gt;</td>
@@ -620,15 +622,15 @@
 <td align="center">a小于b时返回True,否则返回False</td>
 </tr>
 <tr>
-<td align="center">&gt;&#x3D;</td>
+<td align="center">&gt;=</td>
 <td align="center">大于等于</td>
-<td align="center">a&gt;&#x3D;b</td>
+<td align="center">a&gt;=b</td>
 <td align="center">a大于等于b时返回True,否则返回False</td>
 </tr>
 <tr>
-<td align="center">&lt;&#x3D;</td>
+<td align="center">&lt;=</td>
 <td align="center">小于等于</td>
-<td align="center">a&lt;&#x3D;b</td>
+<td align="center">a&lt;=b</td>
 <td align="center">a小于等于b时返回True,否则返回False</td>
 </tr>
 <tr>
@@ -873,9 +875,7 @@
                 </a>
               </div>
             
-
           </nav>
-
           
 
           
@@ -984,7 +984,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">97.5k</span>
+    <span title="Site words total count">91.6k</span>
   
 </div>
 
@@ -1057,13 +1057,14 @@
   
 
 
+
+
+
+
+
+
   
-
-
-
-
-
-
+  
 
 
 
@@ -1101,7 +1102,12 @@
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
   
 
 

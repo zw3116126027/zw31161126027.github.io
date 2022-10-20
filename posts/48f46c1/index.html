@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,7 +19,7 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+  <link href="/lib/pace/pace-theme:minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -86,12 +86,12 @@
 
 
 
-<meta name="description" content="为什么 Java 中只有值传递？开始之前，我们先来搞懂下面这两个概念：  形参&amp;实参 值传递&amp;引用传递  形参&amp;实参方法的定义可能会用到参数（有参的方法），参数在程序语言中分为：  实参（实际参数） ：用于传递给函数&#x2F;方法的参数，必须有确定的值。 形参（形式参数） ：用于定义函数&#x2F;方法，接收实参，不需要有确定的值。12345678String hello">
+<meta name="description" content="为什么 Java 中只有值传递？开始之前，我们先来搞懂下面这两个概念：  形参&amp;实参 值传递&amp;引用传递  形参&amp;实参方法的定义可能会用到参数（有参的方法），参数在程序语言中分为：  实参（实际参数） ：用于传递给函数&#x2F;方法的参数，必须有确定的值。 形参（形式参数） ：用于定义函数&#x2F;方法，接收实参，不需要有确定的值。12345678String hello &#x3D; &quot;Hello!">
 <meta property="og:type" content="article">
 <meta property="og:title" content="为什么Java中只有值传递？">
 <meta property="og:url" content="http://blog-zw.top/posts/48f46c1/index.html">
 <meta property="og:site_name" content="&#x3D;-&#x3D;">
-<meta property="og:description" content="为什么 Java 中只有值传递？开始之前，我们先来搞懂下面这两个概念：  形参&amp;实参 值传递&amp;引用传递  形参&amp;实参方法的定义可能会用到参数（有参的方法），参数在程序语言中分为：  实参（实际参数） ：用于传递给函数&#x2F;方法的参数，必须有确定的值。 形参（形式参数） ：用于定义函数&#x2F;方法，接收实参，不需要有确定的值。12345678String hello">
+<meta property="og:description" content="为什么 Java 中只有值传递？开始之前，我们先来搞懂下面这两个概念：  形参&amp;实参 值传递&amp;引用传递  形参&amp;实参方法的定义可能会用到参数（有参的方法），参数在程序语言中分为：  实参（实际参数） ：用于传递给函数&#x2F;方法的参数，必须有确定的值。 形参（形式参数） ：用于定义函数&#x2F;方法，接收实参，不需要有确定的值。12345678String hello &#x3D; &quot;Hello!">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-04-26T08:58:40.000Z">
 <meta property="article:modified_time" content="2022-08-07T16:02:04.673Z">
@@ -105,7 +105,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -143,7 +143,9 @@
 
 
 
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 <body itemscope itemtype="https://github.com/" lang="zh-Hans">
 
@@ -394,7 +396,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1k
+                  964
                 </span>
               
 
@@ -410,7 +412,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  3
                 </span>
               
             </div>
@@ -438,20 +440,20 @@
 </ul>
 <h1 id="形参-amp-实参"><a href="#形参-amp-实参" class="headerlink" title="形参&amp;实参"></a>形参&amp;实参</h1><p>方法的定义可能会用到参数（有参的方法），参数在程序语言中分为：</p>
 <ul>
-<li>实参（实际参数） ：用于传递给函数&#x2F;方法的参数，必须有确定的值。</li>
-<li>形参（形式参数） ：用于定义函数&#x2F;方法，接收实参，不需要有确定的值。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">hello</span> <span class="operator">=</span> <span class="string">&quot;Hello!&quot;</span>;</span><br><span class="line"><span class="comment">// hello 为实参</span></span><br><span class="line">sayHello(hello);</span><br><span class="line"><span class="comment">// str 为形参</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">sayHello</span><span class="params">(String str)</span> &#123;</span><br><span class="line">    System.out.println(str);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<li>实参（实际参数） ：用于传递给函数/方法的参数，必须有确定的值。</li>
+<li>形参（形式参数） ：用于定义函数/方法，接收实参，不需要有确定的值。<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">hello</span> <span class="operator">=</span> <span class="string">"Hello!"</span>;</span><br><span class="line"><span class="comment">// hello 为实参</span></span><br><span class="line">sayHello(hello);</span><br><span class="line"><span class="comment">// str 为形参</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">sayHello</span><span class="params">(String str)</span> {</span><br><span class="line">    System.out.println(str);</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <h1 id="值传递-amp-引用传递"><a href="#值传递-amp-引用传递" class="headerlink" title="值传递&amp;引用传递"></a>值传递&amp;引用传递</h1>程序设计语言将实参传递给方法（或函数）的方式分为两种：</li>
 <li>值传递 ：方法接收的是实参值的拷贝，会创建副本。</li>
 <li>引用传递 ：方法接收的直接是实参所引用的对象在堆中的地址，不会创建副本，对形参的修改将影响到实参。</li>
 </ul>
 <p><code>很多程序设计语言（比如 C++、 Pascal )提供了两种参数传递的方式，不过，在 Java 中只有值传递。</code></p>
 <h1 id="为什么-Java-只有值传递？"><a href="#为什么-Java-只有值传递？" class="headerlink" title="为什么 Java 只有值传递？"></a>为什么 Java 只有值传递？</h1><p>为什么说 Java 只有值传递呢？ 不需要太多废话，我通过 3 个例子来给大家证明。</p>
-<h1 id="案例1：传递基本类型参数"><a href="#案例1：传递基本类型参数" class="headerlink" title="案例1：传递基本类型参数"></a>案例1：传递基本类型参数</h1><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">num1</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">num2</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line">    swap(num1, num2);</span><br><span class="line">    System.out.println(<span class="string">&quot;num1 = &quot;</span> + num1);</span><br><span class="line">    System.out.println(<span class="string">&quot;num2 = &quot;</span> + num2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">    System.out.println(<span class="string">&quot;a = &quot;</span> + a);</span><br><span class="line">    System.out.println(<span class="string">&quot;b = &quot;</span> + b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">20</span></span><br><span class="line">b = <span class="number">10</span></span><br><span class="line">num1 = <span class="number">10</span></span><br><span class="line">num2 = <span class="number">20</span></span><br></pre></td></tr></table></figure>
-<h2 id="解析："><a href="#解析：" class="headerlink" title="解析："></a>解析：</h2><h3 id="在-swap-方法中，a、b-的值进行交换，并不会影响到-num1、num2。因为，a、b-的值，只是从-num1、num2-的复制过来的。也就是说，a、b-相当于-num1、num2-的副本，副本的内容无论怎么修改，都不会影响到原件本身。"><a href="#在-swap-方法中，a、b-的值进行交换，并不会影响到-num1、num2。因为，a、b-的值，只是从-num1、num2-的复制过来的。也就是说，a、b-相当于-num1、num2-的副本，副本的内容无论怎么修改，都不会影响到原件本身。" class="headerlink" title="在 swap() 方法中，a、b 的值进行交换，并不会影响到 num1、num2。因为，a、b 的值，只是从 num1、num2 的复制过来的。也就是说，a、b 相当于 num1、num2 的副本，副本的内容无论怎么修改，都不会影响到原件本身。"></a>在 swap() 方法中，a、b 的值进行交换，并不会影响到 num1、num2。因为，a、b 的值，只是从 num1、num2 的复制过来的。也就是说，a、b 相当于 num1、num2 的副本，副本的内容无论怎么修改，都不会影响到原件本身。</h3><h1 id="案例2：传递引用类型参数1"><a href="#案例2：传递引用类型参数1" class="headerlink" title="案例2：传递引用类型参数1"></a>案例2：传递引用类型参数1</h1><h2 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">  <span class="type">int</span>[] arr = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> &#125;;</span><br><span class="line">  System.out.println(arr[<span class="number">0</span>]);</span><br><span class="line">  change(arr);</span><br><span class="line">  System.out.println(arr[<span class="number">0</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">change</span><span class="params">(<span class="type">int</span>[] array)</span> &#123;</span><br><span class="line">  <span class="comment">// 将数组的第一个元素变为0</span></span><br><span class="line">  array[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="输出：-1"><a href="#输出：-1" class="headerlink" title="输出："></a>输出：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
-<h2 id="解析：-1"><a href="#解析：-1" class="headerlink" title="解析："></a>解析：</h2><h3 id="看了这个案例很多人肯定觉得-Java-对引用类型的参数采用的是引用传递。实际上，并不是的，这里传递的还是值，不过，这个值是实参的地址罢了！也就是说-change-方法的参数拷贝的是-arr-（实参）的地址，因此，它和-arr-指向的是同一个数组对象。这也就说明了为什么方法内部对形参的修改会影响到实参。为了更强有力地反驳-Java-对引用类型的参数采用的不是引用传递，我们再来看下面这个案例"><a href="#看了这个案例很多人肯定觉得-Java-对引用类型的参数采用的是引用传递。实际上，并不是的，这里传递的还是值，不过，这个值是实参的地址罢了！也就是说-change-方法的参数拷贝的是-arr-（实参）的地址，因此，它和-arr-指向的是同一个数组对象。这也就说明了为什么方法内部对形参的修改会影响到实参。为了更强有力地反驳-Java-对引用类型的参数采用的不是引用传递，我们再来看下面这个案例" class="headerlink" title="看了这个案例很多人肯定觉得 Java 对引用类型的参数采用的是引用传递。实际上，并不是的，这里传递的还是值，不过，这个值是实参的地址罢了！也就是说 change 方法的参数拷贝的是 arr （实参）的地址，因此，它和 arr 指向的是同一个数组对象。这也就说明了为什么方法内部对形参的修改会影响到实参。为了更强有力地反驳 Java 对引用类型的参数采用的不是引用传递，我们再来看下面这个案例"></a>看了这个案例很多人肯定觉得 Java 对引用类型的参数采用的是引用传递。实际上，并不是的，这里传递的还是值，不过，这个值是实参的地址罢了！也就是说 change 方法的参数拷贝的是 arr （实参）的地址，因此，它和 arr 指向的是同一个数组对象。这也就说明了为什么方法内部对形参的修改会影响到实参。为了更强有力地反驳 Java 对引用类型的参数采用的不是引用传递，我们再来看下面这个案例</h3><h1 id="案例3-：传递引用类型参数2"><a href="#案例3-：传递引用类型参数2" class="headerlink" title="案例3 ：传递引用类型参数2"></a>案例3 ：传递引用类型参数2</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">   <span class="comment">// 省略构造函数、Getter&amp;Setter方法</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="type">Person</span> <span class="variable">xiaoZhang</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;小张&quot;</span>);</span><br><span class="line">    <span class="type">Person</span> <span class="variable">xiaoLi</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;小李&quot;</span>);</span><br><span class="line">    swap(xiaoZhang, xiaoLi);</span><br><span class="line">    System.out.println(<span class="string">&quot;xiaoZhang:&quot;</span> + xiaoZhang.getName());</span><br><span class="line">    System.out.println(<span class="string">&quot;xiaoLi:&quot;</span> + xiaoLi.getName());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(Person person1, Person person2)</span> &#123;</span><br><span class="line">    <span class="type">Person</span> <span class="variable">temp</span> <span class="operator">=</span> person1;</span><br><span class="line">    person1 = person2;</span><br><span class="line">    person2 = temp;</span><br><span class="line">    System.out.println(<span class="string">&quot;person1:&quot;</span> + person1.getName());</span><br><span class="line">    System.out.println(<span class="string">&quot;person2:&quot;</span> + person2.getName());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="输出"><a href="#输出" class="headerlink" title="输出:"></a>输出:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">person1:小李</span><br><span class="line">person2:小张</span><br><span class="line">xiaoZhang:小张</span><br><span class="line">xiaoLi:小李</span><br></pre></td></tr></table></figure>
+<h1 id="案例1：传递基本类型参数"><a href="#案例1：传递基本类型参数" class="headerlink" title="案例1：传递基本类型参数"></a>案例1：传递基本类型参数</h1><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">    <span class="type">int</span> <span class="variable">num1</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">num2</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line">    swap(num1, num2);</span><br><span class="line">    System.out.println(<span class="string">"num1 = "</span> + num1);</span><br><span class="line">    System.out.println(<span class="string">"num2 = "</span> + num2);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> {</span><br><span class="line">    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">    System.out.println(<span class="string">"a = "</span> + a);</span><br><span class="line">    System.out.println(<span class="string">"b = "</span> + b);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">20</span></span><br><span class="line">b = <span class="number">10</span></span><br><span class="line">num1 = <span class="number">10</span></span><br><span class="line">num2 = <span class="number">20</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="解析："><a href="#解析：" class="headerlink" title="解析："></a>解析：</h2><h3 id="在-swap-方法中，a、b-的值进行交换，并不会影响到-num1、num2。因为，a、b-的值，只是从-num1、num2-的复制过来的。也就是说，a、b-相当于-num1、num2-的副本，副本的内容无论怎么修改，都不会影响到原件本身。"><a href="#在-swap-方法中，a、b-的值进行交换，并不会影响到-num1、num2。因为，a、b-的值，只是从-num1、num2-的复制过来的。也就是说，a、b-相当于-num1、num2-的副本，副本的内容无论怎么修改，都不会影响到原件本身。" class="headerlink" title="在 swap() 方法中，a、b 的值进行交换，并不会影响到 num1、num2。因为，a、b 的值，只是从 num1、num2 的复制过来的。也就是说，a、b 相当于 num1、num2 的副本，副本的内容无论怎么修改，都不会影响到原件本身。"></a>在 swap() 方法中，a、b 的值进行交换，并不会影响到 num1、num2。因为，a、b 的值，只是从 num1、num2 的复制过来的。也就是说，a、b 相当于 num1、num2 的副本，副本的内容无论怎么修改，都不会影响到原件本身。</h3><h1 id="案例2：传递引用类型参数1"><a href="#案例2：传递引用类型参数1" class="headerlink" title="案例2：传递引用类型参数1"></a>案例2：传递引用类型参数1</h1><h2 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">  <span class="type">int</span>[] arr = { <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> };</span><br><span class="line">  System.out.println(arr[<span class="number">0</span>]);</span><br><span class="line">  change(arr);</span><br><span class="line">  System.out.println(arr[<span class="number">0</span>]);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">change</span><span class="params">(<span class="type">int</span>[] array)</span> {</span><br><span class="line">  <span class="comment">// 将数组的第一个元素变为0</span></span><br><span class="line">  array[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="输出：-1"><a href="#输出：-1" class="headerlink" title="输出："></a>输出：</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="解析：-1"><a href="#解析：-1" class="headerlink" title="解析："></a>解析：</h2><h3 id="看了这个案例很多人肯定觉得-Java-对引用类型的参数采用的是引用传递。实际上，并不是的，这里传递的还是值，不过，这个值是实参的地址罢了！也就是说-change-方法的参数拷贝的是-arr-（实参）的地址，因此，它和-arr-指向的是同一个数组对象。这也就说明了为什么方法内部对形参的修改会影响到实参。为了更强有力地反驳-Java-对引用类型的参数采用的不是引用传递，我们再来看下面这个案例"><a href="#看了这个案例很多人肯定觉得-Java-对引用类型的参数采用的是引用传递。实际上，并不是的，这里传递的还是值，不过，这个值是实参的地址罢了！也就是说-change-方法的参数拷贝的是-arr-（实参）的地址，因此，它和-arr-指向的是同一个数组对象。这也就说明了为什么方法内部对形参的修改会影响到实参。为了更强有力地反驳-Java-对引用类型的参数采用的不是引用传递，我们再来看下面这个案例" class="headerlink" title="看了这个案例很多人肯定觉得 Java 对引用类型的参数采用的是引用传递。实际上，并不是的，这里传递的还是值，不过，这个值是实参的地址罢了！也就是说 change 方法的参数拷贝的是 arr （实参）的地址，因此，它和 arr 指向的是同一个数组对象。这也就说明了为什么方法内部对形参的修改会影响到实参。为了更强有力地反驳 Java 对引用类型的参数采用的不是引用传递，我们再来看下面这个案例"></a>看了这个案例很多人肯定觉得 Java 对引用类型的参数采用的是引用传递。实际上，并不是的，这里传递的还是值，不过，这个值是实参的地址罢了！也就是说 change 方法的参数拷贝的是 arr （实参）的地址，因此，它和 arr 指向的是同一个数组对象。这也就说明了为什么方法内部对形参的修改会影响到实参。为了更强有力地反驳 Java 对引用类型的参数采用的不是引用传递，我们再来看下面这个案例</h3><h1 id="案例3-：传递引用类型参数2"><a href="#案例3-：传递引用类型参数2" class="headerlink" title="案例3 ：传递引用类型参数2"></a>案例3 ：传递引用类型参数2</h1><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> {</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">   <span class="comment">// 省略构造函数、Getter&amp;Setter方法</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">    <span class="type">Person</span> <span class="variable">xiaoZhang</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">"小张"</span>);</span><br><span class="line">    <span class="type">Person</span> <span class="variable">xiaoLi</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">"小李"</span>);</span><br><span class="line">    swap(xiaoZhang, xiaoLi);</span><br><span class="line">    System.out.println(<span class="string">"xiaoZhang:"</span> + xiaoZhang.getName());</span><br><span class="line">    System.out.println(<span class="string">"xiaoLi:"</span> + xiaoLi.getName());</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(Person person1, Person person2)</span> {</span><br><span class="line">    <span class="type">Person</span> <span class="variable">temp</span> <span class="operator">=</span> person1;</span><br><span class="line">    person1 = person2;</span><br><span class="line">    person2 = temp;</span><br><span class="line">    System.out.println(<span class="string">"person1:"</span> + person1.getName());</span><br><span class="line">    System.out.println(<span class="string">"person2:"</span> + person2.getName());</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出:"></a>输出:</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">person1:小李</span><br><span class="line">person2:小张</span><br><span class="line">xiaoZhang:小张</span><br><span class="line">xiaoLi:小李</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="解析：-2"><a href="#解析：-2" class="headerlink" title="解析："></a>解析：</h3><h3 id="怎么回事？？？两个引用类型的形参互换并没有影响实参啊！swap-方法的参数-person1-和-person2-只是拷贝的实参-xiaoZhang-和-xiaoLi-的地址。因此，-person1-和-person2-的互换只是拷贝的两个地址的互换罢了，并不会影响到实参-xiaoZhang-和-xiaoLi-。"><a href="#怎么回事？？？两个引用类型的形参互换并没有影响实参啊！swap-方法的参数-person1-和-person2-只是拷贝的实参-xiaoZhang-和-xiaoLi-的地址。因此，-person1-和-person2-的互换只是拷贝的两个地址的互换罢了，并不会影响到实参-xiaoZhang-和-xiaoLi-。" class="headerlink" title="怎么回事？？？两个引用类型的形参互换并没有影响实参啊！swap 方法的参数 person1 和 person2 只是拷贝的实参 xiaoZhang 和 xiaoLi 的地址。因此， person1 和 person2 的互换只是拷贝的两个地址的互换罢了，并不会影响到实参 xiaoZhang 和 xiaoLi 。"></a>怎么回事？？？两个引用类型的形参互换并没有影响实参啊！swap 方法的参数 person1 和 person2 只是拷贝的实参 xiaoZhang 和 xiaoLi 的地址。因此， person1 和 person2 的互换只是拷贝的两个地址的互换罢了，并不会影响到实参 xiaoZhang 和 xiaoLi 。</h3><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="Java-中将实参传递给方法（或函数）的方式是-值传递-："><a href="#Java-中将实参传递给方法（或函数）的方式是-值传递-：" class="headerlink" title="Java 中将实参传递给方法（或函数）的方式是 值传递 ："></a>Java 中将实参传递给方法（或函数）的方式是 值传递 ：</h2><ul>
 <li>如果参数是基本类型的话，很简单，传递的就是基本类型的字面量值的拷贝，会创建副本。</li>
 <li>如果参数是引用类型，传递的就是实参所引用的对象在堆中地址值的拷贝，同样也会创建副本。</li>
@@ -608,9 +610,7 @@
                 </a>
               </div>
             
-
           </nav>
-
           
 
           
@@ -719,7 +719,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">97.5k</span>
+    <span title="Site words total count">91.6k</span>
   
 </div>
 
@@ -792,13 +792,14 @@
   
 
 
+
+
+
+
+
+
   
-
-
-
-
-
-
+  
 
 
 
@@ -836,7 +837,12 @@
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
   
 
 

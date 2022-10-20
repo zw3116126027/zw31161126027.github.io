@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,7 +19,7 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+  <link href="/lib/pace/pace-theme:minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -105,7 +105,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -143,7 +143,9 @@
 
 
 
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 <body itemscope itemtype="https://github.com/" lang="zh-Hans">
 
@@ -394,7 +396,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  816
+                  803
                 </span>
               
 
@@ -487,61 +489,61 @@
 <p>例：下载 zookeeper-3.4.6.tar.gz 版本</p>
 </blockquote>
 <h1 id="集群部署"><a href="#集群部署" class="headerlink" title="集群部署"></a>集群部署</h1><h2 id="解压安装包"><a href="#解压安装包" class="headerlink" title="解压安装包"></a>解压安装包</h2><p><strong><font color="blue">在opt目录下创建 module目录</font></strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/module</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/module</span><br></pre></td></tr></tbody></table></figure>
 
-<p><strong><font color="blue">解压安装包至opt&#x2F;module目录</font></strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf zookeeper-3.4.6.tar.gz -C /opt/module/</span><br></pre></td></tr></table></figure>
+<p><strong><font color="blue">解压安装包至opt/module目录</font></strong></p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf zookeeper-3.4.6.tar.gz -C /opt/module/</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="配置服务器编号"><a href="#配置服务器编号" class="headerlink" title="配置服务器编号"></a>配置服务器编号</h2><p><strong><font color="blue">在&#x2F;opt&#x2F;module&#x2F;zookeeper-3.4.6 这个目录下创建 zkData</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/module/zookeeper-3.4.6/zkData</span><br></pre></td></tr></table></figure>
+<h2 id="配置服务器编号"><a href="#配置服务器编号" class="headerlink" title="配置服务器编号"></a>配置服务器编号</h2><p><strong><font color="blue">在/opt/module/zookeeper-3.4.6 这个目录下创建 zkData</font></strong></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/module/zookeeper-3.4.6/zkData</span><br></pre></td></tr></tbody></table></figure>
 
-<p><strong><font color="blue">在&#x2F;opt&#x2F;module&#x2F;zookeeper-3.4.6&#x2F;zkData 目录下创建一个 myid 的文件</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim myid</span><br></pre></td></tr></table></figure>
+<p><strong><font color="blue">在/opt/module/zookeeper-3.4.6/zkData 目录下创建一个 myid 的文件</font></strong></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim myid</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="blue">在文件中添加与 server 对应的编号（注意：上下不要有空行，左右不要有空格）</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="blue">分发zookeeper 到其他机器上，并分别在 slave1、slave2上修改 myid 文件中内容为 2、3</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r /opt/module/zookeeper-3.4.6/ root@slave1:/opt/module/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r /opt/module/zookeeper-3.4.6/ root@slave1:/opt/module/</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /opt/module/zookeeper-3.4.6/zkData/myid</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /opt/module/zookeeper-3.4.6/zkData/myid</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="配置zoo-cfg文件"><a href="#配置zoo-cfg文件" class="headerlink" title="配置zoo.cfg文件"></a>配置zoo.cfg文件</h2><p><strong><font color="blue">重命名&#x2F;opt&#x2F;module&#x2F;zookeeper-3.5.6&#x2F;conf&#x2F;zoo_sample.cfg</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv /opt/module/zookeeper-3.4.6/conf/zoo_sample.cfg /opt/module/zookeeper-3.4.6/conf/zoo.cfg</span><br></pre></td></tr></table></figure>
+<h2 id="配置zoo-cfg文件"><a href="#配置zoo-cfg文件" class="headerlink" title="配置zoo.cfg文件"></a>配置zoo.cfg文件</h2><p><strong><font color="blue">重命名/opt/module/zookeeper-3.5.6/conf/zoo_sample.cfg</font></strong></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv /opt/module/zookeeper-3.4.6/conf/zoo_sample.cfg /opt/module/zookeeper-3.4.6/conf/zoo.cfg</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="blue">打开 zoo.cfg 文件</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /opt/module/zookeeper-3.4.6/conf/zoo.cfg</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /opt/module/zookeeper-3.4.6/conf/zoo.cfg</span><br></pre></td></tr></tbody></table></figure>
 <p><strong><font color="blue">修改数据存储路径配置,增加如下配置</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dataDir=/opt/module/zookeeper-3.4.6/zkData</span><br><span class="line">#######################cluster##########################</span><br><span class="line">server.1=192.168.100.200:2888:3888</span><br><span class="line">server.2=192.168.100.201:2888:3888</span><br><span class="line">server.3=192.168.100.202:2888:3888</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dataDir=/opt/module/zookeeper-3.4.6/zkData</span><br><span class="line">#######################cluster##########################</span><br><span class="line">server.1=192.168.100.200:2888:3888</span><br><span class="line">server.2=192.168.100.201:2888:3888</span><br><span class="line">server.3=192.168.100.202:2888:3888</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="pink">PS：</font><font color="ondine">上面配置参数解读</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.A=B:C:D</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.A=B:C:D</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">A:是一个数字，表示这个是第几号服务器,集群模式下配置一个文件 myid，这个文件在 dataDir 目录下，这个文件里面有一个数据</span><br><span class="line">就是 A 的值，Zookeeper 启动时读取此文件，拿到里面的数据与 zoo.cfg 里面的配置信息比</span><br><span class="line">较从而判断到底是哪个 server;</span><br><span class="line"></span><br><span class="line">B:是这个服务器的地址;</span><br><span class="line"></span><br><span class="line">C:是这个服务器 Follower 与集群中的 Leader 服务器交换信息的端口；</span><br><span class="line"></span><br><span class="line">D:是万一集群中的 Leader 服务器挂了，需要一个端口来重新进行选举，选出一个新的</span><br><span class="line">Leader，而这个端口就是用来执行选举时服务器相互通信的端口。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">A:是一个数字，表示这个是第几号服务器,集群模式下配置一个文件 myid，这个文件在 dataDir 目录下，这个文件里面有一个数据</span><br><span class="line">就是 A 的值，Zookeeper 启动时读取此文件，拿到里面的数据与 zoo.cfg 里面的配置信息比</span><br><span class="line">较从而判断到底是哪个 server;</span><br><span class="line"></span><br><span class="line">B:是这个服务器的地址;</span><br><span class="line"></span><br><span class="line">C:是这个服务器 Follower 与集群中的 Leader 服务器交换信息的端口；</span><br><span class="line"></span><br><span class="line">D:是万一集群中的 Leader 服务器挂了，需要一个端口来重新进行选举，选出一个新的</span><br><span class="line">Leader，而这个端口就是用来执行选举时服务器相互通信的端口。</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="blue">分发zoo.cfg文件到其他机器上</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r /opt/module/zookeeper-3.4.6/conf/zoo.cfg root@slave1:/opt/module/zookeeper-3.4.6/conf/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r /opt/module/zookeeper-3.4.6/conf/zoo.cfg root@slave1:/opt/module/zookeeper-3.4.6/conf/</span><br></pre></td></tr></tbody></table></figure>
 
 <h2 id="集群启动"><a href="#集群启动" class="headerlink" title="集群启动"></a>集群启动</h2><p><strong><font color="orange">三台需要关闭防火墙</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="blue">分别启动 Zookeeper</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/module/zookeeper-3.4.6/bin/zkServer.sh start</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/module/zookeeper-3.4.6/bin/zkServer.sh start</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="blue">查看状态</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/module/zookeeper-3.4.6/bin/zkServer.sh status</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/module/zookeeper-3.4.6/bin/zkServer.sh status</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="blue">重启ZK服务</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/module/zookeeper-3.4.6/bin/zkServer.sh restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/module/zookeeper-3.4.6/bin/zkServer.sh restart</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="pink">结果：</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@master conf]# /opt/module/zookeeper-3.4.6/bin/zkServer.sh status</span><br><span class="line">JMX enabled by default</span><br><span class="line">Using config: /opt/module/zookeeper-3.4.6/bin/../conf/zoo.cfg</span><br><span class="line">Mode: follower</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@master conf]# /opt/module/zookeeper-3.4.6/bin/zkServer.sh status</span><br><span class="line">JMX enabled by default</span><br><span class="line">Using config: /opt/module/zookeeper-3.4.6/bin/../conf/zoo.cfg</span><br><span class="line">Mode: follower</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@slave1 ~]# /opt/module/zookeeper-3.4.6/bin/zkServer.sh status</span><br><span class="line">JMX enabled by default</span><br><span class="line">Using config: /opt/module/zookeeper-3.4.6/bin/../conf/zoo.cfg</span><br><span class="line">Mode: follower</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@slave1 ~]# /opt/module/zookeeper-3.4.6/bin/zkServer.sh status</span><br><span class="line">JMX enabled by default</span><br><span class="line">Using config: /opt/module/zookeeper-3.4.6/bin/../conf/zoo.cfg</span><br><span class="line">Mode: follower</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@slave2 ~]# /opt/module/zookeeper-3.4.6/bin/zkServer.sh status</span><br><span class="line">JMX enabled by default</span><br><span class="line">Using config: /opt/module/zookeeper-3.4.6/bin/../conf/zoo.cfg</span><br><span class="line">Mode: leader</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@slave2 ~]# /opt/module/zookeeper-3.4.6/bin/zkServer.sh status</span><br><span class="line">JMX enabled by default</span><br><span class="line">Using config: /opt/module/zookeeper-3.4.6/bin/../conf/zoo.cfg</span><br><span class="line">Mode: leader</span><br></pre></td></tr></tbody></table></figure>
 
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43553032/article/details/126002002">集群的坑</a></p>
 <hr>
@@ -699,9 +701,7 @@
                 </a>
               </div>
             
-
           </nav>
-
           
 
           
@@ -810,7 +810,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">97.5k</span>
+    <span title="Site words total count">91.6k</span>
   
 </div>
 
@@ -883,13 +883,14 @@
   
 
 
+
+
+
+
+
+
   
-
-
-
-
-
-
+  
 
 
 
@@ -927,7 +928,12 @@
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
   
 
 

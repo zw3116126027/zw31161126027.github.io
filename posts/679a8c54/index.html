@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,7 +19,7 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+  <link href="/lib/pace/pace-theme:minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -116,7 +116,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -154,7 +154,9 @@
 
 
 
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 <body itemscope itemtype="https://github.com/" lang="zh-Hans">
 
@@ -405,7 +407,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  924
+                  922
                 </span>
               
 
@@ -505,86 +507,86 @@
 <p>例：下载 kafka_2.12-2.8.2.tgz 版本</p>
 </blockquote>
 <h1 id="集群部署"><a href="#集群部署" class="headerlink" title="集群部署"></a>集群部署</h1><h2 id="解压安装包"><a href="#解压安装包" class="headerlink" title="解压安装包"></a>解压安装包</h2><p><strong><font color="blue">在opt目录下创建 module目录</font></strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/module</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/module</span><br></pre></td></tr></tbody></table></figure>
 
-<p><strong><font color="blue">解压安装包至opt&#x2F;module目录</font></strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf kafka_2.12-2.8.2.tgz -C /opt/module/</span><br></pre></td></tr></table></figure>
+<p><strong><font color="blue">解压安装包至opt/module目录</font></strong></p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf kafka_2.12-2.8.2.tgz -C /opt/module/</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="创建logs文件夹"><a href="#创建logs文件夹" class="headerlink" title="创建logs文件夹"></a>创建logs文件夹</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/module/kafka_2.12-2.8.2/logs</span><br></pre></td></tr></table></figure>
+<h2 id="创建logs文件夹"><a href="#创建logs文件夹" class="headerlink" title="创建logs文件夹"></a>创建logs文件夹</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/module/kafka_2.12-2.8.2/logs</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="ondine">logs 既是数据存储目录，也是日志存储目录</font></strong></p>
-<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /opt/module/kafka_2.12-2.8.2/config/server.properties</span><br></pre></td></tr></table></figure>
+<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /opt/module/kafka_2.12-2.8.2/config/server.properties</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="blue">进入文件修改(找到对应位置，没有则增加)</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">broker.id=0</span><br><span class="line">delete.topic.enable=true</span><br><span class="line">log.dirs=/opt/module/kafka_2.12-2.8.2/logs</span><br><span class="line">zookeeper.connect=192.168.100.200:2181,192.168.100.201:2181,192.168.100.202:2181</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">broker.id=0</span><br><span class="line">delete.topic.enable=true</span><br><span class="line">log.dirs=/opt/module/kafka_2.12-2.8.2/logs</span><br><span class="line">zookeeper.connect=192.168.100.200:2181,192.168.100.201:2181,192.168.100.202:2181</span><br></pre></td></tr></tbody></table></figure>
 
 <p>#broker.id的全局唯一编号，不能重复(修改处) 此处3台节点都要修改</p>
 <p>#删除topic功能使能(修改处)</p>
 <p>#kafka运行日志存放的路径(修改处)</p>
 <p>#配置连接Zookeeper集群地址(修改处)</p>
-<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># KAFKA_HOME</span><br><span class="line">export KAFKA_HOME=/opt/module/kafka_2.12-2.8.2</span><br><span class="line">export PATH=$PATH:$KAFKA_HOME/bin</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># KAFKA_HOME</span><br><span class="line">export KAFKA_HOME=/opt/module/kafka_2.12-2.8.2</span><br><span class="line">export PATH=$PATH:$KAFKA_HOME/bin</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="分发安装包和配置文件"><a href="#分发安装包和配置文件" class="headerlink" title="分发安装包和配置文件"></a>分发安装包和配置文件</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp -r /opt/module/kafka_2.12-2.8.2/ root@slave1:/opt/module/</span><br><span class="line">scp -r /opt/module/kafka_2.12-2.8.2/ root@slave2:/opt/module/</span><br></pre></td></tr></table></figure>
+<h2 id="分发安装包和配置文件"><a href="#分发安装包和配置文件" class="headerlink" title="分发安装包和配置文件"></a>分发安装包和配置文件</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp -r /opt/module/kafka_2.12-2.8.2/ root@slave1:/opt/module/</span><br><span class="line">scp -r /opt/module/kafka_2.12-2.8.2/ root@slave2:/opt/module/</span><br></pre></td></tr></tbody></table></figure>
 
-<p><strong><font color="orange">分发安装包后一定要修改各个节点的&#x2F;config&#x2F;broker.id ！！！slave主机 改为 1、2</font></strong></p>
+<p><strong><font color="orange">分发安装包后一定要修改各个节点的/config/broker.id ！！！slave主机 改为 1、2</font></strong></p>
 <h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><h2 id="集群启动zookeeper"><a href="#集群启动zookeeper" class="headerlink" title="集群启动zookeeper"></a>集群启动zookeeper</h2><p><strong><font color="ondine">因为kafka依赖zk，所以先要启动zk</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/opt/module/zookeeper-3.4.6/bin/zkServer.sh start</span><br><span class="line">/opt/module/zookeeper-3.4.6/bin/zkServer.sh status</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/opt/module/zookeeper-3.4.6/bin/zkServer.sh start</span><br><span class="line">/opt/module/zookeeper-3.4.6/bin/zkServer.sh status</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="启动kafka-server-前台"><a href="#启动kafka-server-前台" class="headerlink" title="启动kafka server(前台)"></a>启动kafka server(前台)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/module/kafka_2.12-2.8.2/bin</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./kafka-server-start.sh ../config/server.properties</span><br></pre></td></tr></table></figure>
+<h2 id="启动kafka-server-前台"><a href="#启动kafka-server-前台" class="headerlink" title="启动kafka server(前台)"></a>启动kafka server(前台)</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/module/kafka_2.12-2.8.2/bin</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./kafka-server-start.sh ../config/server.properties</span><br></pre></td></tr></tbody></table></figure>
 
 <p><img src="/posts/679a8c54/1.png"></p>
 <p><strong><font color="orange">窗口会一直运行，输出结果前10行为成功，下面测试可选择进行</font></strong></p>
 <hr>
 <h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p><strong><font color="blue">1. 进入bin目录</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/module/kafka_2.12-2.8.2/bin</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/module/kafka_2.12-2.8.2/bin</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="blue">2. 启动kafka server(后台运行)</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./kafka-server-start.sh -daemon ../config/server.properties</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./kafka-server-start.sh -daemon ../config/server.properties</span><br></pre></td></tr></tbody></table></figure>
 <p><code>-daemon 参数挂起进程</code></p>
 <p><img src="/posts/679a8c54/7.png"></p>
 <p><strong><font color="blue">3. 查看端口已被监听，启动成功</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ss -tlnp | grep 9092</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ss -tlnp | grep 9092</span><br></pre></td></tr></tbody></table></figure>
 
 <p><img src="/posts/679a8c54/2.png"></p>
 <p><strong><font color="blue">4. 在 master 创建 topic(主题)</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./kafka-topics.sh --create --zookeeper 192.168.100.200:2181 --replication-factor 1 --partitions 1 --topic topic1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./kafka-topics.sh --create --zookeeper 192.168.100.200:2181 --replication-factor 1 --partitions 1 --topic topic1</span><br></pre></td></tr></tbody></table></figure>
 <p><img src="/posts/679a8c54/3.png"></p>
 <p><strong><font color="blue">5. 查看topic(主题) 信息</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./kafka-topics.sh --describe --zookeeper 192.168.100.200:2181 --topic topic1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./kafka-topics.sh --describe --zookeeper 192.168.100.200:2181 --topic topic1</span><br></pre></td></tr></tbody></table></figure>
 
 <p><img src="/posts/679a8c54/4.png"></p>
 <p><strong><font color="blue">6. 在 master 启动<font color="red">生产者控制台</font></font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./kafka-console-producer.sh --broker-list 192.168.100.200:9092 --topic topic1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./kafka-console-producer.sh --broker-list 192.168.100.200:9092 --topic topic1</span><br></pre></td></tr></tbody></table></figure>
 <p><strong><font color="ondine">例：下方图片填写的为 发送的信息</font></strong><br><img src="/posts/679a8c54/5.png"></p>
 <p><code>输入任意信息，然后消费者控制台可收到，发送的对应信息，关机后仍保存之前创建的 topic (主题)</code></p>
-<p><strong><font color="blue">7.  启动<font color="red">消费者控制台</font></font></strong></p>
+<p><strong><font color="blue">7.&nbsp; 启动<font color="red">消费者控制台</font></font></strong></p>
 <p><code>打开集群任意主机,需启动 jps Kafka 进程 </code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/module/kafka_2.12-2.8.2/bin</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./kafka-server-start.sh -daemon ../config/server.properties</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/module/kafka_2.12-2.8.2/bin</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./kafka-server-start.sh -daemon ../config/server.properties</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./kafka-console-consumer.sh --bootstrap-server 192.168.100.200:9092 --topic topic1 --from-beginning</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./kafka-console-consumer.sh --bootstrap-server 192.168.100.200:9092 --topic topic1 --from-beginning</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="ondine">此时在</font><font color="red">生产者控制台</font><font color="ondine">发一条测试消息，<font color="red">消费者控制台</font>即可收到</font></strong></p>
 <p><img src="/posts/679a8c54/6.png"></p>
 <hr>
 <h1 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h1><p><strong><font color="ondine">关闭kafka服务命令</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./kafka-server-stop.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./kafka-server-stop.sh</span><br></pre></td></tr></tbody></table></figure>
 
 <p><img src="/posts/679a8c54/8.png"></p>
 <p><strong><font color="ondine">在zk中查看创建的主题</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-topics.sh --list --bootstrap-server 192.168.100.200:9092,192.168.100.201:9092,192.168.100.202:9092</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-topics.sh --list --bootstrap-server 192.168.100.200:9092,192.168.100.201:9092,192.168.100.202:9092</span><br></pre></td></tr></tbody></table></figure>
 
 <p><img src="/posts/679a8c54/9.png"></p>
 <p><strong><font color="ondine">创建的主题：topic2</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./kafka-topics.sh --create --zookeeper 192.168.100.200:2181 --replication-factor 1 --partitions 1 --topic topic2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./kafka-topics.sh --create --zookeeper 192.168.100.200:2181 --replication-factor 1 --partitions 1 --topic topic2</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="ondine">删除创建的主题：topic2</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-topics.sh --delete --topic topic2 --zookeeper 192.168.100.200:2181</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-topics.sh --delete --topic topic2 --zookeeper 192.168.100.200:2181</span><br></pre></td></tr></tbody></table></figure>
 
 <p><img src="/posts/679a8c54/10.png"></p>
 <p><code>需在server.properties中增加设置，默认未开启delete.topic.enable=true,我们前面配置了</code></p>
@@ -741,9 +743,7 @@
                 </a>
               </div>
             
-
           </nav>
-
           
 
           
@@ -852,7 +852,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">97.5k</span>
+    <span title="Site words total count">91.6k</span>
   
 </div>
 
@@ -925,13 +925,14 @@
   
 
 
+
+
+
+
+
+
   
-
-
-
-
-
-
+  
 
 
 
@@ -969,7 +970,12 @@
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
   
 
 

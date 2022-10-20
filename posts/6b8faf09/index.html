@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,7 +19,7 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+  <link href="/lib/pace/pace-theme:minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -108,7 +108,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -146,7 +146,9 @@
 
 
 
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 <body itemscope itemtype="https://github.com/" lang="zh-Hans">
 
@@ -397,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  793
+                  777
                 </span>
               
 
@@ -413,7 +415,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  2
                 </span>
               
             </div>
@@ -436,19 +438,19 @@
       
         <h1 id="Scrapy"><a href="#Scrapy" class="headerlink" title="Scrapy"></a>Scrapy</h1><h2 id="Scrapy是什么？"><a href="#Scrapy是什么？" class="headerlink" title="Scrapy是什么？"></a>Scrapy是什么？</h2><p> Scrapy是一个为了爬取网站数据，提取结构性数据而编写的应用框架。 可以应用在包括数据挖掘，信息处理 或存储历史数据等一系列的程序中。</p>
 <p>安装scrapy：<br><strong>pip install scrapy</strong></p>
-<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">spiders</span><br><span class="line">	__init__.py</span><br><span class="line">	自定义的爬虫文件.py ‐‐‐》由我们自己创建，是实现爬虫核心功能的文件</span><br><span class="line">__init__.py</span><br><span class="line">items.py ‐‐‐》定义数据结构的地方，是一个继承自scrapy.Item的类</span><br><span class="line">middlewares.py ‐‐‐》中间件 代理</span><br><span class="line">pipelines.py ‐‐‐》管道文件，里面只有一个类，用于处理下载数据的后续处理默认是<span class="number">300</span>优先级，值越小优先级越高（<span class="number">1</span>‐<span class="number">1000</span>）</span><br><span class="line">settings.py ‐‐‐》配置文件 比如：是否遵守robots协议，User‐Agent定义等</span><br></pre></td></tr></table></figure>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">spiders</span><br><span class="line">	__init__.py</span><br><span class="line">	自定义的爬虫文件.py ‐‐‐》由我们自己创建，是实现爬虫核心功能的文件</span><br><span class="line">__init__.py</span><br><span class="line">items.py ‐‐‐》定义数据结构的地方，是一个继承自scrapy.Item的类</span><br><span class="line">middlewares.py ‐‐‐》中间件 代理</span><br><span class="line">pipelines.py ‐‐‐》管道文件，里面只有一个类，用于处理下载数据的后续处理默认是<span class="number">300</span>优先级，值越小优先级越高（<span class="number">1</span>‐<span class="number">1000</span>）</span><br><span class="line">settings.py ‐‐‐》配置文件 比如：是否遵守robots协议，User‐Agent定义等</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">注意：应在spiders文件夹内执</span><br><span class="line"></span><br><span class="line">创建项目：</span><br><span class="line">scrapy startproject 项目名</span><br><span class="line"></span><br><span class="line">创建爬虫文件：</span><br><span class="line">scrapy genspider 爬虫名 域名</span><br><span class="line"></span><br><span class="line">运行：</span><br><span class="line">scrapy crawl 爬虫名</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">注意：应在spiders文件夹内执</span><br><span class="line"></span><br><span class="line">创建项目：</span><br><span class="line">scrapy startproject 项目名</span><br><span class="line"></span><br><span class="line">创建爬虫文件：</span><br><span class="line">scrapy genspider 爬虫名 域名</span><br><span class="line"></span><br><span class="line">运行：</span><br><span class="line">scrapy crawl 爬虫名</span><br></pre></td></tr></tbody></table></figure>
 
 <p>创建后目录大致页如下</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">|-ProjectName              #项目文件夹</span><br><span class="line"></span><br><span class="line">   |-ProjectName           #项目目录</span><br><span class="line">         |-spiders               </span><br><span class="line">    </span><br><span class="line">          |-__init__.py       #爬虫文件</span><br><span class="line">    </span><br><span class="line">          |-baidu.py          #自定义的爬虫文件 核心功能</span><br><span class="line"></span><br><span class="line">      |-items.py               #定义数据结构</span><br><span class="line">    </span><br><span class="line">      |-middlewares.py        #中间件</span><br><span class="line">    </span><br><span class="line">      |-pipelines.py          #数据处理</span><br><span class="line">    </span><br><span class="line">      |-settings.py            #全局配置</span><br><span class="line"></span><br><span class="line">   |-scrapy.cfg               #项目基本配置文件</span><br></pre></td></tr></table></figure>
-<h2 id="Scrapy架构"><a href="#Scrapy架构" class="headerlink" title="Scrapy架构"></a>Scrapy架构</h2><h3 id="Scrapy架构组成"><a href="#Scrapy架构组成" class="headerlink" title="Scrapy架构组成"></a>Scrapy架构组成</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">（1）引擎 ‐‐‐》自动运行，无需关注，会自动组织所有的请求对象，分发给下载器</span><br><span class="line">（2）下载器 ‐‐‐》从引擎处获取到请求对象后，请求数据</span><br><span class="line">（3）spiders ‐‐‐》Spider类定义了如何爬取某个(或某些)网站。包括了爬取的动作(例如:是否跟进链接)以及如何从网页的内容中提取结构化数据(爬取item)。 换句话说，Spider就是您定义爬取的动作及分析某个网页(或者是有些网页)的地方。</span><br><span class="line">（4）调度器 ‐‐‐》有自己的调度规则，无需关注</span><br><span class="line">（5）管道（Item pipeline） ‐‐‐》最终处理数据的管道，会预留接口供我们处理数据当Item在Spider中被收集之后，它将会被传递到Item Pipeline，一些组件会按照一定的顺序执行对Item的处理。每个item pipeline组件(有时称之为“Item Pipeline”)是实现了简单方法的Python类。他们接收到Item并通过它执行一些行为，同时也决定此Item是否继续通过pipeline，或是被丢弃而不再进行处理。</span><br><span class="line">以下是item pipeline的一些典型应用：</span><br><span class="line">1. 清理HTML数据</span><br><span class="line">2. 验证爬取的数据(检查item包含某些字段)</span><br><span class="line">3. 查重(并丢弃)</span><br><span class="line">4. 将爬取结果保存到数据库中</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">|-ProjectName              #项目文件夹</span><br><span class="line"></span><br><span class="line">   |-ProjectName           #项目目录</span><br><span class="line">         |-spiders               </span><br><span class="line">    </span><br><span class="line">          |-__init__.py       #爬虫文件</span><br><span class="line">    </span><br><span class="line">          |-baidu.py          #自定义的爬虫文件 核心功能</span><br><span class="line"></span><br><span class="line">      |-items.py               #定义数据结构</span><br><span class="line">    </span><br><span class="line">      |-middlewares.py        #中间件</span><br><span class="line">    </span><br><span class="line">      |-pipelines.py          #数据处理</span><br><span class="line">    </span><br><span class="line">      |-settings.py            #全局配置</span><br><span class="line"></span><br><span class="line">   |-scrapy.cfg               #项目基本配置文件</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Scrapy架构"><a href="#Scrapy架构" class="headerlink" title="Scrapy架构"></a>Scrapy架构</h2><h3 id="Scrapy架构组成"><a href="#Scrapy架构组成" class="headerlink" title="Scrapy架构组成"></a>Scrapy架构组成</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">（1）引擎 ‐‐‐》自动运行，无需关注，会自动组织所有的请求对象，分发给下载器</span><br><span class="line">（2）下载器 ‐‐‐》从引擎处获取到请求对象后，请求数据</span><br><span class="line">（3）spiders ‐‐‐》Spider类定义了如何爬取某个(或某些)网站。包括了爬取的动作(例如:是否跟进链接)以及如何从网页的内容中提取结构化数据(爬取item)。 换句话说，Spider就是您定义爬取的动作及分析某个网页(或者是有些网页)的地方。</span><br><span class="line">（4）调度器 ‐‐‐》有自己的调度规则，无需关注</span><br><span class="line">（5）管道（Item pipeline） ‐‐‐》最终处理数据的管道，会预留接口供我们处理数据当Item在Spider中被收集之后，它将会被传递到Item Pipeline，一些组件会按照一定的顺序执行对Item的处理。每个item pipeline组件(有时称之为“Item Pipeline”)是实现了简单方法的Python类。他们接收到Item并通过它执行一些行为，同时也决定此Item是否继续通过pipeline，或是被丢弃而不再进行处理。</span><br><span class="line">以下是item pipeline的一些典型应用：</span><br><span class="line">1. 清理HTML数据</span><br><span class="line">2. 验证爬取的数据(检查item包含某些字段)</span><br><span class="line">3. 查重(并丢弃)</span><br><span class="line">4. 将爬取结果保存到数据库中</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="Scrapy工作原理"><a href="#Scrapy工作原理" class="headerlink" title="Scrapy工作原理"></a>Scrapy工作原理</h3><img src="/posts/6b8faf09/1.png" style="zoom:80%;">
 
 <img src="/posts/6b8faf09/2.png" style="zoom:80%;">
 
-<h2 id="全局配置文件settings-py"><a href="#全局配置文件settings-py" class="headerlink" title="全局配置文件settings.py"></a>全局配置文件settings.py</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">BOT_NAME = <span class="string">&#x27;scrapy_baidu_091&#x27;</span>  <span class="comment">#项目名</span></span><br><span class="line">ROBOTSTXT_OBEY = <span class="literal">False</span> 		   <span class="comment">#是否遵循机器人协议</span></span><br><span class="line">CONCURRENT_REQUESTS = <span class="number">32</span>       <span class="comment">#最大并发数</span></span><br><span class="line">DOWNLOAD_DELAY = <span class="number">3</span>   		   <span class="comment">#下载延迟时间</span></span><br><span class="line">COOKIES_ENABLED = <span class="literal">False</span>        <span class="comment">#是否保存Cookies</span></span><br><span class="line">DEFAULT_REQUEST_HEADERS = &#123;    <span class="comment">#默认请求头</span></span><br><span class="line">   <span class="string">&#x27;Accept&#x27;</span>: <span class="string">&#x27;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#x27;</span>,</span><br><span class="line">   <span class="string">&#x27;Accept-Language&#x27;</span>: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">&#125;</span><br><span class="line">ITEM_PIPELINES = &#123;             <span class="comment">#项目管道，300为优先级，越低爬取的优先度越高</span></span><br><span class="line">   <span class="string">&#x27;scrapy_baidu_091.pipelines.ScrapyBaidu091Pipeline&#x27;</span>: <span class="number">300</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="全局配置文件settings-py"><a href="#全局配置文件settings-py" class="headerlink" title="全局配置文件settings.py"></a>全局配置文件settings.py</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">BOT_NAME = <span class="string">'scrapy_baidu_091'</span>  <span class="comment">#项目名</span></span><br><span class="line">ROBOTSTXT_OBEY = <span class="literal">False</span> 		   <span class="comment">#是否遵循机器人协议</span></span><br><span class="line">CONCURRENT_REQUESTS = <span class="number">32</span>       <span class="comment">#最大并发数</span></span><br><span class="line">DOWNLOAD_DELAY = <span class="number">3</span>   		   <span class="comment">#下载延迟时间</span></span><br><span class="line">COOKIES_ENABLED = <span class="literal">False</span>        <span class="comment">#是否保存Cookies</span></span><br><span class="line">DEFAULT_REQUEST_HEADERS = {    <span class="comment">#默认请求头</span></span><br><span class="line">   <span class="string">'Accept'</span>: <span class="string">'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'</span>,</span><br><span class="line">   <span class="string">'Accept-Language'</span>: <span class="string">'en'</span>,</span><br><span class="line">}</span><br><span class="line">ITEM_PIPELINES = {             <span class="comment">#项目管道，300为优先级，越低爬取的优先度越高</span></span><br><span class="line">   <span class="string">'scrapy_baidu_091.pipelines.ScrapyBaidu091Pipeline'</span>: <span class="number">300</span>,</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 
 
@@ -620,9 +622,7 @@
                 </a>
               </div>
             
-
           </nav>
-
           
 
           
@@ -731,7 +731,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">97.5k</span>
+    <span title="Site words total count">91.6k</span>
   
 </div>
 
@@ -804,13 +804,14 @@
   
 
 
+
+
+
+
+
+
   
-
-
-
-
-
-
+  
 
 
 
@@ -848,7 +849,12 @@
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
   
 
 

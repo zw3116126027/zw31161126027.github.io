@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,7 +19,7 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+  <link href="/lib/pace/pace-theme:minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -105,7 +105,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -143,7 +143,9 @@
 
 
 
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 <body itemscope itemtype="https://github.com/" lang="zh-Hans">
 
@@ -394,7 +396,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.3k
+                  2.2k
                 </span>
               
 
@@ -437,7 +439,7 @@
 <p>static修饰的变量和方法可以通过类名和对象名访问，<code>而不用static修饰的变量和方法只能通过对象名访问。</code></p>
 </blockquote>
 <ul>
-<li>类变量或静态常量：static修饰的属性称为类属性（类变量）<br>如：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Student</span> <span class="variable">zhangshan</span> <span class="operator">=</span><span class="keyword">new</span> <span class="title class_">Student</span>();</span><br><span class="line">        Student.play();   <span class="comment">//类的属性 直接用类名调用</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Student</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">play</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;打游戏&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>类变量或静态常量：static修饰的属性称为类属性（类变量）<br>如：<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">main</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">Student</span> <span class="variable">zhangshan</span> <span class="operator">=</span><span class="keyword">new</span> <span class="title class_">Student</span>();</span><br><span class="line">        Student.play();   <span class="comment">//类的属性 直接用类名调用</span></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Student</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">play</span><span class="params">()</span>{</span><br><span class="line">        System.out.println(<span class="string">"打游戏"</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
 </ul>
 <hr>
 <h2 id="方法名的重载和重写"><a href="#方法名的重载和重写" class="headerlink" title="方法名的重载和重写"></a>方法名的重载和重写</h2><h3 id="方法的重载：指同一个类中多个方法："><a href="#方法的重载：指同一个类中多个方法：" class="headerlink" title="方法的重载：指同一个类中多个方法："></a>方法的重载：指同一个类中多个方法：</h3><ul>
@@ -460,7 +462,7 @@
 </li>
 <li><p>方法名、参数列表必须相同，子类方法返回值类型应比父类方法返回值类型更小或相等，抛出的异常范围小于等于父类，访问修饰符范围大于等于父类。</p>
 </li>
-<li><p>如果父类方法访问修饰符为 private&#x2F;final&#x2F;static 则子类就不能重写该方法，但是被 static 修饰的方法能够被再次声明。<br>构造方法无法被重写</p>
+<li><p>如果父类方法访问修饰符为 private/final/static 则子类就不能重写该方法，但是被 static 修饰的方法能够被再次声明。<br>构造方法无法被重写</p>
 <h2 id="综上：重写就是子类对父类方法的重新改造，外部样子不能改变，内部逻辑可以改变。"><a href="#综上：重写就是子类对父类方法的重新改造，外部样子不能改变，内部逻辑可以改变。" class="headerlink" title="综上：重写就是子类对父类方法的重新改造，外部样子不能改变，内部逻辑可以改变。"></a>综上：重写就是子类对父类方法的重新改造，外部样子不能改变，内部逻辑可以改变。</h2></li>
 </ol>
 <h2 id="重载和重写的区别"><a href="#重载和重写的区别" class="headerlink" title="重载和重写的区别"></a>重载和重写的区别</h2><ul>
@@ -484,7 +486,7 @@
 </li>
 </ul>
 <hr>
-<h2 id="extends关键字"><a href="#extends关键字" class="headerlink" title="extends关键字"></a><strong>extends关键字</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Pet</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name; <span class="comment">//昵称</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> health;  <span class="comment">//健康值</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> love;    <span class="comment">//亲密值</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name+<span class="string">&#x27;，&#x27;</span>+health+<span class="string">&#x27;,&#x27;</span>+love;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Penguin</span> <span class="keyword">extends</span> <span class="title class_">Pet</span> &#123;   <span class="comment">//extends 继承关键字</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">nale</span> <span class="operator">=</span><span class="string">&quot;Q仔&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">fenale</span> <span class="operator">=</span><span class="string">&quot;Q妹&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="extends关键字"><a href="#extends关键字" class="headerlink" title="extends关键字"></a><strong>extends关键字</strong></h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Pet</span> {</span><br><span class="line">    <span class="keyword">private</span> String name; <span class="comment">//昵称</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> health;  <span class="comment">//健康值</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> love;    <span class="comment">//亲密值</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span>{</span><br><span class="line">        <span class="keyword">return</span> name+<span class="string">'，'</span>+health+<span class="string">','</span>+love;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Penguin</span> <span class="keyword">extends</span> <span class="title class_">Pet</span> {   <span class="comment">//extends 继承关键字</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">nale</span> <span class="operator">=</span><span class="string">"Q仔"</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">fenale</span> <span class="operator">=</span><span class="string">"Q妹"</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p><strong>有些父类成员不能继承：</strong></p>
 <ul>
 <li><code>private成员</code> </li>
@@ -510,16 +512,16 @@
 <li>参数列表与父类方法相同。</li>
 <li>返回值类型与父类方法相同。</li>
 <li>子类方法访问权限不能比父类更严格。</li>
-<li>抛出的异常<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Penguin</span> <span class="keyword">extends</span> <span class="title class_">Pet</span> &#123;  <span class="comment">//Penguin子类重写toString()</span></span><br><span class="line">    <span class="keyword">public</span>  <span class="keyword">static</span> <span class="type">String</span> <span class="variable">nale</span> <span class="operator">=</span> <span class="string">&quot;Q仔&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span>  <span class="keyword">static</span> <span class="type">String</span> <span class="variable">fenale</span> <span class="operator">=</span> <span class="string">&quot;Q妹&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> String sex;   <span class="comment">//性别</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span>&#123;   <span class="comment">//Penguin子类重写toString()</span></span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">info</span> <span class="operator">=</span> <span class="built_in">super</span>.toString(); <span class="comment">//toString():访问父类的方法</span></span><br><span class="line">        <span class="keyword">return</span> info+<span class="string">&quot;,&quot;</span>+sex;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>抛出的异常<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Penguin</span> <span class="keyword">extends</span> <span class="title class_">Pet</span> {  <span class="comment">//Penguin子类重写toString()</span></span><br><span class="line">    <span class="keyword">public</span>  <span class="keyword">static</span> <span class="type">String</span> <span class="variable">nale</span> <span class="operator">=</span> <span class="string">"Q仔"</span>;</span><br><span class="line">    <span class="keyword">public</span>  <span class="keyword">static</span> <span class="type">String</span> <span class="variable">fenale</span> <span class="operator">=</span> <span class="string">"Q妹"</span>;</span><br><span class="line">    <span class="keyword">public</span> String sex;   <span class="comment">//性别</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span>{   <span class="comment">//Penguin子类重写toString()</span></span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">info</span> <span class="operator">=</span> <span class="built_in">super</span>.toString(); <span class="comment">//toString():访问父类的方法</span></span><br><span class="line">        <span class="keyword">return</span> info+<span class="string">","</span>+sex;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
 </ul>
 <hr>
 <h2 id="抽象类、抽象方法和abstract关键字"><a href="#抽象类、抽象方法和abstract关键字" class="headerlink" title="抽象类、抽象方法和abstract关键字"></a><strong>抽象类、抽象方法和abstract关键字</strong></h2><h3 id="1-抽象类"><a href="#1-抽象类" class="headerlink" title="1. 抽象类"></a>1. 抽象类</h3><ul>
 <li>在继承关系中，去实例化一个父类没有意义，<code>它的特征和方法无法确定，可以使用抽象类来限制父类被实例化，抽象类是不能被实例化的。</code><br>如：<blockquote>
-<p>Pet ww &#x3D; new Pet(); &#x2F;&#x2F;实例化父类没有意义</p>
+<p>Pet ww = new Pet(); //实例化父类没有意义</p>
 </blockquote>
 </li>
-<li>抽象类用关键字abstract来修饰。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Pet</span> &#123;   <span class="comment">//抽象类</span></span><br><span class="line">    <span class="keyword">private</span> String name; <span class="comment">//昵称</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> health;  <span class="comment">//健康值</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> love;    <span class="comment">//亲密值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Penguin</span> <span class="keyword">extends</span> <span class="title class_">Pet</span> &#123;  <span class="comment">//企鹅类</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="type">Pet</span> <span class="variable">ww</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Pet</span>();   <span class="comment">//语法错误，抽象类无法实例化</span></span><br><span class="line">    <span class="type">Pet</span> <span class="variable">zw</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Penguin</span>(); <span class="comment">//正确</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-抽象方法"><a href="#2-抽象方法" class="headerlink" title="2. 抽象方法"></a>2. 抽象方法</h3>父类的play方法，<code>每个子类实现步骤都不一样，即方法体没有实际意义的语句</code>，像这样的方法可以写成抽象方法。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Penguin</span> <span class="keyword">extends</span> <span class="title class_">Pet</span> &#123;  <span class="comment">//子类</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">play</span><span class="params">()</span>&#123; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Pet</span> &#123;   <span class="comment">//父类</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">play</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>抽象类用关键字abstract来修饰。<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Pet</span> {   <span class="comment">//抽象类</span></span><br><span class="line">    <span class="keyword">private</span> String name; <span class="comment">//昵称</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> health;  <span class="comment">//健康值</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> love;    <span class="comment">//亲密值</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Penguin</span> <span class="keyword">extends</span> <span class="title class_">Pet</span> {  <span class="comment">//企鹅类</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">main</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">    <span class="type">Pet</span> <span class="variable">ww</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Pet</span>();   <span class="comment">//语法错误，抽象类无法实例化</span></span><br><span class="line">    <span class="type">Pet</span> <span class="variable">zw</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Penguin</span>(); <span class="comment">//正确</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="2-抽象方法"><a href="#2-抽象方法" class="headerlink" title="2. 抽象方法"></a>2. 抽象方法</h3>父类的play方法，<code>每个子类实现步骤都不一样，即方法体没有实际意义的语句</code>，像这样的方法可以写成抽象方法。<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Penguin</span> <span class="keyword">extends</span> <span class="title class_">Pet</span> {  <span class="comment">//子类</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">play</span><span class="params">()</span>{ </span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Pet</span> {   <span class="comment">//父类</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">play</span><span class="params">()</span>;</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></li>
 <li><code>抽象方法用abstract关键字修饰。</code></li>
 <li><code>抽象方法没有方法体。</code></li>
 <li><code>抽象方法必须在抽象类里。</code></li>
@@ -527,9 +529,9 @@
 </ul>
 <hr>
 <h2 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a><strong>final关键字</strong></h2><p><code>final关键字修饰的变量的值是最终的值，即不能修改它的值—常量。</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">nale</span> <span class="operator">=</span> <span class="string">&quot;Q仔&quot;</span>;   <span class="comment">//final 修饰变量的最终值</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">fenale</span> <span class="operator">=</span> <span class="string">&quot;Q妹&quot;</span>;  <span class="comment">//final 修饰变量的最终值</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">nale</span> <span class="operator">=</span> <span class="string">"Q仔"</span>;   <span class="comment">//final 修饰变量的最终值</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">fenale</span> <span class="operator">=</span> <span class="string">"Q妹"</span>;  <span class="comment">//final 修饰变量的最终值</span></span><br></pre></td></tr></tbody></table></figure>
 <p><code>final关键字修饰的类为最终的子类—不能被继承。</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">class</span> <span class="title class_">Penguin</span> <span class="keyword">extends</span> <span class="title class_">Pet</span>  &#123;   <span class="comment">//最终只类</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">class</span> <span class="title class_">Penguin</span> <span class="keyword">extends</span> <span class="title class_">Pet</span>  {   <span class="comment">//最终只类</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>1、final修饰的类不可以被继承，但可以继承其他的类。</p>
 <p>2、final修饰的方法子类可以继承但是不能重写。</p>
 <p>3、子类重写父类的非final方法可以加上final。</p>
@@ -541,8 +543,8 @@
 <hr>
 <h2 id="多态性"><a href="#多态性" class="headerlink" title="多态性"></a><strong>多态性</strong></h2><ol>
 <li>对象的多态性：父类的引用指向子类的对象（子类的对象赋给父类的引用）</li>
-<li>多态的使用，虚拟方法调用有了对象的多态性后,我们在编译期，只能调用父类声明的方法，但在运行期，我们实际指向的是子类重写父类方法。<br><code>总结：编译，看左边；运行,看右边。</code><br>如：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Pet</span> <span class="variable">qq</span> <span class="operator">=</span><span class="keyword">new</span> <span class="title class_">Penguin</span>();  <span class="comment">//对象的多态性：父类的引用指向子类的对象</span></span><br><span class="line"><span class="type">Pet</span> <span class="variable">ww</span> <span class="operator">=</span><span class="keyword">new</span> <span class="title class_">Pet</span>();</span><br></pre></td></tr></table></figure></li>
-<li>多态性的使用前提：<code>只适用于方法，不适用于属性（属性不会被覆盖和重写）</code><br>如：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Pet qq=<span class="keyword">new</span> <span class="title class_">Penguin</span>();</span><br><span class="line">System.out.println(qq.j);   <span class="comment">//调用父类的变量</span></span><br></pre></td></tr></table></figure></li>
+<li>多态的使用，虚拟方法调用有了对象的多态性后,我们在编译期，只能调用父类声明的方法，但在运行期，我们实际指向的是子类重写父类方法。<br><code>总结：编译，看左边；运行,看右边。</code><br>如：<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Pet</span> <span class="variable">qq</span> <span class="operator">=</span><span class="keyword">new</span> <span class="title class_">Penguin</span>();  <span class="comment">//对象的多态性：父类的引用指向子类的对象</span></span><br><span class="line"><span class="type">Pet</span> <span class="variable">ww</span> <span class="operator">=</span><span class="keyword">new</span> <span class="title class_">Pet</span>();</span><br></pre></td></tr></tbody></table></figure></li>
+<li>多态性的使用前提：<code>只适用于方法，不适用于属性（属性不会被覆盖和重写）</code><br>如：<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Pet qq=<span class="keyword">new</span> <span class="title class_">Penguin</span>();</span><br><span class="line">System.out.println(qq.j);   <span class="comment">//调用父类的变量</span></span><br></pre></td></tr></tbody></table></figure></li>
 <li>“不要犯傻，如果它不是晚绑定，它就不是多态”</li>
 </ol>
 <h1 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h1><h3 id="abstract-抽象的"><a href="#abstract-抽象的" class="headerlink" title="abstract 抽象的"></a>abstract 抽象的</h3><ol>
@@ -748,9 +750,7 @@
                 </a>
               </div>
             
-
           </nav>
-
           
 
           
@@ -859,7 +859,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">97.5k</span>
+    <span title="Site words total count">91.6k</span>
   
 </div>
 
@@ -932,13 +932,14 @@
   
 
 
+
+
+
+
+
+
   
-
-
-
-
-
-
+  
 
 
 
@@ -976,7 +977,12 @@
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
   
 
 

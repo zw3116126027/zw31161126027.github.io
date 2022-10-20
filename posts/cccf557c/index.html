@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,7 +19,7 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+  <link href="/lib/pace/pace-theme:minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -86,12 +86,12 @@
 
 
 
-<meta name="description" content="下载jdk进入华为镜像网址：https:&#x2F;&#x2F;repo.huaweicloud.com&#x2F;java&#x2F;jdk&#x2F;  选择：8u181-b13  下载：jdk-8u181-linux-x64.tar.gz        安装jdk在opt目录下创建 module目录 1mkdir &#x2F;opt&#x2F;module   进入到安装包目录下，解压安装包到opt&#x2F;module目录    tar -zxvf jdk">
+<meta name="description" content="下载jdk进入华为镜像网址：https:&#x2F;&#x2F;repo.huaweicloud.com&#x2F;java&#x2F;jdk&#x2F;  选择：8u181-b13  下载：jdk-8u181-linux-x64.tar.gz        安装jdk在opt目录下创建 module目录 1mkdir &#x2F;opt&#x2F;module   进入到安装包目录下，解压安装包到opt&#x2F;module目录    tar -zxvf jdk -8u2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Linux里安装jdk">
 <meta property="og:url" content="http://blog-zw.top/posts/cccf557c/index.html">
 <meta property="og:site_name" content="&#x3D;-&#x3D;">
-<meta property="og:description" content="下载jdk进入华为镜像网址：https:&#x2F;&#x2F;repo.huaweicloud.com&#x2F;java&#x2F;jdk&#x2F;  选择：8u181-b13  下载：jdk-8u181-linux-x64.tar.gz        安装jdk在opt目录下创建 module目录 1mkdir &#x2F;opt&#x2F;module   进入到安装包目录下，解压安装包到opt&#x2F;module目录    tar -zxvf jdk">
+<meta property="og:description" content="下载jdk进入华为镜像网址：https:&#x2F;&#x2F;repo.huaweicloud.com&#x2F;java&#x2F;jdk&#x2F;  选择：8u181-b13  下载：jdk-8u181-linux-x64.tar.gz        安装jdk在opt目录下创建 module目录 1mkdir &#x2F;opt&#x2F;module   进入到安装包目录下，解压安装包到opt&#x2F;module目录    tar -zxvf jdk -8u2">
 <meta property="og:locale">
 <meta property="og:image" content="http://blog-zw.top/posts/cccf557c/2.png">
 <meta property="og:image" content="http://blog-zw.top/posts/cccf557c/3.png">
@@ -108,7 +108,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -146,7 +146,9 @@
 
 
 
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 <body itemscope itemtype="https://github.com/" lang="zh-Hans">
 
@@ -397,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  159
+                  146
                 </span>
               
 
@@ -447,14 +449,14 @@
 
 <hr>
 <h1 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h1><p>在opt目录下创建 module目录</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/module</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/module</span><br></pre></td></tr></tbody></table></figure>
 
 <ol>
-<li><strong>进入到安装包目录下，解压安装包到opt&#x2F;module目录</strong></li>
+<li><strong>进入到安装包目录下，解压安装包到opt/module目录</strong></li>
 </ol>
 <ul>
 <li><blockquote>
-<p><strong>tar -zxvf jdk -8u22l-linux-x64.tar.gz  -C &#x2F;opt</strong></p>
+<p><strong>tar -zxvf jdk -8u22l-linux-x64.tar.gz  -C /opt</strong></p>
 </blockquote>
 </li>
 </ul>
@@ -463,15 +465,15 @@
 </ol>
 <ul>
 <li><blockquote>
-<p> <strong>vim &#x2F;etc&#x2F;profile</strong>        —-进入etc&#x2F;profile配置全局变量</p>
+<p> <strong>vim /etc/profile</strong>        —-进入etc/profile配置全局变量</p>
 </blockquote>
 </li>
 <li><blockquote>
-<p> <strong>export JAVA_HOME&#x3D;&#x2F; opt&#x2F;module&#x2F;jdk1.8.0_181</strong> </p>
+<p> <strong>export JAVA_HOME=/ opt/module/jdk1.8.0_181</strong> </p>
 </blockquote>
 </li>
 <li><blockquote>
-<p> <strong>export PATH&#x3D;$PATH:$JAVA_HOME&#x2F;bin</strong></p>
+<p> <strong>export PATH=$PATH:$JAVA_HOME/bin</strong></p>
 </blockquote>
 </li>
 </ul>
@@ -480,7 +482,7 @@
 </ol>
 <ul>
 <li><blockquote>
-<p><strong>source &#x2F;etc&#x2F;profile</strong>    —-重新加载配置文件</p>
+<p><strong>source /etc/profile</strong>    —-重新加载配置文件</p>
 </blockquote>
 </li>
 <li><blockquote>
@@ -641,9 +643,7 @@
                 </a>
               </div>
             
-
           </nav>
-
           
 
           
@@ -752,7 +752,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">97.5k</span>
+    <span title="Site words total count">91.6k</span>
   
 </div>
 
@@ -825,13 +825,14 @@
   
 
 
+
+
+
+
+
+
   
-
-
-
-
-
-
+  
 
 
 
@@ -869,7 +870,12 @@
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
   
 
 

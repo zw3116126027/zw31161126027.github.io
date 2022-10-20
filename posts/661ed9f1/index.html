@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,7 +19,7 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+  <link href="/lib/pace/pace-theme:minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -107,7 +107,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -145,7 +145,9 @@
 
 
 
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 <body itemscope itemtype="https://github.com/" lang="zh-Hans">
 
@@ -396,7 +398,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  675
+                  672
                 </span>
               
 
@@ -502,22 +504,22 @@
 <p>例：下载 sqoop-1.4.2.bin__hadoop-2.0.0-alpha.tar.gz 版本</p>
 </blockquote>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="解压安装包"><a href="#解压安装包" class="headerlink" title="解压安装包"></a>解压安装包</h2><p><strong><font color="blue">在opt目录下创建 module目录</font></strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/module</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/module</span><br></pre></td></tr></tbody></table></figure>
 
-<p><strong><font color="blue">解压安装包至opt&#x2F;module目录，并重命名</font></strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf sqoop-1.4.2.bin__hadoop-2.0.0-alpha.tar.gz -C /opt/module/</span><br></pre></td></tr></table></figure>
+<p><strong><font color="blue">解压安装包至opt/module目录，并重命名</font></strong></p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf sqoop-1.4.2.bin__hadoop-2.0.0-alpha.tar.gz -C /opt/module/</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv sqoop-1.4.2.bin__hadoop-2.0.0-alpha/ sqoop-1.4.2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv sqoop-1.4.2.bin__hadoop-2.0.0-alpha/ sqoop-1.4.2</span><br></pre></td></tr></tbody></table></figure>
 
 <h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><p><strong><font color="ondine">Sqoop的配置文件与大多数大数据框架类似，在sqoop根目录下的conf目录中</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/module/sqoop-1.4.2/conf/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/module/sqoop-1.4.2/conf/</span><br></pre></td></tr></tbody></table></figure>
 <p><strong><font color="blue">重命名配置文件</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv sqoop-env-template.sh sqoop-env.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv sqoop-env-template.sh sqoop-env.sh</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="blue">修改配置文件</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim sqoop-env.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim sqoop-env.sh</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export HADOOP_COMMON_HOME=/opt/module/hadoop-2.7.7</span><br><span class="line">export HADOOP_MAPRED_HOME=/opt/module/hadoop-2.7.7</span><br><span class="line">export HIVE_HOME=/opt/module/hive-2.3.4</span><br><span class="line">export ZOOKEEPER_HOME=/opt/module/zookeeper-3.4.6</span><br><span class="line">export ZOOCFGDIR=/opt/module/zookeeper-3.4.6</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export HADOOP_COMMON_HOME=/opt/module/hadoop-2.7.7</span><br><span class="line">export HADOOP_MAPRED_HOME=/opt/module/hadoop-2.7.7</span><br><span class="line">export HIVE_HOME=/opt/module/hive-2.3.4</span><br><span class="line">export ZOOKEEPER_HOME=/opt/module/zookeeper-3.4.6</span><br><span class="line">export ZOOCFGDIR=/opt/module/zookeeper-3.4.6</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="blue">拷贝jdbc驱动到sqoop的lib目录下</font></strong></p>
 <p><a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/c-j/">JDBC驱动程序下载</a></p>
@@ -527,15 +529,15 @@
 <p><strong><font color="ondine">下载 zip格式 进行解压上传mysql-connector-java-5.1.37-bin.jar 到sqoop的lib目录下</font></strong></p>
 <img src="/posts/661ed9f1/1.png" style="zoom: 50%;">
 
-<h2 id="验证Sqoop"><a href="#验证Sqoop" class="headerlink" title="验证Sqoop"></a>验证Sqoop</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/module/sqoop-1.4.2/bin/sqoop help</span><br></pre></td></tr></table></figure>
+<h2 id="验证Sqoop"><a href="#验证Sqoop" class="headerlink" title="验证Sqoop"></a>验证Sqoop</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/module/sqoop-1.4.2/bin/sqoop help</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="pink">结果：</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@master ~]# /opt/module/sqoop-1.4.2/bin/sqoop help</span><br><span class="line">Warning: /usr/lib/hbase does not exist! HBase imports will fail.</span><br><span class="line">Please set $HBASE_HOME to the root of your HBase installation.</span><br><span class="line">usage: sqoop COMMAND [ARGS]</span><br><span class="line"></span><br><span class="line">Available commands:</span><br><span class="line">  codegen            Generate code to interact with database records</span><br><span class="line">  create-hive-table  Import a table definition into Hive</span><br><span class="line">  eval               Evaluate a SQL statement and display the results</span><br><span class="line">  export             Export an HDFS directory to a database table</span><br><span class="line">  help               List available commands</span><br><span class="line">  import             Import a table from a database to HDFS</span><br><span class="line">  import-all-tables  Import tables from a database to HDFS</span><br><span class="line">  job                Work with saved jobs</span><br><span class="line">  list-databases     List available databases on a server</span><br><span class="line">  list-tables        List available tables in a database</span><br><span class="line">  merge              Merge results of incremental imports</span><br><span class="line">  metastore          Run a standalone Sqoop metastore</span><br><span class="line">  version            Display version information</span><br><span class="line"></span><br><span class="line">See &#x27;sqoop help COMMAND&#x27; for information on a specific command.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@master ~]# /opt/module/sqoop-1.4.2/bin/sqoop help</span><br><span class="line">Warning: /usr/lib/hbase does not exist! HBase imports will fail.</span><br><span class="line">Please set $HBASE_HOME to the root of your HBase installation.</span><br><span class="line">usage: sqoop COMMAND [ARGS]</span><br><span class="line"></span><br><span class="line">Available commands:</span><br><span class="line">  codegen            Generate code to interact with database records</span><br><span class="line">  create-hive-table  Import a table definition into Hive</span><br><span class="line">  eval               Evaluate a SQL statement and display the results</span><br><span class="line">  export             Export an HDFS directory to a database table</span><br><span class="line">  help               List available commands</span><br><span class="line">  import             Import a table from a database to HDFS</span><br><span class="line">  import-all-tables  Import tables from a database to HDFS</span><br><span class="line">  job                Work with saved jobs</span><br><span class="line">  list-databases     List available databases on a server</span><br><span class="line">  list-tables        List available tables in a database</span><br><span class="line">  merge              Merge results of incremental imports</span><br><span class="line">  metastore          Run a standalone Sqoop metastore</span><br><span class="line">  version            Display version information</span><br><span class="line"></span><br><span class="line">See 'sqoop help COMMAND' for information on a specific command.</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="测试是否能够成功连接数据库"><a href="#测试是否能够成功连接数据库" class="headerlink" title="测试是否能够成功连接数据库"></a>测试是否能够成功连接数据库</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/module/sqoop-1.4.2/bin/sqoop list-databases --connect jdbc:mysql://192.168.100.200:3306/ --username root --password 123456</span><br></pre></td></tr></table></figure>
+<h2 id="测试是否能够成功连接数据库"><a href="#测试是否能够成功连接数据库" class="headerlink" title="测试是否能够成功连接数据库"></a>测试是否能够成功连接数据库</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/module/sqoop-1.4.2/bin/sqoop list-databases --connect jdbc:mysql://192.168.100.200:3306/ --username root --password 123456</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="pink">结果：</font></strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@master ~]# /opt/module/sqoop-1.4.2/bin/sqoop list-databases --connect jdbc:mysql://192.168.100.200:3306/ --username root --password 123456</span><br><span class="line">Warning: /usr/lib/hbase does not exist! HBase imports will fail.</span><br><span class="line">Please set $HBASE_HOME to the root of your HBase installation.</span><br><span class="line">22/09/25 17:02:51 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.</span><br><span class="line">22/09/25 17:02:51 INFO manager.MySQLManager: Preparing to use a MySQL streaming resultset.</span><br><span class="line">information_schema</span><br><span class="line">hive</span><br><span class="line">mysql</span><br><span class="line">performance_schema</span><br><span class="line">sys</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@master ~]# /opt/module/sqoop-1.4.2/bin/sqoop list-databases --connect jdbc:mysql://192.168.100.200:3306/ --username root --password 123456</span><br><span class="line">Warning: /usr/lib/hbase does not exist! HBase imports will fail.</span><br><span class="line">Please set $HBASE_HOME to the root of your HBase installation.</span><br><span class="line">22/09/25 17:02:51 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.</span><br><span class="line">22/09/25 17:02:51 INFO manager.MySQLManager: Preparing to use a MySQL streaming resultset.</span><br><span class="line">information_schema</span><br><span class="line">hive</span><br><span class="line">mysql</span><br><span class="line">performance_schema</span><br><span class="line">sys</span><br></pre></td></tr></tbody></table></figure>
 
 <hr>
 <center><font color="pink">✿✿ヽ(°▽°)ノ✿完结撒花！</font></center>
@@ -690,9 +692,7 @@
                 </a>
               </div>
             
-
           </nav>
-
           
 
           
@@ -801,7 +801,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">97.5k</span>
+    <span title="Site words total count">91.6k</span>
   
 </div>
 
@@ -874,13 +874,14 @@
   
 
 
+
+
+
+
+
+
   
-
-
-
-
-
-
+  
 
 
 
@@ -918,7 +919,12 @@
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
   
 
 

@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,7 +19,7 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+  <link href="/lib/pace/pace-theme:minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -86,12 +86,12 @@
 
 
 
-<meta name="description" content="网络配置解决 VMware 虚拟机频繁变动 IP 的问题 按以下步骤 保留一个网络配置器设置步骤： 右键创建的虚拟机–》》设置把网络适配器设置 VMnet8(NAT) 多余的网络适配器移除，保留一个   如果要设置多台，就得每台重复此步骤 Window网络适配器设置步骤： 点击VMnet8网络适配器–》》右键属性–》》lnternet协议版本4 (TCP&#x2F;IPv4)   虚拟网络编辑器设">
+<meta name="description" content="网络配置解决 VMware 虚拟机频繁变动 IP 的问题 按以下步骤 保留一个网络配置器设置步骤： 右键创建的虚拟机–》》设置把网络适配器设置 VMnet8(NAT) 多余的网络适配器移除，保留一个   如果要设置多台，就得每台重复此步骤 Window网络适配器设置步骤： 点击VMnet8网络适配器–》》右键属性–》》lnternet协议版本4 (TCP&#x2F;IPv4)   虚拟网络编辑器设置步骤：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Linux里配置静态IP">
 <meta property="og:url" content="http://blog-zw.top/posts/b8f25ef1/index.html">
 <meta property="og:site_name" content="&#x3D;-&#x3D;">
-<meta property="og:description" content="网络配置解决 VMware 虚拟机频繁变动 IP 的问题 按以下步骤 保留一个网络配置器设置步骤： 右键创建的虚拟机–》》设置把网络适配器设置 VMnet8(NAT) 多余的网络适配器移除，保留一个   如果要设置多台，就得每台重复此步骤 Window网络适配器设置步骤： 点击VMnet8网络适配器–》》右键属性–》》lnternet协议版本4 (TCP&#x2F;IPv4)   虚拟网络编辑器设">
+<meta property="og:description" content="网络配置解决 VMware 虚拟机频繁变动 IP 的问题 按以下步骤 保留一个网络配置器设置步骤： 右键创建的虚拟机–》》设置把网络适配器设置 VMnet8(NAT) 多余的网络适配器移除，保留一个   如果要设置多台，就得每台重复此步骤 Window网络适配器设置步骤： 点击VMnet8网络适配器–》》右键属性–》》lnternet协议版本4 (TCP&#x2F;IPv4)   虚拟网络编辑器设置步骤：">
 <meta property="og:locale">
 <meta property="og:image" content="http://blog-zw.top/posts/b8f25ef1/1.png">
 <meta property="og:image" content="http://blog-zw.top/posts/b8f25ef1/2.png">
@@ -112,7 +112,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -150,7 +150,9 @@
 
 
 
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 <body itemscope itemtype="https://github.com/" lang="zh-Hans">
 
@@ -401,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  287
+                  286
                 </span>
               
 
@@ -446,7 +448,7 @@
 
 <p><code>如果要设置多台，就得每台重复此步骤</code></p>
 <h1 id="Window网络适配器设置"><a href="#Window网络适配器设置" class="headerlink" title="Window网络适配器设置"></a>Window网络适配器设置</h1><p><strong>步骤：</strong></p>
-<p>点击VMnet8网络适配器–》》右键属性–》》lnternet协议版本4 (TCP&#x2F;IPv4)</p>
+<p>点击VMnet8网络适配器–》》右键属性–》》lnternet协议版本4 (TCP/IPv4)</p>
 <img src="/posts/b8f25ef1/2.png" style="zoom: 80%;">
 
 <h1 id="虚拟网络编辑器设置"><a href="#虚拟网络编辑器设置" class="headerlink" title="虚拟网络编辑器设置"></a>虚拟网络编辑器设置</h1><p><strong>步骤：</strong></p>
@@ -457,14 +459,14 @@
 <ol>
 <li><strong>命令：</strong></li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/sysconfig/network-scripts/</span><br><span class="line">ip addr</span><br><span class="line">mv ifcfg-enp0s3 ifcfg-16777736   </span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/sysconfig/network-scripts/</span><br><span class="line">ip addr</span><br><span class="line">mv ifcfg-enp0s3 ifcfg-16777736   </span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="red">下方 eno16777736即为网卡名(不同环境条件情况下为不同，大多数为ifcfg-ens33，记住MAC地址即可)，mv 重命名 ifcfg-enp0s3 为 ifcfg-16777736(网卡名)</font></strong></p>
 <ol start="2">
 <li><strong>进入 ifcfg-16777736 更改配置文件：</strong></li>
 </ol>
 <p><strong><font color="red">关键点在于HWADDR 绑定 网卡对应的MAC地址！！！</font></strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ONBOOT=yes</span><br><span class="line">BOOTPROTO=static</span><br><span class="line">HWADDR=#MAC地址</span><br><span class="line">IPADDR=#想要的固定ip</span><br><span class="line">GATEWAY=#VMnet的网关ip</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ONBOOT=yes</span><br><span class="line">BOOTPROTO=static</span><br><span class="line">HWADDR=#MAC地址</span><br><span class="line">IPADDR=#想要的固定ip</span><br><span class="line">GATEWAY=#VMnet的网关ip</span><br></pre></td></tr></tbody></table></figure>
 
 <img src="/posts/b8f25ef1/4.png" style="zoom: 80%;">
 
@@ -628,9 +630,7 @@
                 </a>
               </div>
             
-
           </nav>
-
           
 
           
@@ -739,7 +739,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">97.5k</span>
+    <span title="Site words total count">91.6k</span>
   
 </div>
 
@@ -812,13 +812,14 @@
   
 
 
+
+
+
+
+
+
   
-
-
-
-
-
-
+  
 
 
 
@@ -856,7 +857,12 @@
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
   
 
 
