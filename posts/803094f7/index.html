@@ -104,7 +104,7 @@
 <meta property="og:image" content="http://blog-zw.top/posts/803094f7/17.png">
 <meta property="og:image" content="http://blog-zw.top/posts/803094f7/22.png">
 <meta property="article:published_time" content="2022-08-09T12:23:58.000Z">
-<meta property="article:modified_time" content="2022-10-13T02:31:04.627Z">
+<meta property="article:modified_time" content="2023-05-04T06:26:28.016Z">
 <meta property="article:author" content="Kli_zw">
 <meta property="article:tag" content="大数据部署">
 <meta name="twitter:card" content="summary">
@@ -352,8 +352,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-10-13T10:31:04+08:00">
-                2022-10-13
+              <time title="更新于" itemprop="dateModified" datetime="2023-05-04T14:26:28+08:00">
+                2023-05-04
               </time>
             
           </span>
@@ -519,6 +519,10 @@
 <figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">192.168.100.200 master</span><br><span class="line">192.168.100.201 slave1</span><br><span class="line">192.168.100.202 slave2</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong>三台主机都要配置(因为后面步骤配置更方便)  使用scp 命令分发hosts至其他主机 ：</strong></p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r /etc/hosts root@slave1:/etc/</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r /etc/hosts root@slave2:/etc/</span><br></pre></td></tr></tbody></table></figure>
+
 <figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@nano ~]# scp -r /etc/hosts root@slave1:/etc/</span><br><span class="line">[root@nano ~]# scp -r /etc/hosts root@slave2:/etc/</span><br></pre></td></tr></tbody></table></figure>
 
 <h1 id="Hadoop环境准备"><a href="#Hadoop环境准备" class="headerlink" title="Hadoop环境准备"></a><strong>Hadoop环境准备</strong></h1><h2 id="集群配置JAVA环境"><a href="#集群配置JAVA环境" class="headerlink" title="集群配置JAVA环境"></a>集群配置JAVA环境</h2><ol>
@@ -542,53 +546,34 @@
 <h2 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h2><p>分别登录3台机器，关闭防火墙。</p>
 <p><a target="_blank" rel="noopener" href="https://blog.51cto.com/u_9153232/2318194">hadoop安装为什么需要关闭防火墙?</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44192363/article/details/116810814?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522166006173416782184676521%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=166006173416782184676521&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-116810814-null-null.142%5Ev40%5Epc_rank_34_1,185%5Ev2%5Econtrol&amp;utm_term=Linux%20%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99&amp;spm=1018.2226.3001.4187">Linux关闭防火墙命令</a></p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@nano ~]# systemctl disable firewalld  //永久关闭防火墙</span><br><span class="line">[root@nano ~]# systemctl stop firewalld   //禁用防火墙</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">systemctl status firewalld 查看防火状态</span></span><br></pre></td></tr></tbody></table></figure>
+<p>永久关闭防火墙</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable firewalld</span><br></pre></td></tr></tbody></table></figure>
+<p>禁用防火墙</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld</span><br></pre></td></tr></tbody></table></figure>
+<p>查看防火状态</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status firewalld</span><br></pre></td></tr></tbody></table></figure>
 
 <h2 id="准备Hadoop-tar-gz安装包"><a href="#准备Hadoop-tar-gz安装包" class="headerlink" title="准备Hadoop.tar.gz安装包"></a><strong>准备Hadoop.tar.gz安装包</strong></h2><p><a target="_blank" rel="noopener" href="https://archive.apache.org/dist/hadoop/common/">Hadoop下载</a></p>
 <blockquote>
 <p>例：下载  hadoop-2.7.7.tar.gz版本</p>
 </blockquote>
 <h1 id="安装Hadoop"><a href="#安装Hadoop" class="headerlink" title="安装Hadoop"></a>安装Hadoop</h1><h2 id="Hadoop-环境变量"><a href="#Hadoop-环境变量" class="headerlink" title="Hadoop 环境变量"></a>Hadoop 环境变量</h2><p><strong>三台主机需创建 /opt/module 目录</strong></p>
-<ul>
-<li><blockquote>
-<p><strong>mkdir /opt/module</strong></p>
-</blockquote>
-</li>
-</ul>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/module</span><br></pre></td></tr></tbody></table></figure>
+
 <ol>
 <li><strong>进入到安装包目录下，解压安装包到/opt/module目录</strong></li>
 </ol>
-<ul>
-<li><blockquote>
-<p><strong>tar -zxvf hadoop-2.7.7.tar.gz  -C /opt/module/</strong></p>
-</blockquote>
-</li>
-</ul>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf hadoop-2.7.7.tar.gz  -C /opt/module/</span><br></pre></td></tr></tbody></table></figure>
+
 <ol start="2">
 <li><strong>配置Hadoop环境配置</strong></li>
 </ol>
-<ul>
-<li><blockquote>
-<p><strong>[root@nano ~]# vim /etc/profile</strong></p>
-</blockquote>
-</li>
-<li><blockquote>
-<p><strong>export HADOOP_HOME=/opt/module/hadoop-2.7.7</strong>    —实际安装包路径</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p><strong>export PATH=$PATH:$HADOOP_HOME/bin</strong></p>
-</blockquote>
-</li>
-<li><blockquote>
-<p><strong>export PATH=$PATH:$HADOOP_HOME/sbin</strong></p>
-</blockquote>
-</li>
-<li><blockquote>
-<p><strong>source /etc/profile</strong>      —-重新加载配置文件</p>
-</blockquote>
-</li>
-</ul>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export HADOOP_HOME=/opt/module/hadoop-2.7.7</span><br><span class="line">export PATH=$PATH:$HADOOP_HOME/bin</span><br><span class="line">export PATH=$PATH:$HADOOP_HOME/sbin</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></tbody></table></figure>
+
 <h2 id="Hadoop文件目录结构"><a href="#Hadoop文件目录结构" class="headerlink" title="Hadoop文件目录结构"></a>Hadoop文件目录结构</h2><ul>
 <li>bin目录：存放对Hadoop相关服务（hdfs，yarn，mapred）进行操作的脚本</li>
 <li>etc目录：Hadoop的配置文件目录，存放Hadoop的配置文件</li>
@@ -597,10 +582,10 @@
 <li>share目录：存放Hadoop的依赖jar包、文档、和官方案例</li>
 </ul>
 <h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p><strong><font color="red">【hadoop配置文件存放在hadoop安装路径的Hadoop-2.7.7/etc/hadoop目录下】</font></strong></p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@nano ~]# cd /opt/module/hadoop-2.7.7/etc/hadoop/</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/module/hadoop-2.7.7/etc/hadoop/</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="修改hadoop-env-sh"><a href="#修改hadoop-env-sh" class="headerlink" title="修改hadoop-env.sh"></a>修改hadoop-env.sh</h3><p> 指定JDK的安装位置</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/opt/module/jdk1.8.0_181</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/opt/module/jdk1.8.0_181</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="Core：core-site-xml"><a href="#Core：core-site-xml" class="headerlink" title="Core：core-site.xml"></a>Core：core-site.xml</h3><p><strong>回到Hadoop-2.7.7安装目录，创建 data目录</strong></p>
 <p><img src="/posts/803094f7/6.png"></p>
@@ -715,10 +700,10 @@ start-yarn.sh
 <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Hello Hadoop</span><br><span class="line">Hellp Scala</span><br><span class="line">Hello Java</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong>上传至 hdfs:</strong></p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hadoop fs -put Hello.txt /wc</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hadoop fs -put Hello.txt /wc</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong>运行wordcount案例:</strong></p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hadoop jar /opt/module/hadoop-2.7.7/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.7.jar wordcount /wc/Hello.txt /put</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hadoop jar /opt/module/hadoop-2.7.7/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.7.jar wordcount /wc/Hello.txt /put</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong><font color="ondine">HDFS&nbsp; &nbsp;put文件夹需不存在!</font></strong></p>
 <p><strong>查看运行结果:</strong></p>
