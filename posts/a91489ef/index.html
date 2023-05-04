@@ -86,12 +86,12 @@
 
 
 
-<meta name="description" content="下载下载至对应Mysql安装包  https:&#x2F;&#x2F;downloads.mysql.com&#x2F;archives&#x2F;community&#x2F;   解压安装包在opt目录下创建 module目录 1mkdir &#x2F;opt&#x2F;module 解压安装包至opt&#x2F;module目录,并重命名 1tar -zxvf mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz)  -C &#x2F;opt&#x2F;mo">
+<meta name="description" content="下载下载至对应Mysql安装包  https:&#x2F;&#x2F;downloads.mysql.com&#x2F;archives&#x2F;community&#x2F;   解压安装包在opt目录下创建 module目录 1mkdir &#x2F;opt&#x2F;module 解压安装包至opt&#x2F;module目录,并重命名 1tar -zxvf mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz  -C &#x2F;opt&#x2F;mod">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Linux里安装mysql">
 <meta property="og:url" content="http://blog-zw.top/posts/a91489ef/index.html">
 <meta property="og:site_name" content="&#x3D;-&#x3D;">
-<meta property="og:description" content="下载下载至对应Mysql安装包  https:&#x2F;&#x2F;downloads.mysql.com&#x2F;archives&#x2F;community&#x2F;   解压安装包在opt目录下创建 module目录 1mkdir &#x2F;opt&#x2F;module 解压安装包至opt&#x2F;module目录,并重命名 1tar -zxvf mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz)  -C &#x2F;opt&#x2F;mo">
+<meta property="og:description" content="下载下载至对应Mysql安装包  https:&#x2F;&#x2F;downloads.mysql.com&#x2F;archives&#x2F;community&#x2F;   解压安装包在opt目录下创建 module目录 1mkdir &#x2F;opt&#x2F;module 解压安装包至opt&#x2F;module目录,并重命名 1tar -zxvf mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz  -C &#x2F;opt&#x2F;mod">
 <meta property="og:locale">
 <meta property="og:image" content="http://blog-zw.top/posts/a91489ef/4.png">
 <meta property="og:image" content="http://blog-zw.top/posts/a91489ef/1.png">
@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://blog-zw.top/posts/a91489ef/7.png">
 <meta property="og:image" content="http://blog-zw.top/posts/a91489ef/3.png">
 <meta property="article:published_time" content="2022-04-30T04:36:06.000Z">
-<meta property="article:modified_time" content="2022-10-11T02:38:18.529Z">
+<meta property="article:modified_time" content="2023-05-04T04:43:41.325Z">
 <meta property="article:author" content="Kli_zw">
 <meta property="article:tag" content="大数据部署">
 <meta name="twitter:card" content="summary">
@@ -349,8 +349,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-10-11T10:38:18+08:00">
-                2022-10-11
+              <time title="更新于" itemprop="dateModified" datetime="2023-05-04T12:43:41+08:00">
+                2023-05-04
               </time>
             
           </span>
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  889
+                  886
                 </span>
               
 
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  3
                 </span>
               
             </div>
@@ -449,9 +449,9 @@
 <h1 id="解压安装包"><a href="#解压安装包" class="headerlink" title="解压安装包"></a>解压安装包</h1><p><strong>在opt目录下创建 module目录</strong></p>
 <figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/module</span><br></pre></td></tr></tbody></table></figure>
 <p><strong>解压安装包至opt/module目录,并重命名</strong></p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz)  -C /opt/module</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz  -C /opt/module</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz  mysql-5.7.34</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv mysql-5.7.34-linux-glibc2.12-x86_64  mysql-5.7.34</span><br></pre></td></tr></tbody></table></figure>
 
 <h1 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h1><p><strong><font color="ondine">可不配置,但最好是配置，因为启动Mysql更方便些</font></strong></p>
 <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></tbody></table></figure>
@@ -470,12 +470,10 @@
 
 <figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown mysql:mysql  -R /var/lib/mysql</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="配置-my-cnf"><a href="#配置-my-cnf" class="headerlink" title="配置 my.cnf"></a>配置 my.cnf</h2><ul>
-<li><blockquote>
-<p><strong>vim /etc/my.cnf</strong></p>
-</blockquote>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line"><span class="keyword">user</span><span class="operator">=</span>mysql</span><br><span class="line"></span><br><span class="line">basedir<span class="operator">=</span><span class="operator">/</span>opt<span class="operator">/</span><span class="keyword">module</span><span class="operator">/</span>mysql<span class="number">-5.7</span><span class="number">.34</span>                          </span><br><span class="line">datadir<span class="operator">=</span><span class="operator">/</span>var<span class="operator">/</span>lib<span class="operator">/</span>mysql                    </span><br><span class="line">socket<span class="operator">=</span><span class="operator">/</span>var<span class="operator">/</span>lib<span class="operator">/</span>mysql<span class="operator">/</span>mysql.sock </span><br><span class="line"><span class="type">character</span><span class="operator">-</span><span class="keyword">set</span><span class="operator">-</span>server<span class="operator">=</span>utf8mb4  </span><br><span class="line">symbolic<span class="operator">-</span>links<span class="operator">=</span><span class="number">0</span></span><br><span class="line"></span><br><span class="line">[mysqld_safe]</span><br><span class="line">log<span class="operator">-</span>error<span class="operator">=</span><span class="operator">/</span>var<span class="operator">/</span>lib<span class="operator">/</span>mysql<span class="operator">/</span>err.log</span><br><span class="line">pid<span class="operator">-</span>file<span class="operator">=</span><span class="operator">/</span>var<span class="operator">/</span>lib<span class="operator">/</span>mysql<span class="operator">/</span>mysql.pid</span><br><span class="line"></span><br><span class="line">[client]</span><br><span class="line">port<span class="operator">=</span><span class="number">3306</span>  </span><br><span class="line">socket<span class="operator">=</span><span class="operator">/</span>var<span class="operator">/</span>lib<span class="operator">/</span>mysql<span class="operator">/</span>mysql.sock</span><br></pre></td></tr></tbody></table></figure></li>
-</ul>
+<h2 id="配置-my-cnf"><a href="#配置-my-cnf" class="headerlink" title="配置 my.cnf"></a>配置 my.cnf</h2><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/my.cnf</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line"><span class="keyword">user</span><span class="operator">=</span>mysql</span><br><span class="line"></span><br><span class="line">basedir<span class="operator">=</span><span class="operator">/</span>opt<span class="operator">/</span><span class="keyword">module</span><span class="operator">/</span>mysql<span class="number">-5.7</span><span class="number">.34</span>                          </span><br><span class="line">datadir<span class="operator">=</span><span class="operator">/</span>var<span class="operator">/</span>lib<span class="operator">/</span>mysql                    </span><br><span class="line">socket<span class="operator">=</span><span class="operator">/</span>var<span class="operator">/</span>lib<span class="operator">/</span>mysql<span class="operator">/</span>mysql.sock </span><br><span class="line"><span class="type">character</span><span class="operator">-</span><span class="keyword">set</span><span class="operator">-</span>server<span class="operator">=</span>utf8mb4  </span><br><span class="line">symbolic<span class="operator">-</span>links<span class="operator">=</span><span class="number">0</span></span><br><span class="line"></span><br><span class="line">[mysqld_safe]</span><br><span class="line">log<span class="operator">-</span>error<span class="operator">=</span><span class="operator">/</span>var<span class="operator">/</span>lib<span class="operator">/</span>mysql<span class="operator">/</span>err.log</span><br><span class="line">pid<span class="operator">-</span>file<span class="operator">=</span><span class="operator">/</span>var<span class="operator">/</span>lib<span class="operator">/</span>mysql<span class="operator">/</span>mysql.pid</span><br><span class="line"></span><br><span class="line">[client]</span><br><span class="line">port<span class="operator">=</span><span class="number">3306</span>  </span><br><span class="line">socket<span class="operator">=</span><span class="operator">/</span>var<span class="operator">/</span>lib<span class="operator">/</span>mysql<span class="operator">/</span>mysql.sock</span><br></pre></td></tr></tbody></table></figure>
+
 <img src="/posts/a91489ef/1.png" style="zoom:80%;">
 
 <h2 id="初始化数据库"><a href="#初始化数据库" class="headerlink" title="初始化数据库"></a>初始化数据库</h2><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/module/mysql-5.7.34/bin</span><br></pre></td></tr></tbody></table></figure>
@@ -837,7 +835,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">164.1k</span>
+    <span title="Site words total count">164.2k</span>
   
 </div>
 
